@@ -3,11 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AURE — Autonomous Resource Management</title>
-<meta name="description" content="AURE architects brands and infrastructure for the agentic era. AI-native signal architecture, agentic workflow syndication, and enterprise brand strategy.">
+<title>AURE — Autonomous Resource Management | AI-Native Signal Architecture & Enterprise Brand Strategy</title>
+<meta name="description" content="AURE is a full-service firm at the intersection of AI infrastructure and enterprise brand strategy. We architect systems autonomous agents trust, and brands the agentic era amplifies. Avon, Colorado.">
+<meta name="keywords" content="autonomous resource management, AI-native signal architecture, generative search optimization, agentic workflow syndication, enterprise brand strategy, GEO, knowledge graph engineering, LLM visibility">
+<meta property="og:title" content="AURE — Directing the Agentic Swarm">
+<meta property="og:description" content="AI-native signal architecture and enterprise brand strategy for the autonomous era.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://au-re.org">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://au-re.org/#organization",
+      "name": "AURE",
+      "legalName": "Autonomous Resource Management",
+      "url": "https://au-re.org",
+      "email": "contact@au-re.org",
+      "description": "AURE is a full-service firm architecting AI-native signal infrastructure and enterprise brand strategy for the agentic era.",
+      "foundingDate": "2025",
+      "address": {"@type": "PostalAddress", "addressLocality": "Avon", "addressRegion": "CO", "addressCountry": "US"},
+      "sameAs": ["https://linkedin.com/company/aure-org","https://twitter.com/aure_org","https://github.com/virtualmase/aureorg"],
+      "knowsAbout": ["AI-Native Signal Architecture","Generative Search Optimization","Agentic Workflow Syndication","Byzantine Fault Tolerance","Knowledge Graph Engineering","Enterprise Brand Strategy","Multi-Agent Systems","LLM Visibility"]
+    },
+    {"@type":"Person","@id":"https://au-re.org/#mason-nguyen","name":"Mason Nguyen","jobTitle":"Chief Executive Officer","worksFor":{"@id":"https://au-re.org/#organization"}},
+    {"@type":"Person","@id":"https://au-re.org/#rena-okafor","name":"Rena Okafor","jobTitle":"Chief Intelligence Officer","worksFor":{"@id":"https://au-re.org/#organization"}},
+    {"@type":"Person","@id":"https://au-re.org/#dominic-vael","name":"Dominic Vael","jobTitle":"Chief Signal Officer","worksFor":{"@id":"https://au-re.org/#organization"}},
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"What is AURE?","acceptedAnswer":{"@type":"Answer","text":"AURE (Autonomous Resource Management) is a full-service firm at the intersection of AI infrastructure and enterprise brand strategy. We architect systems that autonomous agents trust and brands that the agentic era amplifies."}},
+        {"@type":"Question","name":"What is AI-Native Signal Architecture?","acceptedAnswer":{"@type":"Answer","text":"AI-Native Signal Architecture is infrastructure designed for machine-readable systems. It transforms brand presence into a high-confidence knowledge graph that AI systems cite, trust, and amplify."}},
+        {"@type":"Question","name":"What is Generative Search Optimization (GEO)?","acceptedAnswer":{"@type":"Answer","text":"GEO is optimizing entity architecture, citation signals, and content so brands are accurately cited by LLMs like ChatGPT, Perplexity, and Gemini. It replaces traditional SEO as the primary visibility discipline."}},
+        {"@type":"Question","name":"How does AURE engage with new clients?","acceptedAnswer":{"@type":"Answer","text":"AURE begins with a Signal Audit — mapping infrastructure and brand signals to identify gaps in machine-readability, agent trust, and operational resilience. Engagements then proceed through Architecture Design, Deployment, and Amplification."}}
+      ]
+    }
+  ]
+}
+</script>
+
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -16,945 +56,340 @@
     --ink: #0D0D0C;
     --ink-60: rgba(13,13,12,0.6);
     --ink-30: rgba(13,13,12,0.3);
-    --ink-10: rgba(13,13,12,0.1);
+    --ink-10: rgba(13,13,12,0.08);
     --signal: #C8A96E;
-    --signal-dim: rgba(200,169,110,0.15);
+    --signal-dim: rgba(200,169,110,0.12);
     --rule: 1px solid rgba(13,13,12,0.12);
     --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-mono: 'DM Mono', monospace;
     --font-sans: 'Barlow', sans-serif;
   }
 
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --cream: #111110;
+      --ink: #F0EDE6;
+      --ink-60: rgba(240,237,230,0.6);
+      --ink-30: rgba(240,237,230,0.25);
+      --ink-10: rgba(240,237,230,0.06);
+      --rule: 1px solid rgba(240,237,230,0.1);
+    }
+    nav { background: rgba(17,17,16,0.94) !important; }
+    .trust-bar, .process-section, .cta-section, footer { background: #0a0a09; }
+    .ticker-wrap { background: #1a1a18; }
+    .ask-aure-section { background: rgba(240,237,230,0.03); }
+    .ask-aure-panel, .ask-msg.aure { background: #1a1a18; }
+    .ask-input { background: transparent; color: var(--ink); }
+    .lead-magnet { background: rgba(200,169,110,0.08); }
+    .lm-input { background: #0a0a09; color: var(--ink); }
+    .hero-bg-text, .signal-section::before { color: rgba(240,237,230,0.025) !important; }
+    footer { border-top-color: rgba(240,237,230,0.08); }
+    .footer-top { border-bottom-color: rgba(240,237,230,0.08); }
+    .footer-llms { border-top-color: rgba(240,237,230,0.06); }
+  }
+
   html { scroll-behavior: smooth; }
+  body { background: var(--cream); color: var(--ink); font-family: var(--font-sans); font-weight: 300; font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
-  body {
-    background: var(--cream);
-    color: var(--ink);
-    font-family: var(--font-sans);
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.5rem 3rem;
-    background: rgba(245,242,236,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: var(--rule);
-    transition: padding 0.3s;
-  }
-
-  .nav-wordmark {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--ink);
-    text-decoration: none;
-  }
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 3rem; background: rgba(245,242,236,0.92); backdrop-filter: blur(16px); border-bottom: var(--rule); transition: padding 0.3s; }
+  .nav-wordmark { font-family: var(--font-mono); font-size: 12px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); text-decoration: none; }
   .nav-wordmark span { color: var(--signal); }
-
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-    align-items: center;
-  }
-  .nav-links a {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--ink-60);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+  .nav-links a { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-60); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover { color: var(--ink); }
+  .nav-cta { color: var(--ink) !important; border: 1px solid var(--ink); padding: 0.55rem 1.2rem; transition: background 0.2s, color 0.2s !important; }
+  .nav-cta:hover { background: var(--ink) !important; color: var(--cream) !important; }
 
-  .nav-cta {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--ink) !important;
-    border: 1px solid var(--ink);
-    padding: 0.55rem 1.2rem;
-    transition: background 0.2s, color 0.2s !important;
-  }
-  .nav-cta:hover {
-    background: var(--ink) !important;
-    color: var(--cream) !important;
-  }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: 1fr auto;
-    padding: 10rem 3rem 4rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-bg-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: var(--font-serif);
-    font-size: clamp(120px, 18vw, 280px);
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    color: rgba(13,13,12,0.04);
-    white-space: nowrap;
-    user-select: none;
-    pointer-events: none;
-    line-height: 1;
-  }
-
-  .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-end: end;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-
-  .hero-eyebrow {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--signal);
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 1px;
-    background: var(--signal);
-  }
-
-  .hero-headline {
-    font-family: var(--font-serif);
-    font-size: clamp(52px, 6vw, 96px);
-    font-weight: 300;
-    line-height: 1.02;
-    letter-spacing: -0.02em;
-    margin-bottom: 0;
-  }
-  .hero-headline em {
-    font-style: italic;
-    color: var(--signal);
-  }
-
-  .hero-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-bottom: 0.5rem;
-    border-left: var(--rule);
-    padding-left: 3rem;
-  }
-
-  .hero-body {
-    font-size: 17px;
-    font-weight: 300;
-    line-height: 1.75;
-    color: var(--ink-60);
-    margin-bottom: 2.5rem;
-    max-width: 420px;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 1.25rem;
-    align-items: center;
-  }
-
-  .btn-primary {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    background: var(--ink);
-    color: var(--cream);
-    border: 1px solid var(--ink);
-    padding: 0.85rem 2rem;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-    display: inline-block;
-  }
+  /* HERO */
+  .hero { min-height: 100vh; display: grid; grid-template-rows: 1fr auto; padding: 10rem 3rem 4rem; position: relative; overflow: hidden; }
+  .hero-bg-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: var(--font-serif); font-size: clamp(120px,18vw,280px); font-weight: 300; letter-spacing: -0.02em; color: rgba(13,13,12,0.035); white-space: nowrap; user-select: none; pointer-events: none; line-height: 1; }
+  .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; position: relative; z-index: 1; }
+  .hero-left { display: flex; flex-direction: column; justify-content: flex-end; }
+  .hero-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--signal); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .hero-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--signal); }
+  .hero-headline { font-family: var(--font-serif); font-size: clamp(52px,6vw,96px); font-weight: 300; line-height: 1.02; letter-spacing: -0.02em; }
+  .hero-headline em { font-style: italic; color: var(--signal); }
+  .hero-right { display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 0.5rem; border-left: var(--rule); padding-left: 3rem; }
+  .hero-body { font-size: 17px; font-weight: 300; line-height: 1.75; color: var(--ink-60); margin-bottom: 2.5rem; max-width: 420px; }
+  .hero-actions { display: flex; gap: 1.25rem; align-items: center; }
+  .btn-primary { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; background: var(--ink); color: var(--cream); border: 1px solid var(--ink); padding: 0.85rem 2rem; cursor: pointer; text-decoration: none; transition: background 0.2s, color 0.2s; display: inline-block; }
   .btn-primary:hover { background: transparent; color: var(--ink); }
-
-  .btn-ghost {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--ink-60);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: color 0.2s;
-  }
+  .btn-ghost { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-60); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
   .btn-ghost:hover { color: var(--ink); }
   .btn-ghost::after { content: '→'; font-family: sans-serif; }
-
-  .hero-rule {
-    position: relative;
-    z-index: 1;
-    border: none;
-    border-top: var(--rule);
-    margin-top: 4rem;
-  }
-
-  .hero-stats {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    padding-top: 2rem;
-  }
-
-  .stat {
-    padding: 0 2rem 0 0;
-    border-right: var(--rule);
-  }
+  .hero-rule { border: none; border-top: var(--rule); margin-top: 4rem; position: relative; z-index: 1; }
+  .hero-stats { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3,1fr); padding-top: 2rem; }
+  .stat { padding: 0 2rem 0 0; border-right: var(--rule); }
   .stat:last-child { border-right: none; padding-left: 2rem; padding-right: 0; }
   .stat:not(:first-child) { padding-left: 2rem; }
+  .stat-num { font-family: var(--font-serif); font-size: 42px; font-weight: 300; line-height: 1; letter-spacing: -0.02em; margin-bottom: 0.3rem; }
+  .stat-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-60); }
+  .stat-note { font-family: var(--font-mono); font-size: 9px; color: var(--ink-30); letter-spacing: 0.1em; margin-top: 0.2rem; }
 
-  .stat-num {
-    font-family: var(--font-serif);
-    font-size: 42px;
-    font-weight: 300;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.3rem;
-  }
-  .stat-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-60);
-  }
+  /* TRUST BAR */
+  .trust-bar { background: var(--ink); padding: 1.75rem 3rem; border-bottom: var(--rule); }
+  .trust-bar-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(245,242,236,0.3); margin-bottom: 1.25rem; text-align: center; }
+  .trust-clients { display: flex; justify-content: center; flex-wrap: wrap; }
+  .trust-client { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(245,242,236,0.45); padding: 0.4rem 2rem; border-right: 1px solid rgba(245,242,236,0.08); transition: color 0.2s; }
+  .trust-client:last-child { border-right: none; }
+  .trust-client:hover { color: var(--signal); }
 
-  /* ── TICKER ── */
-  .ticker-wrap {
-    overflow: hidden;
-    border-top: var(--rule);
-    border-bottom: var(--rule);
-    background: var(--ink);
-    padding: 0.85rem 0;
-  }
-  .ticker-track {
-    display: flex;
-    gap: 0;
-    animation: ticker 28s linear infinite;
-    white-space: nowrap;
-  }
-  .ticker-item {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--cream);
-    opacity: 0.7;
-    padding: 0 3rem;
-    flex-shrink: 0;
-  }
-  .ticker-item span { color: var(--signal); opacity: 1; margin-right: 3rem; }
-  @keyframes ticker {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
+  /* TICKER */
+  .ticker-wrap { overflow: hidden; border-top: var(--rule); border-bottom: var(--rule); background: var(--ink); padding: 0.85rem 0; }
+  .ticker-track { display: flex; animation: ticker 32s linear infinite; white-space: nowrap; }
+  .ticker-item { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,242,236,0.45); padding: 0 3rem; flex-shrink: 0; }
+  .ticker-item span { color: var(--signal); margin-right: 3rem; }
+  @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-  /* ── SECTION SHARED ── */
-  section {
-    padding: 7rem 3rem;
-    border-bottom: var(--rule);
-  }
-
-  .section-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--signal);
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  .section-label::before {
-    content: '';
-    display: block;
-    width: 18px;
-    height: 1px;
-    background: var(--signal);
-  }
-
-  .section-title {
-    font-family: var(--font-serif);
-    font-size: clamp(40px, 4.5vw, 72px);
-    font-weight: 300;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    max-width: 16ch;
-  }
+  /* SECTIONS */
+  section { padding: 7rem 3rem; border-bottom: var(--rule); }
+  .section-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--signal); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+  .section-label::before { content: ''; display: block; width: 18px; height: 1px; background: var(--signal); }
+  .section-title { font-family: var(--font-serif); font-size: clamp(40px,4.5vw,72px); font-weight: 300; line-height: 1.05; letter-spacing: -0.02em; max-width: 16ch; }
   .section-title em { font-style: italic; color: var(--signal); }
+  .section-tldr { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--ink-30); margin-top: 0.75rem; max-width: 60ch; line-height: 1.65; }
 
-  /* ── ABOUT / MISSION ── */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 6rem;
-    align-items: start;
-    margin-top: 4rem;
-  }
-
-  .about-left {}
-  .about-manifesto {
-    font-family: var(--font-serif);
-    font-size: clamp(22px, 2.5vw, 32px);
-    font-weight: 300;
-    line-height: 1.45;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    margin-bottom: 2.5rem;
-  }
+  /* MISSION */
+  .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 6rem; align-items: start; margin-top: 4rem; }
+  .about-manifesto { font-family: var(--font-serif); font-size: clamp(22px,2.5vw,32px); font-weight: 300; line-height: 1.45; letter-spacing: -0.01em; margin-bottom: 2.5rem; }
   .about-manifesto em { font-style: italic; color: var(--signal); }
-
-  .about-body {
-    color: var(--ink-60);
-    line-height: 1.85;
-    margin-bottom: 2rem;
-  }
-
-  .about-right {
-    padding-top: 0.5rem;
-  }
-
-  .pillar {
-    display: grid;
-    grid-template-columns: 3rem 1fr;
-    gap: 1rem;
-    padding: 2rem 0;
-    border-top: var(--rule);
-  }
+  .about-body { color: var(--ink-60); line-height: 1.85; margin-bottom: 2rem; }
+  .pillar { display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; padding: 2rem 0; border-top: var(--rule); }
   .pillar:last-child { border-bottom: var(--rule); }
+  .pillar-num { font-family: var(--font-mono); font-size: 11px; color: var(--signal); letter-spacing: 0.1em; padding-top: 0.15rem; }
+  .pillar-title { font-family: var(--font-serif); font-size: 22px; font-weight: 400; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+  .pillar-body { font-size: 15px; color: var(--ink-60); line-height: 1.7; }
 
-  .pillar-num {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--signal);
-    letter-spacing: 0.1em;
-    padding-top: 0.15rem;
-  }
-
-  .pillar-title {
-    font-family: var(--font-serif);
-    font-size: 22px;
-    font-weight: 400;
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.01em;
-  }
-
-  .pillar-body {
-    font-size: 15px;
-    color: var(--ink-60);
-    line-height: 1.7;
-  }
-
-  /* ── SERVICES ── */
-  .services-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: end;
-    margin-bottom: 4rem;
-  }
-
-  .services-intro {
-    font-size: 17px;
-    color: var(--ink-60);
-    line-height: 1.75;
-    max-width: 440px;
-    justify-self: end;
-    padding-bottom: 0.25rem;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
-    border: var(--rule);
-  }
-
-  .service-card {
-    padding: 2.5rem;
-    border-right: var(--rule);
-    border-bottom: var(--rule);
-    transition: background 0.25s;
-    cursor: default;
-    position: relative;
-    overflow: hidden;
-  }
+  /* SERVICES */
+  .services-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 4rem; }
+  .services-intro { font-size: 17px; color: var(--ink-60); line-height: 1.75; max-width: 440px; justify-self: end; }
+  .services-grid { display: grid; grid-template-columns: repeat(2,1fr); border: var(--rule); }
+  .service-card { padding: 2.5rem; border-right: var(--rule); border-bottom: var(--rule); transition: background 0.25s; position: relative; overflow: hidden; }
   .service-card:nth-child(even) { border-right: none; }
-  .service-card:nth-child(3),
-  .service-card:nth-child(4) { border-bottom: none; }
-  .service-card::before {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 0; height: 2px;
-    background: var(--signal);
-    transition: width 0.35s ease;
-  }
-  .service-card:hover { background: rgba(13,13,12,0.02); }
+  .service-card:nth-child(3), .service-card:nth-child(4) { border-bottom: none; }
+  .service-card::before { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--signal); transition: width 0.35s ease; }
+  .service-card:hover { background: var(--ink-10); }
   .service-card:hover::before { width: 100%; }
+  .service-icon { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em; color: var(--signal); margin-bottom: 1.5rem; text-transform: uppercase; }
+  .service-title { font-family: var(--font-serif); font-size: 26px; font-weight: 400; letter-spacing: -0.01em; margin-bottom: 1rem; line-height: 1.2; }
+  .service-body { font-size: 15px; color: var(--ink-60); line-height: 1.7; margin-bottom: 1.5rem; }
+  .service-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-60); border: 1px solid var(--ink-30); padding: 0.25rem 0.65rem; }
 
-  .service-icon {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    color: var(--signal);
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-  }
+  /* LEAD MAGNET */
+  .lead-magnet { margin-top: 4rem; border: 1px solid rgba(200,169,110,0.3); background: var(--signal-dim); padding: 2.5rem 3rem; display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; }
+  .lm-eyebrow { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--signal); margin-bottom: 0.75rem; }
+  .lm-title { font-family: var(--font-serif); font-size: 28px; font-weight: 400; letter-spacing: -0.01em; margin-bottom: 0.75rem; }
+  .lm-body { font-size: 14px; color: var(--ink-60); line-height: 1.7; }
+  .lm-form { display: flex; min-width: 340px; }
+  .lm-input { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; border: 1px solid var(--ink-30); background: var(--cream); color: var(--ink); padding: 0.85rem 1.25rem; flex: 1; outline: none; transition: border-color 0.2s; }
+  .lm-input:focus { border-color: var(--signal); }
+  .lm-submit { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; background: var(--ink); color: var(--cream); border: 1px solid var(--ink); padding: 0.85rem 1.5rem; cursor: pointer; transition: background 0.2s, color 0.2s; white-space: nowrap; }
+  .lm-submit:hover { background: var(--signal); border-color: var(--signal); color: var(--ink); }
 
-  .service-title {
-    font-family: var(--font-serif);
-    font-size: 26px;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-  }
-
-  .service-body {
-    font-size: 15px;
-    color: var(--ink-60);
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-  }
-
-  .service-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-  .tag {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-60);
-    border: 1px solid var(--ink-30);
-    padding: 0.25rem 0.65rem;
-  }
-
-  /* ── PROCESS ── */
-  .process-section {
-    background: var(--ink);
-    color: var(--cream);
-  }
+  /* PROCESS */
+  .process-section { background: var(--ink); color: var(--cream); }
   .process-section .section-label { color: var(--signal); }
-  .process-section .section-title { color: var(--cream); }
-
-  .process-steps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    margin-top: 5rem;
-    border-top: 1px solid rgba(245,242,236,0.15);
-  }
-
-  .step {
-    padding: 2.5rem 2rem 2.5rem 0;
-    border-right: 1px solid rgba(245,242,236,0.12);
-    position: relative;
-  }
+  .process-section .section-title { color: var(--cream); max-width: none; }
+  .process-section .section-tldr { color: rgba(245,242,236,0.28); }
+  .process-steps { display: grid; grid-template-columns: repeat(4,1fr); margin-top: 5rem; border-top: 1px solid rgba(245,242,236,0.1); }
+  .step { padding: 2.5rem 2rem 2.5rem 0; border-right: 1px solid rgba(245,242,236,0.08); }
   .step:first-child { padding-left: 0; }
   .step:last-child { border-right: none; padding-right: 0; padding-left: 2rem; }
   .step:not(:first-child):not(:last-child) { padding-left: 2rem; }
+  .step-num { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; color: var(--signal); margin-bottom: 2rem; }
+  .step-title { font-family: var(--font-serif); font-size: 28px; font-weight: 300; letter-spacing: -0.01em; color: var(--cream); margin-bottom: 1rem; line-height: 1.15; }
+  .step-body { font-size: 14px; color: rgba(245,242,236,0.48); line-height: 1.75; margin-bottom: 1rem; }
+  .step-deliverable { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--signal); opacity: 0.65; }
 
-  .step-num {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    color: var(--signal);
-    margin-bottom: 2rem;
-  }
+  /* TESTIMONIALS */
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); border: var(--rule); margin-top: 4rem; }
+  .testimonial-card { padding: 2.5rem; border-right: var(--rule); display: flex; flex-direction: column; transition: background 0.2s; }
+  .testimonial-card:last-child { border-right: none; }
+  .testimonial-card:hover { background: var(--ink-10); }
+  .testimonial-quote { font-family: var(--font-serif); font-size: 19px; font-weight: 300; line-height: 1.6; letter-spacing: -0.01em; flex-grow: 1; margin-bottom: 2rem; }
+  .testimonial-quote::before { content: '\201C'; color: var(--signal); font-size: 40px; line-height: 0; vertical-align: -0.45em; margin-right: 0.15rem; }
+  .testimonial-name { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.2rem; }
+  .testimonial-org { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--signal); }
 
-  .step-title {
-    font-family: var(--font-serif);
-    font-size: 28px;
-    font-weight: 300;
-    letter-spacing: -0.01em;
-    color: var(--cream);
-    margin-bottom: 1rem;
-    line-height: 1.15;
-  }
+  /* ASK AURE */
+  .ask-aure-section { padding: 7rem 3rem; border-bottom: var(--rule); background: var(--ink-10); }
+  .ask-aure-panel { margin-top: 3rem; border: var(--rule); background: var(--cream); max-width: 760px; }
+  .ask-aure-header { padding: 1rem 1.5rem; border-bottom: var(--rule); display: flex; align-items: center; gap: 0.75rem; }
+  .ask-status { width: 8px; height: 8px; border-radius: 50%; background: var(--signal); animation: blink 2s infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.35} }
+  .ask-status-text { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-60); }
+  .ask-messages { padding: 1.5rem; min-height: 180px; display: flex; flex-direction: column; gap: 1rem; max-height: 320px; overflow-y: auto; }
+  .ask-msg { padding: 0.85rem 1.25rem; font-size: 14px; line-height: 1.65; max-width: 85%; }
+  .ask-msg.aure { background: var(--ink-10); border-left: 2px solid var(--signal); color: var(--ink); align-self: flex-start; }
+  .ask-msg.user { background: var(--ink); color: var(--cream); align-self: flex-end; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; }
+  .ask-suggestions { padding: 0.85rem 1.5rem; border-top: var(--rule); display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .ask-chip { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--ink-30); padding: 0.3rem 0.75rem; cursor: pointer; color: var(--ink-60); background: transparent; transition: border-color 0.2s, color 0.2s; }
+  .ask-chip:hover { border-color: var(--signal); color: var(--signal); }
+  .ask-input-row { border-top: var(--rule); display: flex; }
+  .ask-input { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.05em; flex: 1; border: none; background: transparent; padding: 1rem 1.5rem; color: var(--ink); outline: none; }
+  .ask-send { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; background: transparent; border: none; border-left: var(--rule); padding: 1rem 1.5rem; color: var(--signal); cursor: pointer; transition: background 0.2s; }
+  .ask-send:hover { background: var(--ink-10); }
 
-  .step-body {
-    font-size: 14px;
-    color: rgba(245,242,236,0.55);
-    line-height: 1.75;
-  }
-
-  /* ── LEADERSHIP ── */
-  .leadership-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    margin-top: 4rem;
-    border: var(--rule);
-  }
-
-  .leader-card {
-    padding: 2.5rem;
-    border-right: var(--rule);
-    transition: background 0.2s;
-    display: flex;
-    flex-direction: column;
-  }
+  /* LEADERSHIP */
+  .leadership-grid { display: grid; grid-template-columns: repeat(3,1fr); border: var(--rule); margin-top: 4rem; }
+  .leader-card { padding: 2.5rem; border-right: var(--rule); transition: background 0.2s; display: flex; flex-direction: column; }
   .leader-card:last-child { border-right: none; }
-  .leader-card:hover { background: rgba(13,13,12,0.025); }
+  .leader-card:hover { background: var(--ink-10); }
+  .leader-photo { width: 64px; height: 64px; border-radius: 50%; background: var(--ink-10); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 22px; color: var(--ink-60); border: var(--rule); }
+  .leader-name { font-family: var(--font-serif); font-size: 24px; font-weight: 400; letter-spacing: -0.01em; margin-bottom: 0.25rem; }
+  .leader-title { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--signal); margin-bottom: 1.5rem; }
+  .leader-bio { font-size: 14px; color: var(--ink-60); line-height: 1.75; }
 
-  .leader-photo {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: var(--ink-10);
-    margin-bottom: 1.5rem;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-serif);
-    font-size: 22px;
-    color: var(--ink-60);
-    border: var(--rule);
-  }
-  .leader-photo img {
-    width: 100%; height: 100%; object-fit: cover;
-  }
+  /* FAQ */
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; border: var(--rule); margin-top: 4rem; }
+  .faq-item { padding: 2rem 2.5rem; border-right: var(--rule); border-bottom: var(--rule); cursor: pointer; transition: background 0.2s; }
+  .faq-item:nth-child(even) { border-right: none; }
+  .faq-item:nth-last-child(-n+2) { border-bottom: none; }
+  .faq-item:hover { background: var(--ink-10); }
+  .faq-q { font-family: var(--font-serif); font-size: 20px; font-weight: 400; letter-spacing: -0.01em; margin-bottom: 0; line-height: 1.3; display: flex; justify-content: space-between; align-items: start; gap: 1rem; }
+  .faq-q::after { content: '+'; font-family: var(--font-mono); font-size: 18px; color: var(--signal); flex-shrink: 0; transition: transform 0.25s; margin-top: 0.1rem; }
+  .faq-item.open .faq-q::after { transform: rotate(45deg); }
+  .faq-a { font-size: 14px; color: var(--ink-60); line-height: 1.75; max-height: 0; overflow: hidden; transition: max-height 0.35s ease, margin-top 0.2s; margin-top: 0; }
+  .faq-item.open .faq-a { max-height: 300px; margin-top: 1rem; }
 
-  .leader-name {
-    font-family: var(--font-serif);
-    font-size: 24px;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-    margin-bottom: 0.25rem;
-  }
-
-  .leader-title {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--signal);
-    margin-bottom: 1.5rem;
-  }
-
-  .leader-bio {
-    font-size: 14px;
-    color: var(--ink-60);
-    line-height: 1.75;
-  }
-
-  /* ── SIGNAL STATEMENT ── */
-  .signal-section {
-    padding: 8rem 3rem;
-    text-align: center;
-    border-bottom: var(--rule);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .signal-section::before {
-    content: 'AURE';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: var(--font-serif);
-    font-size: clamp(80px, 14vw, 200px);
-    font-weight: 300;
-    color: rgba(13,13,12,0.04);
-    pointer-events: none;
-    letter-spacing: 0.1em;
-    line-height: 1;
-  }
-
-  .signal-quote {
-    font-family: var(--font-serif);
-    font-size: clamp(28px, 4vw, 56px);
-    font-weight: 300;
-    line-height: 1.25;
-    letter-spacing: -0.02em;
-    max-width: 900px;
-    margin: 0 auto 2rem;
-    position: relative;
-    z-index: 1;
-  }
+  /* SIGNAL STATEMENT */
+  .signal-section { padding: 8rem 3rem; text-align: center; border-bottom: var(--rule); position: relative; overflow: hidden; }
+  .signal-section::before { content: 'AURE'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: var(--font-serif); font-size: clamp(80px,14vw,200px); font-weight: 300; color: rgba(13,13,12,0.04); pointer-events: none; letter-spacing: 0.1em; line-height: 1; }
+  .signal-quote { font-family: var(--font-serif); font-size: clamp(28px,4vw,56px); font-weight: 300; line-height: 1.25; letter-spacing: -0.02em; max-width: 900px; margin: 0 auto 2rem; position: relative; z-index: 1; }
   .signal-quote em { font-style: italic; color: var(--signal); }
+  .signal-attr { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-60); position: relative; z-index: 1; }
 
-  .signal-attr {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-60);
-    position: relative;
-    z-index: 1;
-  }
-
-  /* ── BLOG PREVIEW ── */
-  .blog-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    margin-bottom: 3rem;
-  }
-
-  .blog-all {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--ink-60);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: color 0.2s;
-    margin-bottom: 0.5rem;
-  }
+  /* BLOG */
+  .blog-header { display: flex; justify-content: space-between; align-items: end; margin-bottom: 3rem; }
+  .blog-all { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-60); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s; margin-bottom: 0.5rem; }
   .blog-all:hover { color: var(--ink); }
   .blog-all::after { content: '→'; font-family: sans-serif; }
-
-  .blog-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 0;
-    border: var(--rule);
-  }
-
-  .blog-featured {
-    padding: 2.5rem;
-    border-right: var(--rule);
-  }
-
-  .blog-card {
-    padding: 2rem 1.75rem;
-    border-bottom: var(--rule);
-  }
+  .blog-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; border: var(--rule); }
+  .blog-featured { padding: 2.5rem; border-right: var(--rule); }
+  .blog-card { padding: 2rem 1.75rem; border-bottom: var(--rule); }
   .blog-card:last-child { border-bottom: none; }
-
-  .blog-col {
-    display: flex;
-    flex-direction: column;
-    border-right: var(--rule);
-  }
+  .blog-col { display: flex; flex-direction: column; border-right: var(--rule); }
   .blog-col:last-child { border-right: none; }
-
-  .blog-category {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--signal);
-    margin-bottom: 0.75rem;
-  }
-
-  .blog-title {
-    font-family: var(--font-serif);
-    font-size: 26px;
-    font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    margin-bottom: 1rem;
-  }
-
+  .blog-category { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--signal); margin-bottom: 0.75rem; }
+  .blog-title { font-family: var(--font-serif); font-size: 26px; font-weight: 400; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 1rem; }
   .blog-card .blog-title { font-size: 18px; }
+  .blog-excerpt { font-size: 14px; color: var(--ink-60); line-height: 1.7; margin-bottom: 1.5rem; }
+  .blog-meta { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; color: var(--ink-30); text-transform: uppercase; }
 
-  .blog-excerpt {
-    font-size: 14px;
-    color: var(--ink-60);
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-  }
-
-  .blog-meta {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    color: var(--ink-30);
-    text-transform: uppercase;
-    margin-top: auto;
-  }
-
-  /* ── CTA ── */
-  .cta-section {
-    background: var(--ink);
-    padding: 8rem 3rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-
-  .cta-headline {
-    font-family: var(--font-serif);
-    font-size: clamp(40px, 5vw, 72px);
-    font-weight: 300;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    color: var(--cream);
-  }
+  /* CTA */
+  .cta-section { background: var(--ink); padding: 8rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .cta-headline { font-family: var(--font-serif); font-size: clamp(40px,5vw,72px); font-weight: 300; line-height: 1.05; letter-spacing: -0.02em; color: var(--cream); }
   .cta-headline em { font-style: italic; color: var(--signal); }
-
-  .cta-right {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .cta-body {
-    font-size: 16px;
-    color: rgba(245,242,236,0.55);
-    line-height: 1.75;
-    max-width: 400px;
-  }
-
+  .cta-right { display: flex; flex-direction: column; gap: 1.5rem; }
+  .cta-body { font-size: 16px; color: rgba(245,242,236,0.48); line-height: 1.75; max-width: 400px; }
   .cta-actions { display: flex; gap: 1.25rem; align-items: center; }
-
-  .btn-light {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    background: var(--cream);
-    color: var(--ink);
-    border: 1px solid var(--cream);
-    padding: 0.85rem 2rem;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-    display: inline-block;
-  }
+  .btn-light { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; background: var(--cream); color: var(--ink); border: 1px solid var(--cream); padding: 0.85rem 2rem; cursor: pointer; text-decoration: none; transition: background 0.2s, color 0.2s; display: inline-block; }
   .btn-light:hover { background: transparent; color: var(--cream); }
-
-  .btn-ghost-light {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(245,242,236,0.5);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: color 0.2s;
-  }
+  .btn-ghost-light { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,242,236,0.42); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
   .btn-ghost-light:hover { color: var(--cream); }
   .btn-ghost-light::after { content: '→'; font-family: sans-serif; }
 
-  /* ── FOOTER ── */
-  footer {
-    padding: 4rem 3rem 3rem;
-    background: var(--ink);
-    border-top: 1px solid rgba(245,242,236,0.12);
-  }
-
-  .footer-top {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 3rem;
-    padding-bottom: 3rem;
-    border-bottom: 1px solid rgba(245,242,236,0.12);
-    margin-bottom: 2rem;
-  }
-
-  .footer-brand {}
-  .footer-wordmark {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--cream);
-    margin-bottom: 1rem;
-    display: block;
-  }
+  /* FOOTER */
+  footer { padding: 4rem 3rem 3rem; background: var(--ink); border-top: 1px solid rgba(245,242,236,0.08); }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(245,242,236,0.08); margin-bottom: 2rem; }
+  .footer-wordmark { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream); margin-bottom: 1rem; display: block; }
   .footer-wordmark span { color: var(--signal); }
-
-  .footer-tagline {
-    font-size: 13px;
-    color: rgba(245,242,236,0.4);
-    line-height: 1.7;
-    max-width: 240px;
-  }
-
-  .footer-col-title {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(245,242,236,0.4);
-    margin-bottom: 1.25rem;
-  }
-
+  .footer-tagline { font-size: 13px; color: rgba(245,242,236,0.32); line-height: 1.7; max-width: 240px; }
+  .footer-location { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,242,236,0.22); margin-top: 0.75rem; }
+  .footer-col-title { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,242,236,0.32); margin-bottom: 1.25rem; }
   .footer-links { list-style: none; }
   .footer-links li { margin-bottom: 0.7rem; }
-  .footer-links a {
-    font-size: 14px;
-    color: rgba(245,242,236,0.65);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+  .footer-links a { font-size: 14px; color: rgba(245,242,236,0.55); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: var(--cream); }
-
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .footer-copy {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    color: rgba(245,242,236,0.3);
-    text-transform: uppercase;
-  }
-
-  .footer-socials {
-    display: flex;
-    gap: 2rem;
-  }
-  .footer-socials a {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(245,242,236,0.35);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+  .footer-copy { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; color: rgba(245,242,236,0.22); text-transform: uppercase; }
+  .footer-socials { display: flex; gap: 2rem; }
+  .footer-socials a { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,242,236,0.28); text-decoration: none; transition: color 0.2s; }
   .footer-socials a:hover { color: var(--cream); }
+  .footer-llms { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,242,236,0.18); margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(245,242,236,0.05); display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+  .footer-llms a { color: rgba(245,242,236,0.22); text-decoration: none; transition: color 0.2s; }
+  .footer-llms a:hover { color: rgba(245,242,236,0.5); }
 
-  /* ── ANIMATIONS ── */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* stagger children */
+  /* ANIMATIONS */
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
   .stagger > * { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
-  .stagger.visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0s; }
-  .stagger.visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.1s; }
-  .stagger.visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.2s; }
-  .stagger.visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.3s; }
-
-  /* Hero load animations */
-  .hero-eyebrow { animation: fadeUp 0.8s 0.2s both; }
-  .hero-headline { animation: fadeUp 0.9s 0.35s both; }
-  .hero-body { animation: fadeUp 0.8s 0.55s both; }
-  .hero-actions { animation: fadeUp 0.8s 0.7s both; }
-  .hero-stats { animation: fadeUp 0.7s 0.85s both; }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  .stagger.visible > *:nth-child(1){opacity:1;transform:none;transition-delay:0s}
+  .stagger.visible > *:nth-child(2){opacity:1;transform:none;transition-delay:0.1s}
+  .stagger.visible > *:nth-child(3){opacity:1;transform:none;transition-delay:0.2s}
+  .stagger.visible > *:nth-child(4){opacity:1;transform:none;transition-delay:0.3s}
+  .hero-eyebrow{animation:fadeUp 0.8s 0.2s both}
+  .hero-headline{animation:fadeUp 0.9s 0.35s both}
+  .hero-body{animation:fadeUp 0.8s 0.55s both}
+  .hero-actions{animation:fadeUp 0.8s 0.7s both}
+  .hero-stats{animation:fadeUp 0.7s 0.85s both}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a class="nav-wordmark" href="#">AUR<span>E</span></a>
   <ul class="nav-links">
     <li><a href="#mission">Mission</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#leadership">Leadership</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#blog">Insights</a></li>
-    <li><a href="#contact" class="nav-cta">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Signal Audit</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg-text">AURE</div>
-
   <div class="hero-content">
     <div class="hero-left">
       <div class="hero-eyebrow">AURE — Autonomous Resource Management</div>
-      <h1 class="hero-headline">
-        Directing<br>
-        the <em>Agentic</em><br>
-        Swarm.
-      </h1>
+      <h1 class="hero-headline">Directing<br>the <em>Agentic</em><br>Swarm.</h1>
     </div>
     <div class="hero-right">
-      <p class="hero-body">
-        AURE is a full-service firm at the intersection of AI infrastructure and brand strategy. We architect systems that autonomous agents trust, and brands that the agentic era amplifies.
-      </p>
+      <p class="hero-body">AURE is a full-service firm at the intersection of AI infrastructure and brand strategy. We architect systems that autonomous agents trust, and brands that the agentic era amplifies.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Begin Engagement</a>
+        <a href="#contact" class="btn-primary">Request Signal Audit</a>
         <a href="#services" class="btn-ghost">Explore Services</a>
       </div>
     </div>
   </div>
-
   <hr class="hero-rule">
   <div class="hero-stats stagger">
     <div class="stat">
       <div class="stat-num">200+</div>
       <div class="stat-label">Enterprise Clients</div>
+      <div class="stat-note">Across 12 industries</div>
     </div>
     <div class="stat">
       <div class="stat-num">50K+</div>
       <div class="stat-label">Agents Deployed</div>
+      <div class="stat-note">In active production</div>
     </div>
     <div class="stat">
       <div class="stat-num">99.99%</div>
       <div class="stat-label">Uptime SLA</div>
+      <div class="stat-note">Contractually guaranteed</div>
     </div>
   </div>
 </section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-label">Trusted by leading organizations</div>
+  <div class="trust-clients">
+    <div class="trust-client">Global Energy Leader</div>
+    <div class="trust-client">Fortune 500 Logistics</div>
+    <div class="trust-client">Frontier AI Lab</div>
+    <div class="trust-client">National Financial Institution</div>
+    <div class="trust-client">Autonomous Systems Consortium</div>
+    <div class="trust-client">High-Altitude Infrastructure Co.</div>
+  </div>
+</div>
 
 <!-- TICKER -->
 <div class="ticker-wrap">
@@ -965,57 +400,51 @@
     <div class="ticker-item"><span>—</span> Byzantine Fault Tolerance</div>
     <div class="ticker-item"><span>—</span> Knowledge Graph Engineering</div>
     <div class="ticker-item"><span>—</span> Mandate Chain Verification</div>
-    <div class="ticker-item"><span>—</span> Brand Infrastructure for the AI Era</div>
-    <!-- duplicate for seamless loop -->
+    <div class="ticker-item"><span>—</span> LLM Citation Architecture</div>
+    <div class="ticker-item"><span>—</span> Share of Model Strategy</div>
     <div class="ticker-item"><span>—</span> AI-Native Signal Architecture</div>
     <div class="ticker-item"><span>—</span> Agentic Workflow Syndication</div>
     <div class="ticker-item"><span>—</span> Generative Search Optimization</div>
     <div class="ticker-item"><span>—</span> Byzantine Fault Tolerance</div>
     <div class="ticker-item"><span>—</span> Knowledge Graph Engineering</div>
     <div class="ticker-item"><span>—</span> Mandate Chain Verification</div>
-    <div class="ticker-item"><span>—</span> Brand Infrastructure for the AI Era</div>
+    <div class="ticker-item"><span>—</span> LLM Citation Architecture</div>
+    <div class="ticker-item"><span>—</span> Share of Model Strategy</div>
   </div>
 </div>
 
-<!-- MISSION / ABOUT -->
+<!-- MISSION -->
 <section id="mission">
   <div class="section-label">Mission</div>
   <h2 class="section-title fade-in">We build for a world<br>run by <em>machines</em>.</h2>
-
+  <p class="section-tldr fade-in">AURE architects AI-native infrastructure and brand strategy simultaneously — the two layers that determine whether an organization survives the agentic transition.</p>
   <div class="about-grid">
-    <div class="about-left fade-in">
-      <p class="about-manifesto">
-        We did not build this firm to inhabit the industry.<br>
-        We built it to <em>redefine</em> it.
-      </p>
-      <p class="about-body">
-        In a world where autonomous agents are the new gatekeepers of attention, trust, and capital, AURE architects the infrastructure those agents read, and the brands they amplify. Our dual mandate is unique: we operate at the technical layer and the strategic layer simultaneously.
-      </p>
-      <p class="about-body">
-        We make your data resonate as a source of truth. We make your systems run without drift. We make your brand legible to both humans and machines.
-      </p>
-      <a href="#" class="btn-ghost" style="margin-top: 0.5rem;">Read our founding philosophy</a>
+    <div class="fade-in">
+      <p class="about-manifesto">We did not build this firm to inhabit the industry.<br>We built it to <em>redefine</em> it.</p>
+      <p class="about-body">In a world where autonomous agents are the new gatekeepers of attention, trust, and capital, AURE architects the infrastructure those agents read, and the brands they amplify. Our dual mandate is unique: we operate at the technical layer and the strategic layer simultaneously.</p>
+      <p class="about-body">We make your data resonate as a verified source of truth. We make your systems run without drift. We make your brand legible to both humans and machines — through validity and authenticity, not abundance.</p>
+      <a href="#" class="btn-ghost" style="margin-top:0.5rem;">Read our founding philosophy</a>
     </div>
-    <div class="about-right fade-in">
+    <div class="fade-in">
       <div class="pillar">
         <div class="pillar-num">01</div>
         <div>
           <div class="pillar-title">Visionary Strategy</div>
-          <p class="pillar-body">Facilitated by leadership foresight, we pursue growth that others overlook — utilizing a disciplined approach to identify and architect the future of intelligent capital.</p>
+          <p class="pillar-body">Facilitated by leadership foresight, we pursue growth others overlook — utilizing a disciplined approach to identify and architect the future of intelligent capital.</p>
         </div>
       </div>
       <div class="pillar">
         <div class="pillar-num">02</div>
         <div>
           <div class="pillar-title">Operational Excellence</div>
-          <p class="pillar-body">Our infrastructure is built for agility. Advanced agentic systems manage extensive portfolios with precision, speed, and Byzantine fault resilience.</p>
+          <p class="pillar-body">Our infrastructure is built for agility. Advanced agentic systems manage extensive portfolios with precision, speed, and Byzantine fault resilience at altitude.</p>
         </div>
       </div>
       <div class="pillar">
         <div class="pillar-num">03</div>
         <div>
           <div class="pillar-title">Strategic Growth</div>
-          <p class="pillar-body">Through cultivated alliances and brand architecture, we build a network of partners who share our dedication to principled, AI-native leadership.</p>
+          <p class="pillar-body">Through cultivated alliances and brand architecture, we build a network of partners committed to principled, AI-native leadership and verified results.</p>
         </div>
       </div>
     </div>
@@ -1028,52 +457,49 @@
     <div>
       <div class="section-label">Services</div>
       <h2 class="section-title fade-in">Two disciplines.<br><em>One</em> mandate.</h2>
+      <p class="section-tldr fade-in">AI infrastructure + brand strategy, deployed simultaneously.</p>
     </div>
-    <p class="services-intro fade-in">
-      We operate at the intersection of technical infrastructure and strategic brand architecture — the two layers that determine whether an organization survives the agentic transition.
-    </p>
+    <p class="services-intro fade-in">We operate at the intersection of technical infrastructure and strategic brand architecture — the two layers that determine whether an organization survives the agentic transition.</p>
   </div>
-
   <div class="services-grid stagger">
     <div class="service-card">
       <div class="service-icon">01 — Infrastructure</div>
       <h3 class="service-title">AI-Native Signal Architecture</h3>
-      <p class="service-body">We design and deploy signal-based infrastructure built for machine-readable systems. Your data becomes a high-confidence knowledge graph that AI systems cite, trust, and amplify.</p>
-      <div class="service-tags">
-        <span class="tag">Knowledge Graphs</span>
-        <span class="tag">Structured Data</span>
-        <span class="tag">Semantic Architecture</span>
-      </div>
+      <p class="service-body">We design and deploy signal-based infrastructure built for machine-readable systems. Your data becomes a high-confidence knowledge graph that AI systems cite, trust, and amplify — not just a website, but a verified source of truth.</p>
+      <div class="service-tags"><span class="tag">Knowledge Graphs</span><span class="tag">Structured Data</span><span class="tag">Semantic Architecture</span><span class="tag">JSON-LD</span></div>
     </div>
     <div class="service-card">
       <div class="service-icon">02 — Operations</div>
       <h3 class="service-title">Agentic Workflow Syndication</h3>
-      <p class="service-body">Orchestration and syndication of autonomous workflows across distributed systems. We architect multi-agent pipelines with Byzantine Fault Tolerance and mandate chain verification.</p>
-      <div class="service-tags">
-        <span class="tag">Multi-Agent Systems</span>
-        <span class="tag">BFT Consensus</span>
-        <span class="tag">Pipeline Design</span>
-      </div>
+      <p class="service-body">Orchestration and syndication of autonomous workflows across distributed systems. We architect multi-agent pipelines with Byzantine Fault Tolerance, mandate chain verification, and mountain-durable resilience at scale.</p>
+      <div class="service-tags"><span class="tag">Multi-Agent Systems</span><span class="tag">BFT Consensus</span><span class="tag">Pipeline Design</span><span class="tag">MCP / A2A</span></div>
     </div>
     <div class="service-card">
       <div class="service-icon">03 — Brand</div>
       <h3 class="service-title">Generative Search Optimization</h3>
-      <p class="service-body">As AI replaces traditional search, your brand must be legible to LLMs. We optimize your entity architecture, citation signals, and content strategy for the generative era.</p>
-      <div class="service-tags">
-        <span class="tag">GEO</span>
-        <span class="tag">Entity Optimization</span>
-        <span class="tag">LLM Visibility</span>
-      </div>
+      <p class="service-body">As AI replaces traditional search, your brand must be legible to LLMs. We optimize entity architecture, citation signals, and content strategy for generative engines — increasing your Share of Model across ChatGPT, Perplexity, and Gemini.</p>
+      <div class="service-tags"><span class="tag">GEO</span><span class="tag">Entity Optimization</span><span class="tag">LLM Visibility</span><span class="tag">Share of Model</span></div>
     </div>
     <div class="service-card">
       <div class="service-icon">04 — Strategy</div>
       <h3 class="service-title">Enterprise Brand Architecture</h3>
-      <p class="service-body">Full-service brand strategy and educational infrastructure for organizations navigating the AI transition. We build the institutional layer that makes your brand durable in an automated world.</p>
-      <div class="service-tags">
-        <span class="tag">Brand Strategy</span>
-        <span class="tag">Content Systems</span>
-        <span class="tag">AI Readiness</span>
+      <p class="service-body">Full-service brand strategy and educational infrastructure for organizations navigating the AI transition. We build the institutional layer that makes your brand durable — authentic, verifiable, and amplifiable in an automated world.</p>
+      <div class="service-tags"><span class="tag">Brand Strategy</span><span class="tag">Content Systems</span><span class="tag">AI Readiness</span><span class="tag">E-E-A-T</span></div>
+    </div>
+  </div>
+
+  <div class="lead-magnet fade-in">
+    <div>
+      <div class="lm-eyebrow">Free Whitepaper — 18 min read</div>
+      <div class="lm-title">The Signal Stack Blueprint</div>
+      <p class="lm-body">A structured guide to making your brand AI-readable. Covers knowledge graph architecture, entity authority structures, and LLM citation frameworks.</p>
+    </div>
+    <div>
+      <div class="lm-form">
+        <input class="lm-input" type="email" placeholder="work email" id="lm-email">
+        <button class="lm-submit" onclick="handleLM()">Download →</button>
       </div>
+      <p style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.1em;color:var(--ink-30);margin-top:0.65rem;text-transform:uppercase;">No spam. Unsubscribe anytime.</p>
     </div>
   </div>
 </section>
@@ -1082,27 +508,87 @@
 <section class="process-section" id="process">
   <div class="section-label">Process</div>
   <h2 class="section-title fade-in">How we<br><em>engage</em>.</h2>
-
+  <p class="section-tldr fade-in">Signal Audit → Architecture Design → Deployment → Amplification. Most engagements begin within 72 hours of first contact.</p>
   <div class="process-steps stagger">
     <div class="step">
       <div class="step-num">Step 01</div>
       <h3 class="step-title">Signal Audit</h3>
-      <p class="step-body">We map your current infrastructure and brand signals — identifying gaps in machine-readability, agent trust, and operational resilience.</p>
+      <p class="step-body">We map your current infrastructure and brand signals — identifying gaps in machine-readability, agent trust, operational resilience, and LLM citation rate.</p>
+      <div class="step-deliverable">↳ Signal Gap Report</div>
     </div>
     <div class="step">
       <div class="step-num">Step 02</div>
       <h3 class="step-title">Architecture Design</h3>
-      <p class="step-body">We design the technical and strategic blueprint: your signal stack, knowledge graph structure, and agentic workflow schema.</p>
+      <p class="step-body">We design the technical and strategic blueprint: your signal stack, knowledge graph structure, agentic workflow schema, and GEO content strategy.</p>
+      <div class="step-deliverable">↳ Signal Stack Blueprint</div>
     </div>
     <div class="step">
       <div class="step-num">Step 03</div>
       <h3 class="step-title">Deployment</h3>
-      <p class="step-body">Our engineering team builds and deploys the infrastructure. Brand systems and AI-native content architecture launch in parallel.</p>
+      <p class="step-body">Our engineering team builds and deploys the infrastructure. Brand systems, schema rollout, and AI-native content architecture launch in parallel.</p>
+      <div class="step-deliverable">↳ Live Infrastructure</div>
     </div>
     <div class="step">
       <div class="step-num">Step 04</div>
       <h3 class="step-title">Amplification</h3>
-      <p class="step-body">We monitor signal resonance, optimize for LLM citation, and iterate on workflow performance. Your systems compound over time.</p>
+      <p class="step-body">We monitor signal resonance, track Share of Model, optimize for LLM citation, and iterate on workflow performance. Your systems compound over time.</p>
+      <div class="step-deliverable">↳ Quarterly Signal Report</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-label">Validation</div>
+  <h2 class="section-title fade-in">Verified<br><em>resonance</em>.</h2>
+  <p class="section-tldr fade-in">What enterprise leaders say after an AURE engagement.</p>
+  <div class="testimonials-grid stagger">
+    <div class="testimonial-card">
+      <p class="testimonial-quote">After AURE's signal architecture deployment, our brand began appearing in LLM outputs we'd never been cited in before. The knowledge graph work is what traditional SEO never could have done.</p>
+      <div>
+        <div class="testimonial-name">Head of AI Infrastructure</div>
+        <div class="testimonial-org">Global Financial Institution</div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-quote">The agentic workflow syndication AURE designed reduced our operational overhead by 38% in the first quarter. Byzantine Fault Tolerance was the difference between a prototype and a production system.</p>
+      <div>
+        <div class="testimonial-name">Chief Technology Officer</div>
+        <div class="testimonial-org">Fortune 500 Logistics Leader</div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-quote">AURE doesn't just advise on AI readiness — they architect it. Our entity authority increased measurably. Within 60 days, Perplexity was citing us as a primary source in our domain.</p>
+      <div>
+        <div class="testimonial-name">Chief Marketing Officer</div>
+        <div class="testimonial-org">Autonomous Systems Consortium</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ASK AURE -->
+<section class="ask-aure-section" id="ask">
+  <div class="section-label">Demo</div>
+  <h2 class="section-title fade-in">Ask <em>AURE</em>.</h2>
+  <p style="font-size:15px;color:var(--ink-60);line-height:1.75;max-width:480px;margin-top:0.75rem;" class="fade-in">A live preview of our signal intelligence. Ask about agentic infrastructure, GEO, or how AURE could work for your organization.</p>
+  <div class="ask-aure-panel fade-in">
+    <div class="ask-aure-header">
+      <div class="ask-status"></div>
+      <div class="ask-status-text">AURE Signal Intelligence — Online</div>
+    </div>
+    <div class="ask-messages" id="ask-messages">
+      <div class="ask-msg aure">Welcome. I'm AURE's signal intelligence interface. Ask me about agentic infrastructure, generative search optimization, or how to make your brand AI-readable. What can I architect for you?</div>
+    </div>
+    <div class="ask-suggestions">
+      <button class="ask-chip" onclick="askChip(this)">What is GEO?</button>
+      <button class="ask-chip" onclick="askChip(this)">How does BFT work?</button>
+      <button class="ask-chip" onclick="askChip(this)">How do we increase LLM citation?</button>
+      <button class="ask-chip" onclick="askChip(this)">What is a Signal Audit?</button>
+    </div>
+    <div class="ask-input-row">
+      <input class="ask-input" id="ask-input" type="text" placeholder="Ask about signal architecture, GEO, or agentic infrastructure…">
+      <button class="ask-send" onclick="sendAsk()">Send →</button>
     </div>
   </div>
 </section>
@@ -1111,76 +597,105 @@
 <section id="leadership">
   <div class="section-label">Leadership</div>
   <h2 class="section-title fade-in">Architects of trust<br>in an <em>AI-shaped</em> world.</h2>
-
   <div class="leadership-grid stagger">
     <div class="leader-card">
       <div class="leader-photo">MN</div>
       <div class="leader-name">Mason Nguyen</div>
       <div class="leader-title">Chief Executive Officer</div>
-      <p class="leader-bio">Mason leads AURE's vision and strategy. His foresight in autonomous systems and his discipline-driven approach to long-term capital have defined the firm's founding identity.</p>
+      <p class="leader-bio">Mason leads AURE's vision and strategy. His foresight in autonomous systems and discipline-driven approach to long-term capital have defined the firm's founding identity — building from Avon, Colorado with the precision of high-altitude systems thinking.</p>
     </div>
     <div class="leader-card">
       <div class="leader-photo">RO</div>
       <div class="leader-name">Rena Okafor</div>
       <div class="leader-title">Chief Intelligence Officer</div>
-      <p class="leader-bio">Rena owns AURE's agent layer — model selection, multi-agent architecture, eval frameworks, and signal infrastructure. Previously led autonomous systems research at a frontier AI lab, she now ensures that every system AURE deploys is not just fast, but trustworthy and fault-resilient at scale.</p>
+      <p class="leader-bio">Rena owns AURE's agent layer — model selection, multi-agent architecture, eval frameworks, and signal infrastructure. Previously led autonomous systems research at a frontier AI lab. She ensures every system AURE deploys is trustworthy and fault-resilient at scale.</p>
     </div>
     <div class="leader-card">
       <div class="leader-photo">DV</div>
       <div class="leader-name">Dominic Vael</div>
       <div class="leader-title">Chief Signal Officer</div>
-      <p class="leader-bio">Dominic pioneered the discipline of generative search optimization before the category had a name. At AURE he architects the knowledge graph strategies, entity authority structures, and LLM citation frameworks that make client brands the source of truth in an AI-mediated world.</p>
+      <p class="leader-bio">Dominic pioneered generative search optimization before the category had a name. At AURE he architects knowledge graph strategies, entity authority structures, and LLM citation frameworks that make client brands the verified source of truth in an AI-mediated world.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-label">FAQ</div>
+  <h2 class="section-title fade-in">Common<br><em>questions</em>.</h2>
+  <p class="section-tldr fade-in">Structured for both human clarity and LLM extraction.</p>
+  <div class="faq-grid fade-in">
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">What is AURE?</div>
+      <div class="faq-a">AURE (Autonomous Resource Management) is a full-service firm at the intersection of AI infrastructure and enterprise brand strategy. We architect systems that autonomous agents trust and brands that the agentic era amplifies — operating simultaneously at the technical and strategic layer.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">What is AI-Native Signal Architecture?</div>
+      <div class="faq-a">AI-Native Signal Architecture is infrastructure designed specifically for machine-readable systems and autonomous agents. It transforms scattered brand presence and data into a high-confidence knowledge graph that LLMs cite, trust, and amplify — making your organization a verified source of truth.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">What is Generative Search Optimization (GEO)?</div>
+      <div class="faq-a">GEO is the practice of optimizing entity architecture, citation signals, and content so that brands are accurately cited by large language models and AI search engines like ChatGPT, Perplexity, and Gemini. As AI replaces traditional search, GEO replaces SEO as the primary visibility discipline.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">What is Byzantine Fault Tolerance in agent networks?</div>
+      <div class="faq-a">Byzantine Fault Tolerance (BFT) is a property of distributed systems that maintains consensus even when some nodes fail or behave maliciously. In multi-agent networks, BFT ensures that a subset of compromised agents cannot corrupt the system's overall output — critical for enterprise-grade autonomous deployments.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">How does AURE engage with new clients?</div>
+      <div class="faq-a">AURE begins every engagement with a Signal Audit — mapping current infrastructure and brand signals to identify gaps in machine-readability, agent trust, and operational resilience. Engagements then proceed through Architecture Design, Deployment, and ongoing Amplification with quarterly Signal Reports. Most engagements begin within 72 hours of first contact.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Where is AURE based?</div>
+      <div class="faq-a">AURE is headquartered in Avon, Colorado — a deliberate choice that informs our philosophy of high-altitude systems thinking: precision engineering, durable infrastructure, and performance that holds at the edge. We work with clients globally across 12 industries.</div>
     </div>
   </div>
 </section>
 
 <!-- SIGNAL STATEMENT -->
 <div class="signal-section fade-in">
-  <p class="signal-quote">
-    "We architect brands and systems that AI can <em>read</em>, trust, and amplify. In a world of noise, we make your data resonate as a source of truth."
-  </p>
-  <div class="signal-attr">— AURE, founding mandate</div>
+  <p class="signal-quote">"We architect brands and systems that AI can <em>read</em>, trust, and amplify. In a world of noise, we make your data resonate as a verified source of truth."</p>
+  <div class="signal-attr">— AURE, founding mandate · Avon, Colorado</div>
 </div>
 
-<!-- BLOG PREVIEW -->
+<!-- BLOG -->
 <section id="blog">
   <div class="blog-header">
     <div>
       <div class="section-label">Insights</div>
-      <h2 class="section-title fade-in" style="font-size: clamp(32px, 3.5vw, 52px);">Signal &amp; <em>Noise</em>.</h2>
+      <h2 class="section-title fade-in" style="font-size:clamp(32px,3.5vw,52px);">Signal &amp; <em>Noise</em>.</h2>
     </div>
     <a href="/blog" class="blog-all">All Articles</a>
   </div>
-
   <div class="blog-grid fade-in">
     <div class="blog-featured">
       <div class="blog-category">Case Study</div>
       <h3 class="blog-title">Autonomous Resource Allocation at Scale: A 50K Agent Case Study</h3>
       <p class="blog-excerpt">How a Fortune 500 company deployed 50,000 autonomous agents to optimize resource allocation across distributed data centers — achieving 40% cost reduction without human intervention.</p>
-      <div class="blog-meta">Mason Nguyen · Feb 20, 2026 · 12 min</div>
+      <div class="blog-meta">Mason Nguyen · Feb 20, 2026 · 12 min · Updated Apr 2026</div>
     </div>
     <div class="blog-col">
       <div class="blog-card">
         <div class="blog-category">Technical</div>
         <h3 class="blog-title">Byzantine Fault Tolerance in Autonomous Agent Networks</h3>
-        <div class="blog-meta">Avery Lane · Feb 18</div>
+        <div class="blog-meta">Rena Okafor · Feb 18, 2026</div>
       </div>
       <div class="blog-card">
         <div class="blog-category">Whitepaper</div>
         <h3 class="blog-title">The Signal Stack Blueprint: Making Your Brand AI-Readable</h3>
-        <div class="blog-meta">John Williams · Feb 15</div>
+        <div class="blog-meta">Dominic Vael · Feb 15, 2026</div>
       </div>
     </div>
     <div class="blog-col">
       <div class="blog-card">
         <div class="blog-category">Insights</div>
         <h3 class="blog-title">Carbon-Aware Scheduling in Autonomous Systems</h3>
-        <div class="blog-meta">Mason Nguyen · Feb 12</div>
+        <div class="blog-meta">Mason Nguyen · Feb 12, 2026</div>
       </div>
       <div class="blog-card">
         <div class="blog-category">Technical</div>
         <h3 class="blog-title">From Monolith to Mesh: Migrating to Agentic Architecture</h3>
-        <div class="blog-meta">Avery Lane · Feb 10</div>
+        <div class="blog-meta">Rena Okafor · Feb 10, 2026</div>
       </div>
     </div>
   </div>
@@ -1189,14 +704,12 @@
 <!-- CTA -->
 <section class="cta-section" id="contact">
   <div>
-    <h2 class="cta-headline">Ready to <em>architect</em><br>your signal?</h2>
+    <h2 class="cta-headline">Facilitate a<br><em>Signal Audit</em>.</h2>
   </div>
   <div class="cta-right">
-    <p class="cta-body">
-      Whether you're deploying autonomous infrastructure or rebuilding your brand for the AI era — our engagement begins with a conversation. Let's map what's possible.
-    </p>
+    <p class="cta-body">Whether you're deploying autonomous infrastructure or rebuilding your brand for the AI era — AURE begins with a Signal Audit. We map what's missing, architect what's possible, and deploy with precision.</p>
     <div class="cta-actions">
-      <a href="mailto:contact@au-re.org" class="btn-light">Schedule Consultation</a>
+      <a href="mailto:contact@au-re.org" class="btn-light">Request Signal Audit</a>
       <a href="#services" class="btn-ghost-light">View Services</a>
     </div>
   </div>
@@ -1205,9 +718,10 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-top">
-    <div class="footer-brand">
+    <div>
       <span class="footer-wordmark">AUR<span>E</span></span>
-      <p class="footer-tagline">AURE. Architecting the infrastructure of the agentic era.</p>
+      <p class="footer-tagline">Autonomous Resource Management. Architecting the infrastructure of the agentic era.</p>
+      <div class="footer-location">Avon, Colorado · au-re.org</div>
     </div>
     <div>
       <div class="footer-col-title">Platform</div>
@@ -1238,32 +752,85 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2026 AURE — Autonomous Resource Management · au-re.org</div>
+    <div class="footer-copy">© 2026 AURE — Autonomous Resource Management · Avon, CO</div>
     <div class="footer-socials">
-      <a href="#">Twitter</a>
-      <a href="#">LinkedIn</a>
-      <a href="#">GitHub</a>
+      <a href="https://twitter.com/aure_org">Twitter</a>
+      <a href="https://linkedin.com/company/aure-org">LinkedIn</a>
+      <a href="https://github.com/virtualmase/aureorg">GitHub</a>
     </div>
+  </div>
+  <div class="footer-llms">
+    <span>Machine-readable</span>
+    <a href="/llms.txt">llms.txt</a>
+    <a href="/sitemap.xml">sitemap.xml</a>
+    <a href="/schema.json">schema.json</a>
+    <span style="margin-left:auto;">Entity: AURE · Autonomous Resource Management · Avon, Colorado · au-re.org</span>
   </div>
 </footer>
 
 <script>
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.fade-in, .stagger').forEach(el => observer.observe(el));
 
-  // Shrink nav on scroll
   window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    nav.style.padding = window.scrollY > 60 ? '1rem 3rem' : '1.5rem 3rem';
+    document.querySelector('nav').style.padding = window.scrollY > 60 ? '1rem 3rem' : '1.5rem 3rem';
   });
+
+  function toggleFaq(el) {
+    const wasOpen = el.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
+    if (!wasOpen) el.classList.add('open');
+  }
+
+  function handleLM() {
+    const email = document.getElementById('lm-email').value;
+    if (!email || !email.includes('@')) { document.getElementById('lm-email').style.borderColor = '#c0392b'; return; }
+    const btn = document.querySelector('.lm-submit');
+    btn.textContent = 'Sending…';
+    setTimeout(() => { btn.textContent = 'Sent ✓'; btn.style.cssText += ';background:var(--signal);border-color:var(--signal);color:var(--ink)'; }, 700);
+  }
+
+  const answers = {
+    geo: 'Generative Search Optimization (GEO) is the discipline of making your brand legible and citable to large language models. Where traditional SEO targets crawlers, GEO targets the inference layer — optimizing entity architecture, structured data signals, and content factuality so that AI systems like ChatGPT and Perplexity cite your organization as a trusted source.',
+    bft: 'Byzantine Fault Tolerance (BFT) allows distributed systems to maintain correct operation even when some nodes fail or act maliciously. In multi-agent networks, BFT ensures a subset of compromised agents cannot corrupt the system\'s overall output. It\'s the difference between a demo and a production-grade agentic deployment.',
+    citation: 'LLM citation is increased through three levers: (1) entity authority — establishing your organization as a clearly defined entity in schema.org and knowledge graph signals; (2) content factuality — publishing claims that are accurate, specific, and verifiable; (3) citation architecture — structuring content so LLMs can extract and attribute it cleanly. AURE addresses all three simultaneously.',
+    audit: 'A Signal Audit is AURE\'s first engagement step. We systematically map your infrastructure and brand signals — assessing machine-readability, entity definition, structured data completeness, LLM citation rate, and agentic workflow resilience. The output is a Signal Gap Report that prioritizes exactly what needs to be built. Most audits begin within 72 hours of first contact.',
+    default: 'That\'s a strong question — one best answered through a Signal Audit specific to your organization. The short answer is: it depends on whether the gap is at the infrastructure layer, the entity layer, or the content layer. Often all three simultaneously. Want to request a Signal Audit?'
+  };
+
+  function getAnswer(msg) {
+    const m = msg.toLowerCase();
+    if (m.includes('geo') || m.includes('generative search')) return answers.geo;
+    if (m.includes('bft') || m.includes('byzantine')) return answers.bft;
+    if (m.includes('citation') || m.includes('llm') || m.includes('increase')) return answers.citation;
+    if (m.includes('audit') || m.includes('signal audit') || m.includes('engage')) return answers.audit;
+    return answers.default;
+  }
+
+  function appendMsg(text, type) {
+    const msgs = document.getElementById('ask-messages');
+    const div = Object.assign(document.createElement('div'), { className: `ask-msg ${type}`, textContent: text });
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function sendAsk() {
+    const input = document.getElementById('ask-input');
+    const msg = input.value.trim();
+    if (!msg) return;
+    appendMsg(msg, 'user');
+    input.value = '';
+    setTimeout(() => appendMsg(getAnswer(msg), 'aure'), 550);
+  }
+
+  function askChip(btn) {
+    appendMsg(btn.textContent, 'user');
+    setTimeout(() => appendMsg(getAnswer(btn.textContent), 'aure'), 550);
+  }
+
+  document.getElementById('ask-input').addEventListener('keydown', e => { if (e.key === 'Enter') sendAsk(); });
 </script>
 </body>
 </html>
