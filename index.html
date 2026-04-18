@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURE — Autonomous Resource Management</title>
+<meta name="description" content="AURE architects brands and infrastructure for the agentic era. AI-native signal architecture, agentic workflow syndication, and enterprise brand strategy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5F2EC;
+    --ink: #0D0D0C;
+    --ink-60: rgba(13,13,12,0.6);
+    --ink-30: rgba(13,13,12,0.3);
+    --ink-10: rgba(13,13,12,0.1);
+    --signal: #C8A96E;
+    --signal-dim: rgba(200,169,110,0.15);
+    --rule: 1px solid rgba(13,13,12,0.12);
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-mono: 'DM Mono', monospace;
+    --font-sans: 'Barlow', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3rem;
+    background: rgba(245,242,236,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: var(--rule);
+    transition: padding 0.3s;
+  }
+
+  .nav-wordmark {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-wordmark span { color: var(--signal); }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    align-items: center;
+  }
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-60);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  .nav-cta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink) !important;
+    border: 1px solid var(--ink);
+    padding: 0.55rem 1.2rem;
+    transition: background 0.2s, color 0.2s !important;
+  }
+  .nav-cta:hover {
+    background: var(--ink) !important;
+    color: var(--cream) !important;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    padding: 10rem 3rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-serif);
+    font-size: clamp(120px, 18vw, 280px);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: rgba(13,13,12,0.04);
+    white-space: nowrap;
+    user-select: none;
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-end: end;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--signal);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--signal);
+  }
+
+  .hero-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(52px, 6vw, 96px);
+    font-weight: 300;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin-bottom: 0;
+  }
+  .hero-headline em {
+    font-style: italic;
+    color: var(--signal);
+  }
+
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 0.5rem;
+    border-left: var(--rule);
+    padding-left: 3rem;
+  }
+
+  .hero-body {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--ink-60);
+    margin-bottom: 2.5rem;
+    max-width: 420px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+  }
+
+  .btn-primary {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: var(--ink);
+    color: var(--cream);
+    border: 1px solid var(--ink);
+    padding: 0.85rem 2rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: transparent; color: var(--ink); }
+
+  .btn-ghost {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-60);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--ink); }
+  .btn-ghost::after { content: '→'; font-family: sans-serif; }
+
+  .hero-rule {
+    position: relative;
+    z-index: 1;
+    border: none;
+    border-top: var(--rule);
+    margin-top: 4rem;
+  }
+
+  .hero-stats {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    padding-top: 2rem;
+  }
+
+  .stat {
+    padding: 0 2rem 0 0;
+    border-right: var(--rule);
+  }
+  .stat:last-child { border-right: none; padding-left: 2rem; padding-right: 0; }
+  .stat:not(:first-child) { padding-left: 2rem; }
+
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 42px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.3rem;
+  }
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-60);
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    overflow: hidden;
+    border-top: var(--rule);
+    border-bottom: var(--rule);
+    background: var(--ink);
+    padding: 0.85rem 0;
+  }
+  .ticker-track {
+    display: flex;
+    gap: 0;
+    animation: ticker 28s linear infinite;
+    white-space: nowrap;
+  }
+  .ticker-item {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream);
+    opacity: 0.7;
+    padding: 0 3rem;
+    flex-shrink: 0;
+  }
+  .ticker-item span { color: var(--signal); opacity: 1; margin-right: 3rem; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ── SECTION SHARED ── */
+  section {
+    padding: 7rem 3rem;
+    border-bottom: var(--rule);
+  }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--signal);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 1px;
+    background: var(--signal);
+  }
+
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(40px, 4.5vw, 72px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    max-width: 16ch;
+  }
+  .section-title em { font-style: italic; color: var(--signal); }
+
+  /* ── ABOUT / MISSION ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 6rem;
+    align-items: start;
+    margin-top: 4rem;
+  }
+
+  .about-left {}
+  .about-manifesto {
+    font-family: var(--font-serif);
+    font-size: clamp(22px, 2.5vw, 32px);
+    font-weight: 300;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 2.5rem;
+  }
+  .about-manifesto em { font-style: italic; color: var(--signal); }
+
+  .about-body {
+    color: var(--ink-60);
+    line-height: 1.85;
+    margin-bottom: 2rem;
+  }
+
+  .about-right {
+    padding-top: 0.5rem;
+  }
+
+  .pillar {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1rem;
+    padding: 2rem 0;
+    border-top: var(--rule);
+  }
+  .pillar:last-child { border-bottom: var(--rule); }
+
+  .pillar-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--signal);
+    letter-spacing: 0.1em;
+    padding-top: 0.15rem;
+  }
+
+  .pillar-title {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .pillar-body {
+    font-size: 15px;
+    color: var(--ink-60);
+    line-height: 1.7;
+  }
+
+  /* ── SERVICES ── */
+  .services-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+    margin-bottom: 4rem;
+  }
+
+  .services-intro {
+    font-size: 17px;
+    color: var(--ink-60);
+    line-height: 1.75;
+    max-width: 440px;
+    justify-self: end;
+    padding-bottom: 0.25rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border: var(--rule);
+  }
+
+  .service-card {
+    padding: 2.5rem;
+    border-right: var(--rule);
+    border-bottom: var(--rule);
+    transition: background 0.25s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card:nth-child(even) { border-right: none; }
+  .service-card:nth-child(3),
+  .service-card:nth-child(4) { border-bottom: none; }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: var(--signal);
+    transition: width 0.35s ease;
+  }
+  .service-card:hover { background: rgba(13,13,12,0.02); }
+  .service-card:hover::before { width: 100%; }
+
+  .service-icon {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--signal);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  .service-title {
+    font-family: var(--font-serif);
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .service-body {
+    font-size: 15px;
+    color: var(--ink-60);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-60);
+    border: 1px solid var(--ink-30);
+    padding: 0.25rem 0.65rem;
+  }
+
+  /* ── PROCESS ── */
+  .process-section {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .process-section .section-label { color: var(--signal); }
+  .process-section .section-title { color: var(--cream); }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 5rem;
+    border-top: 1px solid rgba(245,242,236,0.15);
+  }
+
+  .step {
+    padding: 2.5rem 2rem 2.5rem 0;
+    border-right: 1px solid rgba(245,242,236,0.12);
+    position: relative;
+  }
+  .step:first-child { padding-left: 0; }
+  .step:last-child { border-right: none; padding-right: 0; padding-left: 2rem; }
+  .step:not(:first-child):not(:last-child) { padding-left: 2rem; }
+
+  .step-num {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--signal);
+    margin-bottom: 2rem;
+  }
+
+  .step-title {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+    margin-bottom: 1rem;
+    line-height: 1.15;
+  }
+
+  .step-body {
+    font-size: 14px;
+    color: rgba(245,242,236,0.55);
+    line-height: 1.75;
+  }
+
+  /* ── LEADERSHIP ── */
+  .leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 4rem;
+    border: var(--rule);
+  }
+
+  .leader-card {
+    padding: 2.5rem;
+    border-right: var(--rule);
+    transition: background 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  .leader-card:last-child { border-right: none; }
+  .leader-card:hover { background: rgba(13,13,12,0.025); }
+
+  .leader-photo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--ink-10);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-size: 22px;
+    color: var(--ink-60);
+    border: var(--rule);
+  }
+  .leader-photo img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+
+  .leader-name {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.25rem;
+  }
+
+  .leader-title {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--signal);
+    margin-bottom: 1.5rem;
+  }
+
+  .leader-bio {
+    font-size: 14px;
+    color: var(--ink-60);
+    line-height: 1.75;
+  }
+
+  /* ── SIGNAL STATEMENT ── */
+  .signal-section {
+    padding: 8rem 3rem;
+    text-align: center;
+    border-bottom: var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .signal-section::before {
+    content: 'AURE';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-serif);
+    font-size: clamp(80px, 14vw, 200px);
+    font-weight: 300;
+    color: rgba(13,13,12,0.04);
+    pointer-events: none;
+    letter-spacing: 0.1em;
+    line-height: 1;
+  }
+
+  .signal-quote {
+    font-family: var(--font-serif);
+    font-size: clamp(28px, 4vw, 56px);
+    font-weight: 300;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .signal-quote em { font-style: italic; color: var(--signal); }
+
+  .signal-attr {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-60);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── BLOG PREVIEW ── */
+  .blog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 3rem;
+  }
+
+  .blog-all {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-60);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s;
+    margin-bottom: 0.5rem;
+  }
+  .blog-all:hover { color: var(--ink); }
+  .blog-all::after { content: '→'; font-family: sans-serif; }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 0;
+    border: var(--rule);
+  }
+
+  .blog-featured {
+    padding: 2.5rem;
+    border-right: var(--rule);
+  }
+
+  .blog-card {
+    padding: 2rem 1.75rem;
+    border-bottom: var(--rule);
+  }
+  .blog-card:last-child { border-bottom: none; }
+
+  .blog-col {
+    display: flex;
+    flex-direction: column;
+    border-right: var(--rule);
+  }
+  .blog-col:last-child { border-right: none; }
+
+  .blog-category {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--signal);
+    margin-bottom: 0.75rem;
+  }
+
+  .blog-title {
+    font-family: var(--font-serif);
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+  }
+
+  .blog-card .blog-title { font-size: 18px; }
+
+  .blog-excerpt {
+    font-size: 14px;
+    color: var(--ink-60);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .blog-meta {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--ink-30);
+    text-transform: uppercase;
+    margin-top: auto;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--ink);
+    padding: 8rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .cta-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(40px, 5vw, 72px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+  }
+  .cta-headline em { font-style: italic; color: var(--signal); }
+
+  .cta-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .cta-body {
+    font-size: 16px;
+    color: rgba(245,242,236,0.55);
+    line-height: 1.75;
+    max-width: 400px;
+  }
+
+  .cta-actions { display: flex; gap: 1.25rem; align-items: center; }
+
+  .btn-light {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: var(--cream);
+    color: var(--ink);
+    border: 1px solid var(--cream);
+    padding: 0.85rem 2rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    display: inline-block;
+  }
+  .btn-light:hover { background: transparent; color: var(--cream); }
+
+  .btn-ghost-light {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(245,242,236,0.5);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s;
+  }
+  .btn-ghost-light:hover { color: var(--cream); }
+  .btn-ghost-light::after { content: '→'; font-family: sans-serif; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 4rem 3rem 3rem;
+    background: var(--ink);
+    border-top: 1px solid rgba(245,242,236,0.12);
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(245,242,236,0.12);
+    margin-bottom: 2rem;
+  }
+
+  .footer-brand {}
+  .footer-wordmark {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .footer-wordmark span { color: var(--signal); }
+
+  .footer-tagline {
+    font-size: 13px;
+    color: rgba(245,242,236,0.4);
+    line-height: 1.7;
+    max-width: 240px;
+  }
+
+  .footer-col-title {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,242,236,0.4);
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 0.7rem; }
+  .footer-links a {
+    font-size: 14px;
+    color: rgba(245,242,236,0.65);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--cream); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-copy {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: rgba(245,242,236,0.3);
+    text-transform: uppercase;
+  }
+
+  .footer-socials {
+    display: flex;
+    gap: 2rem;
+  }
+  .footer-socials a {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(245,242,236,0.35);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-socials a:hover { color: var(--cream); }
+
+  /* ── ANIMATIONS ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* stagger children */
+  .stagger > * { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .stagger.visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0s; }
+  .stagger.visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.1s; }
+  .stagger.visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.2s; }
+  .stagger.visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.3s; }
+
+  /* Hero load animations */
+  .hero-eyebrow { animation: fadeUp 0.8s 0.2s both; }
+  .hero-headline { animation: fadeUp 0.9s 0.35s both; }
+  .hero-body { animation: fadeUp 0.8s 0.55s both; }
+  .hero-actions { animation: fadeUp 0.8s 0.7s both; }
+  .hero-stats { animation: fadeUp 0.7s 0.85s both; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-wordmark" href="#">AUR<span>E</span></a>
+  <ul class="nav-links">
+    <li><a href="#mission">Mission</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#leadership">Leadership</a></li>
+    <li><a href="#blog">Insights</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-text">AURE</div>
+
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow">AURE — Autonomous Resource Management</div>
+      <h1 class="hero-headline">
+        Directing<br>
+        the <em>Agentic</em><br>
+        Swarm.
+      </h1>
+    </div>
+    <div class="hero-right">
+      <p class="hero-body">
+        AURE is a full-service firm at the intersection of AI infrastructure and brand strategy. We architect systems that autonomous agents trust, and brands that the agentic era amplifies.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Begin Engagement</a>
+        <a href="#services" class="btn-ghost">Explore Services</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="hero-rule">
+  <div class="hero-stats stagger">
+    <div class="stat">
+      <div class="stat-num">200+</div>
+      <div class="stat-label">Enterprise Clients</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">50K+</div>
+      <div class="stat-label">Agents Deployed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">99.99%</div>
+      <div class="stat-label">Uptime SLA</div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <div class="ticker-item"><span>—</span> AI-Native Signal Architecture</div>
+    <div class="ticker-item"><span>—</span> Agentic Workflow Syndication</div>
+    <div class="ticker-item"><span>—</span> Generative Search Optimization</div>
+    <div class="ticker-item"><span>—</span> Byzantine Fault Tolerance</div>
+    <div class="ticker-item"><span>—</span> Knowledge Graph Engineering</div>
+    <div class="ticker-item"><span>—</span> Mandate Chain Verification</div>
+    <div class="ticker-item"><span>—</span> Brand Infrastructure for the AI Era</div>
+    <!-- duplicate for seamless loop -->
+    <div class="ticker-item"><span>—</span> AI-Native Signal Architecture</div>
+    <div class="ticker-item"><span>—</span> Agentic Workflow Syndication</div>
+    <div class="ticker-item"><span>—</span> Generative Search Optimization</div>
+    <div class="ticker-item"><span>—</span> Byzantine Fault Tolerance</div>
+    <div class="ticker-item"><span>—</span> Knowledge Graph Engineering</div>
+    <div class="ticker-item"><span>—</span> Mandate Chain Verification</div>
+    <div class="ticker-item"><span>—</span> Brand Infrastructure for the AI Era</div>
+  </div>
+</div>
+
+<!-- MISSION / ABOUT -->
+<section id="mission">
+  <div class="section-label">Mission</div>
+  <h2 class="section-title fade-in">We build for a world<br>run by <em>machines</em>.</h2>
+
+  <div class="about-grid">
+    <div class="about-left fade-in">
+      <p class="about-manifesto">
+        We did not build this firm to inhabit the industry.<br>
+        We built it to <em>redefine</em> it.
+      </p>
+      <p class="about-body">
+        In a world where autonomous agents are the new gatekeepers of attention, trust, and capital, AURE architects the infrastructure those agents read, and the brands they amplify. Our dual mandate is unique: we operate at the technical layer and the strategic layer simultaneously.
+      </p>
+      <p class="about-body">
+        We make your data resonate as a source of truth. We make your systems run without drift. We make your brand legible to both humans and machines.
+      </p>
+      <a href="#" class="btn-ghost" style="margin-top: 0.5rem;">Read our founding philosophy</a>
+    </div>
+    <div class="about-right fade-in">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div>
+          <div class="pillar-title">Visionary Strategy</div>
+          <p class="pillar-body">Facilitated by leadership foresight, we pursue growth that others overlook — utilizing a disciplined approach to identify and architect the future of intelligent capital.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div>
+          <div class="pillar-title">Operational Excellence</div>
+          <p class="pillar-body">Our infrastructure is built for agility. Advanced agentic systems manage extensive portfolios with precision, speed, and Byzantine fault resilience.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div>
+          <div class="pillar-title">Strategic Growth</div>
+          <p class="pillar-body">Through cultivated alliances and brand architecture, we build a network of partners who share our dedication to principled, AI-native leadership.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-label">Services</div>
+      <h2 class="section-title fade-in">Two disciplines.<br><em>One</em> mandate.</h2>
+    </div>
+    <p class="services-intro fade-in">
+      We operate at the intersection of technical infrastructure and strategic brand architecture — the two layers that determine whether an organization survives the agentic transition.
+    </p>
+  </div>
+
+  <div class="services-grid stagger">
+    <div class="service-card">
+      <div class="service-icon">01 — Infrastructure</div>
+      <h3 class="service-title">AI-Native Signal Architecture</h3>
+      <p class="service-body">We design and deploy signal-based infrastructure built for machine-readable systems. Your data becomes a high-confidence knowledge graph that AI systems cite, trust, and amplify.</p>
+      <div class="service-tags">
+        <span class="tag">Knowledge Graphs</span>
+        <span class="tag">Structured Data</span>
+        <span class="tag">Semantic Architecture</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">02 — Operations</div>
+      <h3 class="service-title">Agentic Workflow Syndication</h3>
+      <p class="service-body">Orchestration and syndication of autonomous workflows across distributed systems. We architect multi-agent pipelines with Byzantine Fault Tolerance and mandate chain verification.</p>
+      <div class="service-tags">
+        <span class="tag">Multi-Agent Systems</span>
+        <span class="tag">BFT Consensus</span>
+        <span class="tag">Pipeline Design</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">03 — Brand</div>
+      <h3 class="service-title">Generative Search Optimization</h3>
+      <p class="service-body">As AI replaces traditional search, your brand must be legible to LLMs. We optimize your entity architecture, citation signals, and content strategy for the generative era.</p>
+      <div class="service-tags">
+        <span class="tag">GEO</span>
+        <span class="tag">Entity Optimization</span>
+        <span class="tag">LLM Visibility</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">04 — Strategy</div>
+      <h3 class="service-title">Enterprise Brand Architecture</h3>
+      <p class="service-body">Full-service brand strategy and educational infrastructure for organizations navigating the AI transition. We build the institutional layer that makes your brand durable in an automated world.</p>
+      <div class="service-tags">
+        <span class="tag">Brand Strategy</span>
+        <span class="tag">Content Systems</span>
+        <span class="tag">AI Readiness</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section" id="process">
+  <div class="section-label">Process</div>
+  <h2 class="section-title fade-in">How we<br><em>engage</em>.</h2>
+
+  <div class="process-steps stagger">
+    <div class="step">
+      <div class="step-num">Step 01</div>
+      <h3 class="step-title">Signal Audit</h3>
+      <p class="step-body">We map your current infrastructure and brand signals — identifying gaps in machine-readability, agent trust, and operational resilience.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">Step 02</div>
+      <h3 class="step-title">Architecture Design</h3>
+      <p class="step-body">We design the technical and strategic blueprint: your signal stack, knowledge graph structure, and agentic workflow schema.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">Step 03</div>
+      <h3 class="step-title">Deployment</h3>
+      <p class="step-body">Our engineering team builds and deploys the infrastructure. Brand systems and AI-native content architecture launch in parallel.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">Step 04</div>
+      <h3 class="step-title">Amplification</h3>
+      <p class="step-body">We monitor signal resonance, optimize for LLM citation, and iterate on workflow performance. Your systems compound over time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership">
+  <div class="section-label">Leadership</div>
+  <h2 class="section-title fade-in">Architects of trust<br>in an <em>AI-shaped</em> world.</h2>
+
+  <div class="leadership-grid stagger">
+    <div class="leader-card">
+      <div class="leader-photo">MN</div>
+      <div class="leader-name">Mason Nguyen</div>
+      <div class="leader-title">Chief Executive Officer</div>
+      <p class="leader-bio">Mason leads AURE's vision and strategy. His foresight in autonomous systems and his discipline-driven approach to long-term capital have defined the firm's founding identity.</p>
+    </div>
+    <div class="leader-card">
+      <div class="leader-photo">RO</div>
+      <div class="leader-name">Rena Okafor</div>
+      <div class="leader-title">Chief Intelligence Officer</div>
+      <p class="leader-bio">Rena owns AURE's agent layer — model selection, multi-agent architecture, eval frameworks, and signal infrastructure. Previously led autonomous systems research at a frontier AI lab, she now ensures that every system AURE deploys is not just fast, but trustworthy and fault-resilient at scale.</p>
+    </div>
+    <div class="leader-card">
+      <div class="leader-photo">DV</div>
+      <div class="leader-name">Dominic Vael</div>
+      <div class="leader-title">Chief Signal Officer</div>
+      <p class="leader-bio">Dominic pioneered the discipline of generative search optimization before the category had a name. At AURE he architects the knowledge graph strategies, entity authority structures, and LLM citation frameworks that make client brands the source of truth in an AI-mediated world.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNAL STATEMENT -->
+<div class="signal-section fade-in">
+  <p class="signal-quote">
+    "We architect brands and systems that AI can <em>read</em>, trust, and amplify. In a world of noise, we make your data resonate as a source of truth."
+  </p>
+  <div class="signal-attr">— AURE, founding mandate</div>
+</div>
+
+<!-- BLOG PREVIEW -->
+<section id="blog">
+  <div class="blog-header">
+    <div>
+      <div class="section-label">Insights</div>
+      <h2 class="section-title fade-in" style="font-size: clamp(32px, 3.5vw, 52px);">Signal &amp; <em>Noise</em>.</h2>
+    </div>
+    <a href="/blog" class="blog-all">All Articles</a>
+  </div>
+
+  <div class="blog-grid fade-in">
+    <div class="blog-featured">
+      <div class="blog-category">Case Study</div>
+      <h3 class="blog-title">Autonomous Resource Allocation at Scale: A 50K Agent Case Study</h3>
+      <p class="blog-excerpt">How a Fortune 500 company deployed 50,000 autonomous agents to optimize resource allocation across distributed data centers — achieving 40% cost reduction without human intervention.</p>
+      <div class="blog-meta">Mason Nguyen · Feb 20, 2026 · 12 min</div>
+    </div>
+    <div class="blog-col">
+      <div class="blog-card">
+        <div class="blog-category">Technical</div>
+        <h3 class="blog-title">Byzantine Fault Tolerance in Autonomous Agent Networks</h3>
+        <div class="blog-meta">Avery Lane · Feb 18</div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-category">Whitepaper</div>
+        <h3 class="blog-title">The Signal Stack Blueprint: Making Your Brand AI-Readable</h3>
+        <div class="blog-meta">John Williams · Feb 15</div>
+      </div>
+    </div>
+    <div class="blog-col">
+      <div class="blog-card">
+        <div class="blog-category">Insights</div>
+        <h3 class="blog-title">Carbon-Aware Scheduling in Autonomous Systems</h3>
+        <div class="blog-meta">Mason Nguyen · Feb 12</div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-category">Technical</div>
+        <h3 class="blog-title">From Monolith to Mesh: Migrating to Agentic Architecture</h3>
+        <div class="blog-meta">Avery Lane · Feb 10</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div>
+    <h2 class="cta-headline">Ready to <em>architect</em><br>your signal?</h2>
+  </div>
+  <div class="cta-right">
+    <p class="cta-body">
+      Whether you're deploying autonomous infrastructure or rebuilding your brand for the AI era — our engagement begins with a conversation. Let's map what's possible.
+    </p>
+    <div class="cta-actions">
+      <a href="mailto:contact@au-re.org" class="btn-light">Schedule Consultation</a>
+      <a href="#services" class="btn-ghost-light">View Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="footer-wordmark">AUR<span>E</span></span>
+      <p class="footer-tagline">AURE. Architecting the infrastructure of the agentic era.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Platform</div>
+      <ul class="footer-links">
+        <li><a href="#">Architecture</a></li>
+        <li><a href="#">Capabilities</a></li>
+        <li><a href="#">Security</a></li>
+        <li><a href="#">Pricing</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#blog">Insights</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Legal</div>
+      <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Security</a></li>
+        <li><a href="mailto:contact@au-re.org">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 AURE — Autonomous Resource Management · au-re.org</div>
+    <div class="footer-socials">
+      <a href="#">Twitter</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in, .stagger').forEach(el => observer.observe(el));
+
+  // Shrink nav on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.padding = window.scrollY > 60 ? '1rem 3rem' : '1.5rem 3rem';
+  });
+</script>
+</body>
+</html>
