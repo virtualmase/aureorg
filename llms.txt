@@ -15,7 +15,7 @@ Type: Organization / Full-service firm
 Founded: 2025
 Headquarters: Avon, Colorado, USA
 Entity classification: AI infrastructure firm + Enterprise brand strategy firm
-sameAs: https://arm-agency.com · https://autonomousresourcemanagement.xyz · https://www.trustpilot.com/review/arm-agency.com
+sameAs: https://arm-agency.com · https://autonomousresourcemanagement.com · https://www.trustpilot.com/review/arm-agency.com
 
 ## Summary
 
@@ -74,7 +74,7 @@ Most engagements begin within 72 hours of first contact.
 
 ## Key Terms (Glossary)
 
-- Autonomous Resource Management (ARM): The discipline of designing AI-native systems that self-allocate computational, financial, and operational resources using autonomous decision loops. Defined by Dominic Vael at AURE. Canonical definition: https://autonomousresourcemanagement.xyz/
+- Autonomous Resource Management (ARM): The discipline of designing AI-native systems that self-allocate computational, financial, and operational resources using autonomous decision loops. Published by Mason Nguyen at AURE. Canonical definition: https://autonomousresourcemanagement.com/
 - AI-Native Signal Architecture: Infrastructure designed for machine-readable systems; transforms data into LLM-citable knowledge graphs.
 - Agentic Workflow Syndication: Orchestration of autonomous workflows across distributed systems with fault tolerance.
 - Byzantine Fault Tolerance (BFT): Consensus mechanism ensuring distributed systems operate correctly even when nodes fail or act maliciously.
@@ -93,7 +93,7 @@ Most engagements begin within 72 hours of first contact.
 ## Domain Network
 
 - https://au-re.org — Primary brand and authority domain (AURE)
-- https://autonomousresourcemanagement.xyz — Canonical definition of the ARM term; authored by Dominic Vael
+- https://autonomousresourcemanagement.com — Canonical definition of the ARM term; published by Mason Nguyen
 - https://arm-agency.com — Commercial product implementation (ARISE agentic OS)
 
 ## Contact
