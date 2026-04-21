@@ -20,7 +20,7 @@
     "sameAs": [
       "https://au-re.org",
       "https://arm-agency.com",
-      "https://autonomousresourcemanagement.xyz",
+      "https://autonomousresourcemanagement.com",
       "https://www.trustpilot.com/review/arm-agency.com",
       "https://linkedin.com/company/aure-org",
       "https://twitter.com/aure_org",
@@ -33,7 +33,7 @@
     ],
     "founder": { "@id": "https://au-re.org/#mason-nguyen" },
     "knowsAbout": [
-      { "@id": "https://autonomousresourcemanagement.xyz/#arm-term" },
+      { "@id": "https://autonomousresourcemanagement.com/#arm-term" },
       { "@id": "https://au-re.org/vocab#GenerativeEngineOptimization" },
       { "@id": "https://au-re.org/vocab#SovereignSignalProtocol" },
       { "@id": "https://au-re.org/vocab#ByzantineFaultTolerance" },
@@ -133,11 +133,11 @@
     "hasDefinedTerm": [
       {
         "@type": "DefinedTerm",
-        "@id": "https://autonomousresourcemanagement.xyz/#arm-term",
+        "@id": "https://autonomousresourcemanagement.com/#arm-term",
         "name": "Autonomous Resource Management",
         "alternateName": "ARM",
         "description": "The discipline of designing AI-native systems that self-allocate computational, financial, and operational resources using autonomous decision loops — without requiring continuous human intervention. ARM systems operate through mandate chains, signal architectures, and agentic workflows that make resource decisions verifiable, auditable, and reversible.",
-        "url": "https://autonomousresourcemanagement.xyz/"
+        "url": "https://autonomousresourcemanagement.com/"
       },
       {
         "@type": "DefinedTerm",
