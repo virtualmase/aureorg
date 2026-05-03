@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="color-scheme" content="dark"/>
+<meta name="theme-color" content="#04060e"/>
+<title>AU-RE.ORG — Govern the Chaos. Own the Fabric.</title>
+<meta name="description" content="AU-RE.ORG is the sovereign network for autonomous resource management across Energy, Finance, Compute, and Supply. Predictive neural sovereignty for the agentic era."/>
+<link rel="canonical" href="https://au-re.org/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="AU-RE.ORG — Govern the Chaos. Own the Fabric."/>
+<meta property="og:description" content="The sovereign network for autonomous resource management. Four domains. One fabric. Predictive neural sovereignty."/>
+<meta property="og:url" content="https://au-re.org/"/>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
+<link rel="alternate" type="text/plain" title="LLM directory" href="/llms.txt"/>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"Organization","@id":"https://au-re.org/#org","name":"AU-RE.ORG","alternateName":["Autonomous Resource Engineering","AURE"],"url":"https://au-re.org/","description":"AU-RE.ORG is the sovereign network for autonomous resource management across Energy, Finance, Compute, and Supply. Predictive neural sovereignty for the agentic era.","sameAs":["https://autonomousresourcemanagement.com","https://arctura.network","https://arm-agency.com"],"contactPoint":{"@type":"ContactPoint","email":"signal@arctura.network"}},
+    {"@type":"WebSite","@id":"https://au-re.org/#site","url":"https://au-re.org/","name":"AU-RE.ORG","publisher":{"@id":"https://au-re.org/#org"},"inLanguage":"en"}
+  ]
+}
+</script>
+
+<!-- Fonts: Bebas Neue (monumental display) + Fira Code (precision data) + Lora (authoritative body serif) -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet"/>
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   AU-RE.ORG — DARK MATTER COSMOGRAPHY
+   The universe is being mapped and governed.
+
+   Palette:
+   Void deep:    #04060e  ← absolute space
+   Void mid:     #080c1a  ← deep field
+   Void raise:   #0d1228  ← elevated surface
+   Void panel:   #121830  ← panel
+   Grid line:    #1c2340  ← structural line
+   Grid bright:  #2a3460  ← bright line
+
+   Arcturian:    #2b5bff  ← 450nm, primary signal
+   Arc soft:     #5b8aff  ← soft signal
+   Arc glow:     rgba(43,91,255,0.35)
+   Arc wash:     rgba(43,91,255,0.07)
+
+   Gold:         #c9a84c  ← burnished aureus
+   Gold soft:    #e5cc9a  ← vellum light
+   Gold glow:    rgba(201,168,76,0.25)
+
+   Signal:       #00d4aa  ← teal confirmation
+   Warn:         #ff9b40  ← amber alert
+   Danger:       #ff4466  ← red critical
+
+   Text high:    #eef2ff
+   Text mid:     #a8b4d8
+   Text low:     #6070a0
+   Text ghost:   #2c3a5c
+═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --v0:   #04060e;
+  --v1:   #080c1a;
+  --v2:   #0d1228;
+  --v3:   #121830;
+  --v4:   #1a2240;
+  --gl:   #1c2340;
+  --gb:   #2a3460;
+
+  --arc:      #2b5bff;
+  --arc-s:    #5b8aff;
+  --arc-glow: rgba(43,91,255,0.35);
+  --arc-wash: rgba(43,91,255,0.07);
+  --arc-dim:  rgba(43,91,255,0.04);
+
+  --gold:     #c9a84c;
+  --gold-s:   #e5cc9a;
+  --gold-glow:rgba(201,168,76,0.25);
+  --gold-wash:rgba(201,168,76,0.07);
+
+  --sig:  #00d4aa;
+  --sig-glow: rgba(0,212,170,0.2);
+  --warn: #ff9b40;
+  --red:  #ff4466;
+
+  --th:   #eef2ff;
+  --tm:   #a8b4d8;
+  --tl:   #6070a0;
+  --tg:   #2c3a5c;
+
+  --display: 'Bebas Neue', 'Impact', sans-serif;
+  --mono:    'Fira Code', ui-monospace, monospace;
+  --body:    'Lora', Georgia, serif;
+
+  --r: 6px;
+  --r-lg: 14px;
+  --r-xl: 24px;
+
+  --ease: cubic-bezier(0.16,1,0.3,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  background: var(--v0);
+  color: var(--tm);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  cursor: crosshair;
+}
+
+/* ── Cosmic background ── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  background:
+    radial-gradient(ellipse 1800px 900px at 60% -15%, rgba(43,91,255,0.14), transparent 55%),
+    radial-gradient(ellipse 1200px 700px at -10% 60%, rgba(43,91,255,0.09), transparent 50%),
+    radial-gradient(ellipse 900px 600px at 100% 90%, rgba(201,168,76,0.07), transparent 55%),
+    radial-gradient(ellipse 600px 400px at 30% 100%, rgba(0,212,170,0.05), transparent 60%);
+}
+
+/* Precision grid */
+body::after {
+  content: '';
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(43,91,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43,91,255,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  background-position: -1px -1px;
+}
+
+a { color: var(--arc-s); text-decoration: none; transition: color .2s; }
+a:hover { color: var(--th); }
+::selection { background: var(--arc); color: var(--th); }
+:focus-visible { outline: 1px solid var(--arc); outline-offset: 3px; }
+
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+.wrap-sm { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--v1); }
+::-webkit-scrollbar-thumb { background: var(--gb); border-radius: 2px; }
+
+/* ═══ NAV ═══════════════════════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  background: rgba(4,6,14,0.85);
+  border-bottom: 1px solid var(--gl);
+  transition: border-color .3s;
+}
+.nav-inner {
+  display: flex; align-items: center;
+  padding: 16px 40px;
+  max-width: 1280px; margin: 0 auto;
+  gap: 32px;
+}
+
+.logo {
+  display: flex; align-items: center; gap: 14px;
+  flex-shrink: 0; cursor: pointer;
+}
+.logo-mark {
+  position: relative;
+  width: 36px; height: 36px;
+}
+.logo-mark svg { width: 100%; height: 100%; }
+.logo-wordmark {
+  font-family: var(--display);
+  font-size: 22px;
+  letter-spacing: 4px;
+  color: var(--th);
+  line-height: 1;
+}
+.logo-tagline {
+  font-family: var(--mono);
+  font-size: 8px; letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-top: 2px;
+}
+
+.nav-links {
+  display: flex; gap: 4px;
+  list-style: none;
+  margin-left: auto;
+}
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 10px; letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--tl); padding: 7px 12px;
+  border-radius: var(--r);
+  transition: all .18s;
+}
+.nav-links a:hover { color: var(--tm); background: var(--arc-wash); }
+
+/* THE single primary CTA — everywhere, dominant */
+.btn-signal {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--mono);
+  font-size: 11px; letter-spacing: 2.5px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--arc), #4a3cff);
+  border: none; border-radius: var(--r);
+  color: var(--th); padding: 11px 24px;
+  cursor: crosshair;
+  transition: all .25s var(--ease);
+  white-space: nowrap;
+}
+.btn-signal:hover {
+  background: linear-gradient(135deg, #3d6aff, #5a4dff);
+  box-shadow: 0 0 32px var(--arc-glow), 0 0 60px rgba(74,60,255,0.2);
+  transform: translateY(-1px);
+  color: var(--th);
+}
+.btn-signal:active { transform: translateY(0); }
+.btn-signal .arrow { transition: transform .2s var(--ease); }
+.btn-signal:hover .arrow { transform: translateX(4px); }
+
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--mono);
+  font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--gl);
+  border-radius: var(--r);
+  color: var(--tl); padding: 10px 22px;
+  cursor: crosshair;
+  transition: all .22s;
+}
+.btn-outline:hover {
+  border-color: var(--arc-s); color: var(--tm);
+  background: var(--arc-wash);
+}
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.nt-bar { display: block; width: 20px; height: 1px; background: var(--tm); margin: 5px 0; transition: all .25s; }
+
+/* Mobile nav */
+#mobileNav {
+  display: none;
+  position: fixed; inset: 0; z-index: 190;
+  background: rgba(4,6,14,0.98);
+  backdrop-filter: blur(24px);
+  padding: 100px 40px 40px;
+  flex-direction: column; gap: 32px;
+}
+#mobileNav.open { display: flex; }
+#mobileNav a {
+  font-family: var(--display);
+  font-size: 48px; letter-spacing: 4px;
+  color: var(--th); display: block;
+  transition: color .2s;
+}
+#mobileNav a:hover { color: var(--gold); }
+
+/* ═══ HERO ══════════════════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  justify-content: center;
+  padding: 120px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Orbiting globe background — pure CSS */
+.hero-cosmos {
+  position: absolute;
+  right: -80px; top: 50%;
+  transform: translateY(-50%);
+  width: 680px; height: 680px;
+  pointer-events: none;
+}
+.cosmos-globe {
+  position: absolute;
+  inset: 80px;
+  border-radius: 50%;
+  border: 1px solid rgba(43,91,255,0.2);
+  background: radial-gradient(ellipse at 35% 35%, rgba(43,91,255,0.12), rgba(4,6,14,0.8) 65%);
+  box-shadow:
+    0 0 0 1px rgba(43,91,255,0.06),
+    0 0 80px rgba(43,91,255,0.08),
+    inset 0 0 40px rgba(43,91,255,0.05);
+}
+.globe-grid {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 38px, rgba(43,91,255,0.06) 38px, rgba(43,91,255,0.06) 39px),
+    repeating-linear-gradient(90deg, transparent, transparent 38px, rgba(43,91,255,0.04) 38px, rgba(43,91,255,0.04) 39px);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Four orbital domain nodes */
+.orbit-ring {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  border: 1px dashed rgba(43,91,255,0.12);
+  animation: orbit-rotate 60s linear infinite;
+}
+.orbit-ring:nth-child(2) {
+  inset: 20px;
+  border-color: rgba(201,168,76,0.08);
+  animation-duration: 90s;
+  animation-direction: reverse;
+}
+@keyframes orbit-rotate { to { transform: rotate(360deg); } }
+
+.domain-node {
+  position: absolute;
+  width: 64px; height: 64px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+.dn-hex {
+  width: 52px; height: 52px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.dn-hex svg { width: 100%; height: 100%; }
+.dn-label {
+  font-family: var(--mono);
+  font-size: 8px; letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--tl); margin-top: 5px;
+  text-align: center;
+}
+
+/* Position domain nodes */
+.dn-energy  { top: -20px;  left: 50%; transform: translateX(-50%); }
+.dn-finance { left: -20px; top: 50%;  transform: translateY(-50%); }
+.dn-compute { right: -20px;top: 50%;  transform: translateY(-50%); }
+.dn-supply  { bottom: -20px;left: 50%;transform: translateX(-50%); }
+
+/* Connection lines from nodes to globe */
+.globe-lines {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+}
+
+/* Hero content */
+.hero-content {
+  position: relative; z-index: 1;
+  max-width: 640px;
+}
+.hero-overline {
+  font-family: var(--mono);
+  font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 28px;
+  animation: rise 0.8s 0.1s var(--ease) both;
+}
+.hero-overline::before {
+  content: '';
+  display: block; width: 32px; height: 1px;
+  background: var(--gold);
+}
+.live-pulse {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--sig); box-shadow: 0 0 10px var(--sig);
+  animation: pulse-sig 2s ease-in-out infinite;
+  margin-left: 4px;
+}
+@keyframes pulse-sig { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.5)} }
+
+.hero-headline {
+  font-family: var(--display);
+  font-size: clamp(72px, 9vw, 120px);
+  letter-spacing: 6px;
+  line-height: 0.92;
+  color: var(--th);
+  margin-bottom: 20px;
+  animation: rise 0.8s 0.2s var(--ease) both;
+}
+.hero-headline .line-gold {
+  /* exact burnished gold — the Roman aureus rendered in sRGB */
+  background: linear-gradient(110deg, #c9a84c 0%, #e5cc9a 45%, #c9a84c 80%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  display: block;
+}
+
+.hero-sub {
+  font-family: var(--mono);
+  font-size: 13px; letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--tl); margin-bottom: 36px; line-height: 1.7;
+  animation: rise 0.8s 0.3s var(--ease) both;
+}
+
+.hero-lede {
+  font-size: 17px; color: var(--tm); line-height: 1.8;
+  max-width: 520px; margin-bottom: 44px; font-style: italic;
+  animation: rise 0.8s 0.4s var(--ease) both;
+}
+
+.hero-actions {
+  display: flex; gap: 14px; flex-wrap: wrap;
+  animation: rise 0.8s 0.5s var(--ease) both;
+}
+
+@keyframes rise {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* Scroll indicator */
+.scroll-cue {
+  position: absolute;
+  bottom: 36px; left: 50%; transform: translateX(-50%);
+  font-family: var(--mono); font-size: 9px;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--tg);
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  animation: rise 1s 1.2s var(--ease) both;
+}
+.scroll-line {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, var(--gold-wash) 0%, transparent 100%);
+  animation: scroll-drop 2.4s ease-in-out infinite;
+}
+@keyframes scroll-drop {
+  0%,100% { opacity:.2; transform: scaleY(1); }
+  50%      { opacity:.8; transform: scaleY(1.2); }
+}
+
+/* ═══ STAT BAR ══════════════════════════════════════════════════ */
+.stat-bar {
+  border-top: 1px solid var(--gl);
+  border-bottom: 1px solid var(--gl);
+  background: rgba(8,12,26,0.6);
+}
+.stat-inner {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+}
+.stat-cell {
+  padding: 28px 20px; text-align: center;
+  border-right: 1px solid var(--gl);
+  position: relative; overflow: hidden;
+  transition: background .2s;
+}
+.stat-cell:last-child { border-right: none; }
+.stat-cell:hover { background: var(--arc-dim); }
+.stat-val {
+  font-family: var(--display);
+  font-size: 44px; letter-spacing: 2px;
+  color: var(--th); line-height: 1; margin-bottom: 8px;
+}
+.stat-val .stat-sup { font-size: 20px; color: var(--arc-s); }
+.stat-lbl {
+  font-family: var(--mono);
+  font-size: 9px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--tg);
+}
+
+/* ═══ SECTION BASE ══════════════════════════════════════════════ */
+section { padding: 100px 0; }
+.s-overline {
+  font-family: var(--mono);
+  font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase;
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 16px;
+}
+.s-overline::before { content:''; display:block; width:28px; height:1px; background:currentColor; }
+.s-overline.gold { color: var(--gold); }
+.s-overline.blue { color: var(--arc-s); }
+
+.s-title {
+  font-family: var(--display);
+  font-size: clamp(40px, 5vw, 64px);
+  letter-spacing: 4px; line-height: 1.0;
+  color: var(--th); margin-bottom: 20px;
+}
+.s-title em { font-style: italic; color: var(--gold); font-family: var(--body); }
+.s-lede { font-size: 17px; color: var(--tm); line-height: 1.8; max-width: 600px; font-style: italic; }
+
+/* ═══ DOMAINS ════════════════════════════════════════════════════ */
+.domains { background: var(--v1); border-top: 1px solid var(--gl); border-bottom: 1px solid var(--gl); }
+.domains-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--gl);
+  border: 1px solid var(--gl);
+  border-radius: var(--r-lg); overflow: hidden;
+  margin-top: 64px;
+}
+.domain-card {
+  background: var(--v2); padding: 44px 32px;
+  position: relative; overflow: hidden;
+  transition: background .25s;
+  cursor: default;
+}
+.domain-card:hover { background: var(--v3); }
+.domain-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+}
+.dc-energy::before   { background: linear-gradient(90deg, transparent, var(--sig), transparent); }
+.dc-finance::before  { background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.dc-compute::before  { background: linear-gradient(90deg, transparent, var(--arc-s), transparent); }
+.dc-supply::before   { background: linear-gradient(90deg, transparent, var(--warn), transparent); }
+
+.domain-card::after {
+  content: '';
+  position: absolute; bottom: -30px; right: -30px;
+  width: 100px; height: 100px; border-radius: 50%;
+  opacity: 0.08;
+}
+.dc-energy::after  { background: var(--sig); }
+.dc-finance::after { background: var(--gold); }
+.dc-compute::after { background: var(--arc); }
+.dc-supply::after  { background: var(--warn); }
+
+.dc-hex {
+  width: 54px; height: 54px; margin-bottom: 20px;
+}
+.dc-hex svg { width: 100%; height: 100%; }
+
+.dc-num {
+  font-family: var(--mono);
+  font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; margin-bottom: 14px;
+}
+.num-energy  { color: var(--sig); }
+.num-finance { color: var(--gold); }
+.num-compute { color: var(--arc-s); }
+.num-supply  { color: var(--warn); }
+
+.dc-title {
+  font-family: var(--display);
+  font-size: 28px; letter-spacing: 3px;
+  color: var(--th); margin-bottom: 12px;
+}
+.dc-desc { font-size: 14px; color: var(--tl); line-height: 1.75; }
+.dc-stack { margin-top: 20px; display: flex; flex-direction: column; gap: 6px; }
+.dc-item {
+  font-family: var(--mono);
+  font-size: 11px; color: var(--tg);
+  letter-spacing: 0.5px;
+  display: flex; align-items: center; gap: 8px;
+}
+.dc-item::before { content:'—'; color: var(--gl); }
+
+/* ═══ ORG PHILOSOPHY ════════════════════════════════════════════ */
+.philosophy { background: var(--v0); }
+.phil-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: var(--gl);
+  border: 1px solid var(--gl);
+  border-radius: var(--r-lg); overflow: hidden;
+  margin-top: 64px;
+}
+.phil-cell {
+  background: var(--v2); padding: 44px 36px;
+  transition: background .25s;
+}
+.phil-cell:hover { background: var(--v3); }
+.phil-cell.full { grid-column: span 2; background: rgba(43,91,255,0.03); }
+
+.pc-num {
+  font-family: var(--display);
+  font-size: 60px; letter-spacing: 2px;
+  /* Arcturian blue at echo opacity */
+  color: rgba(43,91,255,0.12);
+  line-height: 1; margin-bottom: 16px;
+}
+.pc-title {
+  font-family: var(--display);
+  font-size: 24px; letter-spacing: 2px;
+  color: var(--th); margin-bottom: 12px;
+}
+.pc-body { font-size: 15px; color: var(--tl); line-height: 1.8; }
+.pc-body strong { color: var(--tm); font-weight: 500; }
+
+/* Archetype cards */
+.archetype-row {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 18px; margin-top: 24px;
+}
+.arch-card {
+  background: var(--v3); border: 1px solid var(--gl);
+  border-radius: var(--r); padding: 24px 20px;
+  transition: border-color .2s;
+}
+.arch-card:hover { border-color: var(--arc-s); }
+.arch-tag {
+  font-family: var(--mono); font-size: 9px;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--arc-s); margin-bottom: 10px;
+}
+.arch-name { font-family: var(--display); font-size: 18px; letter-spacing: 2px; color: var(--th); margin-bottom: 8px; }
+.arch-desc { font-size: 13px; color: var(--tl); line-height: 1.7; }
+
+/* ═══ NETWORK MAP ════════════════════════════════════════════════ */
+.network { background: var(--v1); border-top: 1px solid var(--gl); }
+.network-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 16px; margin-top: 64px;
+}
+.net-node {
+  border: 1px solid var(--gl); border-radius: var(--r-lg);
+  background: var(--v2); padding: 32px 24px;
+  transition: all .25s; position: relative; overflow: hidden;
+}
+.net-node::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--arc-s), transparent);
+  opacity: 0;
+  transition: opacity .25s;
+}
+.net-node:hover { border-color: rgba(43,91,255,0.3); transform: translateY(-2px); }
+.net-node:hover::before { opacity: 1; }
+.net-node.primary {
+  border-color: rgba(201,168,76,0.3);
+  background: rgba(201,168,76,0.03);
+}
+.net-node.primary::before {
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.6;
+}
+.nn-role {
+  font-family: var(--mono); font-size: 9px;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 14px;
+}
+.nn-name {
+  font-family: var(--display); font-size: 20px;
+  letter-spacing: 2px; color: var(--th); margin-bottom: 10px;
+}
+.nn-url {
+  font-family: var(--mono); font-size: 11px;
+  color: var(--arc-s); margin-bottom: 14px;
+}
+.nn-desc { font-size: 13px; color: var(--tl); line-height: 1.7; }
+
+/* ═══ SIGNAL (CTA SECTION) ════════════════════════════════════════ */
+.signal-section {
+  background: var(--v0);
+  position: relative; overflow: hidden;
+  padding: 140px 0;
+}
+.signal-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 1000px 600px at 50% 50%, rgba(43,91,255,0.08), transparent 60%);
+}
+.signal-inner { text-align: center; position: relative; z-index: 1; }
+.signal-inner .s-overline { justify-content: center; }
+.signal-inner .s-overline::before { display: none; }
+
+.signal-title {
+  font-family: var(--display);
+  font-size: clamp(56px, 8vw, 100px);
+  letter-spacing: 6px; line-height: 0.95;
+  color: var(--th); margin-bottom: 28px;
+}
+.signal-title .title-gold {
+  background: linear-gradient(110deg, var(--gold) 0%, var(--gold-s) 50%, var(--gold) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  display: block;
+}
+
+.signal-sub {
+  font-size: 18px; color: var(--tm); font-style: italic;
+  max-width: 500px; margin: 0 auto 48px; line-height: 1.75;
+}
+.signal-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ═══ FOOTER ════════════════════════════════════════════════════ */
+footer {
+  border-top: 1px solid var(--gl);
+  background: rgba(4,6,14,0.9);
+  padding: 56px 0 32px;
+}
+.foot-grid {
+  display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  gap: 48px; margin-bottom: 48px;
+}
+.foot-brand .foot-logo {
+  font-family: var(--display); font-size: 20px;
+  letter-spacing: 4px; color: var(--th); display: block; margin-bottom: 6px;
+}
+.foot-brand .foot-tag {
+  font-family: var(--mono); font-size: 9px;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); display: block; margin-bottom: 14px;
+}
+.foot-brand p { font-size: 13px; color: var(--tg); line-height: 1.7; }
+
+.foot-col h4 {
+  font-family: var(--mono); font-size: 9px;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--tl); margin-bottom: 14px;
+}
+.foot-col a {
+  display: block; font-family: var(--mono);
+  font-size: 12px; color: var(--tg);
+  padding: 5px 0; transition: color .18s;
+  letter-spacing: 0.5px;
+}
+.foot-col a:hover { color: var(--tm); }
+
+.foot-bottom {
+  border-top: 1px solid var(--gl); padding-top: 22px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: 1px; color: var(--tg);
+  flex-wrap: wrap; gap: 12px;
+}
+.foot-status { display: flex; align-items: center; gap: 8px; color: var(--sig); }
+.foot-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sig); box-shadow: 0 0 8px var(--sig); animation: pulse-sig 2s infinite; }
+
+/* ═══ PHASE INDICATOR ═══════════════════════════════════════════ */
+.phase-bar {
+  margin-top: 28px;
+  padding: 20px 24px;
+  background: var(--v3); border: 1px solid var(--gl);
+  border-radius: var(--r); font-family: var(--mono);
+}
+.phase-bar .pb-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--tg); margin-bottom: 14px; }
+.phases { display: flex; gap: 0; }
+.phase {
+  flex: 1; padding: 12px 16px;
+  border: 1px solid var(--gl); margin-right: -1px;
+  transition: all .2s; cursor: default;
+}
+.phase:first-child { border-radius: var(--r) 0 0 var(--r); }
+.phase:last-child  { border-radius: 0 var(--r) var(--r) 0; }
+.phase.active { background: var(--arc-wash); border-color: var(--arc); z-index: 1; }
+.phase-num { font-size: 9px; color: var(--tg); margin-bottom: 4px; }
+.phase-name { font-size: 11px; color: var(--tm); }
+.phase.active .phase-name { color: var(--arc-s); }
+.phase-cta  { font-size: 10px; color: var(--tg); margin-top: 4px; }
+.phase.active .phase-cta { color: var(--arc-s); }
+
+/* ═══ RESPONSIVE ════════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .hero-cosmos { display: none; }
+  .domains-grid { grid-template-columns: 1fr 1fr; }
+  .network-grid { grid-template-columns: 1fr 1fr; }
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  section { padding: 72px 0; }
+  .wrap, .wrap-sm { padding: 0 24px; }
+  .nav-inner { padding: 14px 24px; }
+  .nav-links { display: none; }
+  .btn-outline { display: none; }
+  .nav-toggle { display: flex; flex-direction: column; }
+  .hero-headline { font-size: clamp(64px, 16vw, 90px); }
+  .domains-grid { grid-template-columns: 1fr; }
+  .phil-grid { grid-template-columns: 1fr; }
+  .phil-cell.full { grid-column: 1; }
+  .archetype-row { grid-template-columns: 1fr; }
+  .network-grid { grid-template-columns: 1fr; }
+  .stat-inner { grid-template-columns: 1fr 1fr; }
+  .foot-grid { grid-template-columns: 1fr; gap: 28px; }
+  .foot-bottom { flex-direction: column; text-align: center; }
+  .phases { flex-direction: column; }
+  .phase { margin-right: 0; margin-bottom: -1px; border-radius: 0; }
+  .phase:first-child { border-radius: var(--r) var(--r) 0 0; }
+  .phase:last-child  { border-radius: 0 0 var(--r) var(--r); }
+}
+@media (max-width: 480px) {
+  .wrap, .wrap-sm { padding: 0 18px; }
+  .nav-inner { padding: 12px 18px; }
+  .signal-section { padding: 96px 0; }
+  .stat-inner { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ MOBILE NAV ══════════════════════════════════════════════ -->
+<div id="mobileNav" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+  <a href="#domains">Domains</a>
+  <a href="#org">Org</a>
+  <a href="#network">Network</a>
+  <a href="#signal">Signal</a>
+  <a href="#signal" style="color:var(--gold);" onclick="closeMobileNav()">Send Signal →</a>
+</div>
+
+<!-- ══ NAV ════════════════════════════════════════════════════ -->
+<nav role="banner">
+  <div class="nav-inner">
+    <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})" role="link" tabindex="0" aria-label="AU-RE.ORG home">
+      <div class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="18,2 32,10 32,26 18,34 4,26 4,10" fill="none" stroke="rgba(43,91,255,0.5)" stroke-width="1.2"/>
+          <polygon points="18,6 28,12 28,24 18,30 8,24 8,12" fill="none" stroke="rgba(201,168,76,0.25)" stroke-width="0.6"/>
+          <circle cx="18" cy="18" r="4.5" fill="rgba(43,91,255,0.7)" style="filter:drop-shadow(0 0 5px rgba(43,91,255,0.9))"/>
+          <circle cx="18" cy="2"  r="1.4" fill="#b48ef7"/>
+          <circle cx="32" cy="10" r="1.2" fill="#4a6cf7"/>
+          <circle cx="32" cy="26" r="1.2" fill="#4a6cf7"/>
+          <circle cx="18" cy="34" r="1.4" fill="#c9a84c"/>
+          <circle cx="4"  cy="26" r="1.2" fill="#4a6cf7"/>
+          <circle cx="4"  cy="10" r="1.2" fill="#c9a84c"/>
+        </svg>
+      </div>
+      <div>
+        <span class="logo-wordmark">AU-RE.ORG</span>
+        <span class="logo-tagline">Predictive Neural Sovereignty</span>
+      </div>
+    </div>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#domains">Domains</a></li>
+      <li><a href="#org">Org Model</a></li>
+      <li><a href="#network">Network</a></li>
+    </ul>
+
+    <!-- THE ONE PRIMARY CTA -->
+    <a href="#signal" class="btn-signal" aria-label="Send signal — join the waitlist">
+      Send Signal <span class="arrow" aria-hidden="true">→</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleMobileNav(this)">
+      <span class="nt-bar"></span>
+      <span class="nt-bar"></span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+<!-- ══ HERO ════════════════════════════════════════════════════ -->
+<section class="hero" aria-labelledby="hero-title">
+
+  <!-- Cosmic orbital visualization -->
+  <div class="hero-cosmos" aria-hidden="true">
+    <div class="orbit-ring"></div>
+    <div class="orbit-ring"></div>
+    <div class="cosmos-globe">
+      <div class="globe-grid"></div>
+    </div>
+
+    <!-- Domain nodes -->
+    <div class="domain-node dn-energy">
+      <div class="dn-hex">
+        <svg viewBox="0 0 52 52" fill="none">
+          <polygon points="26,2 46,13 46,39 26,50 6,39 6,13" fill="rgba(0,212,170,0.08)" stroke="rgba(0,212,170,0.4)" stroke-width="1"/>
+          <text x="26" y="29" text-anchor="middle" font-family="'Fira Code',monospace" font-size="9" fill="rgba(0,212,170,0.7)" letter-spacing="1">E</text>
+        </svg>
+      </div>
+      <div class="dn-label">Energy</div>
+    </div>
+    <div class="domain-node dn-finance">
+      <div class="dn-hex">
+        <svg viewBox="0 0 52 52" fill="none">
+          <polygon points="26,2 46,13 46,39 26,50 6,39 6,13" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.4)" stroke-width="1"/>
+          <text x="26" y="29" text-anchor="middle" font-family="'Fira Code',monospace" font-size="9" fill="rgba(201,168,76,0.7)" letter-spacing="1">F</text>
+        </svg>
+      </div>
+      <div class="dn-label">Finance</div>
+    </div>
+    <div class="domain-node dn-compute">
+      <div class="dn-hex">
+        <svg viewBox="0 0 52 52" fill="none">
+          <polygon points="26,2 46,13 46,39 26,50 6,39 6,13" fill="rgba(43,91,255,0.08)" stroke="rgba(91,138,255,0.4)" stroke-width="1"/>
+          <text x="26" y="29" text-anchor="middle" font-family="'Fira Code',monospace" font-size="9" fill="rgba(91,138,255,0.7)" letter-spacing="1">C</text>
+        </svg>
+      </div>
+      <div class="dn-label">Compute</div>
+    </div>
+    <div class="domain-node dn-supply">
+      <div class="dn-hex">
+        <svg viewBox="0 0 52 52" fill="none">
+          <polygon points="26,2 46,13 46,39 26,50 6,39 6,13" fill="rgba(255,155,64,0.08)" stroke="rgba(255,155,64,0.35)" stroke-width="1"/>
+          <text x="26" y="29" text-anchor="middle" font-family="'Fira Code',monospace" font-size="9" fill="rgba(255,155,64,0.7)" letter-spacing="1">S</text>
+        </svg>
+      </div>
+      <div class="dn-label">Supply</div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="hero-content">
+      <div class="hero-overline">
+        Sovereign Network · v0.1 · Active
+        <span class="live-pulse" aria-hidden="true"></span>
+      </div>
+      <h1 id="hero-title" class="hero-headline">
+        GOVERN
+        <span class="line-gold">THE CHAOS.</span>
+        OWN THE
+        FABRIC.
+      </h1>
+      <p class="hero-sub">
+        Energy &nbsp;·&nbsp; Finance &nbsp;·&nbsp; Compute &nbsp;·&nbsp; Supply<br/>
+        Autonomous Resource Management · Four Domains · One Protocol Substrate
+      </p>
+      <p class="hero-lede">
+        AU-RE.ORG is the sovereign network for autonomous resource management.
+        When the system is queryable, artifact-rich, and legible to AI — you need almost no human middleware.
+      </p>
+      <div class="hero-actions">
+        <!-- ONE PRIMARY CTA only — waitlist appropriate for v0.1 -->
+        <a href="#signal" class="btn-signal" style="font-size:13px;padding:14px 32px;">
+          Send Signal <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <!-- Soft secondary — scroll, no dead links -->
+        <a href="#domains" class="btn-outline">Explore Domains</a>
+      </div>
+
+      <!-- CTA Phase indicator — transparent about where we are -->
+      <div class="phase-bar" role="region" aria-label="Product phase">
+        <div class="pb-label">Product Phase</div>
+        <div class="phases">
+          <div class="phase active">
+            <div class="phase-num">Phase 01 · Now</div>
+            <div class="phase-name">Blueprint</div>
+            <div class="phase-cta">Send Signal →</div>
+          </div>
+          <div class="phase">
+            <div class="phase-num">Phase 02 · Q3 2026</div>
+            <div class="phase-name">Repo Live</div>
+            <div class="phase-cta">Star on GitHub</div>
+          </div>
+          <div class="phase">
+            <div class="phase-num">Phase 03 · Q1 2027</div>
+            <div class="phase-name">Docs + Playground</div>
+            <div class="phase-cta">Get Started</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">
+    <span class="scroll-line"></span>
+    <span>Descend</span>
+  </div>
+</section>
+
+<!-- ══ STAT BAR ════════════════════════════════════════════════ -->
+<div class="stat-bar" role="region" aria-label="Network statistics">
+  <div class="stat-inner wrap" style="padding-left:40px;padding-right:40px;max-width:1280px;margin:0 auto;">
+    <div class="stat-cell">
+      <div class="stat-val">4<span class="stat-sup">×</span></div>
+      <div class="stat-lbl">Resource Domains</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-val">144</div>
+      <div class="stat-lbl">Bonded Nodes</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-val">99.97<span class="stat-sup">%</span></div>
+      <div class="stat-lbl">Attestation Rate</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-val" id="co2-val">−1.84</div>
+      <div class="stat-lbl">kgCO₂e/hr (net−)</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-val" id="hz-val">4,320</div>
+      <div class="stat-lbl">Hz Resonance</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOUR DOMAINS ════════════════════════════════════════════ -->
+<section class="domains" id="domains" aria-labelledby="domains-title">
+  <div class="wrap">
+    <div class="s-overline signal">Signal Domains</div>
+    <h2 id="domains-title" class="s-title">FOUR DOMAINS.<br/>ONE FABRIC.</h2>
+    <p class="s-lede">
+      AU-RE.ORG governs four resource domains through a single sovereign protocol substrate.
+      Each domain is an autonomous node. Each node is a mandate chain. Each mandate is attested.
+    </p>
+
+    <div class="domains-grid" role="list">
+      <!-- Energy -->
+      <div class="domain-card dc-energy" role="listitem">
+        <div class="dc-hex" aria-hidden="true">
+          <svg viewBox="0 0 54 54" fill="none">
+            <polygon points="27,2 49,13 49,41 27,52 5,41 5,13" fill="rgba(0,212,170,0.06)" stroke="rgba(0,212,170,0.35)" stroke-width="1.2"/>
+            <circle cx="27" cy="27" r="6" fill="rgba(0,212,170,0.4)" style="filter:drop-shadow(0 0 6px rgba(0,212,170,0.6))"/>
+          </svg>
+        </div>
+        <div class="dc-num num-energy">Domain 01</div>
+        <h3 class="dc-title">ENERGY</h3>
+        <p class="dc-desc">Carbon-sovereign operations. Net-negative by design. The grid's carbon intensity is a first-class scheduling variable.</p>
+        <div class="dc-stack">
+          <div class="dc-item">WattTime + Electricity Maps</div>
+          <div class="dc-item">Kepler per-pod measurement</div>
+          <div class="dc-item">L1 Carbon Scheduler</div>
+          <div class="dc-item">Green window forecasting (18h)</div>
+        </div>
+      </div>
+
+      <!-- Finance -->
+      <div class="domain-card dc-finance" role="listitem">
+        <div class="dc-hex" aria-hidden="true">
+          <svg viewBox="0 0 54 54" fill="none">
+            <polygon points="27,2 49,13 49,41 27,52 5,41 5,13" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.35)" stroke-width="1.2"/>
+            <circle cx="27" cy="27" r="6" fill="rgba(201,168,76,0.5)" style="filter:drop-shadow(0 0 6px rgba(201,168,76,0.7))"/>
+          </svg>
+        </div>
+        <div class="dc-num num-finance">Domain 02</div>
+        <h3 class="dc-title">FINANCE</h3>
+        <p class="dc-desc">Mandate-signed payment intents with full chain-of-custody. Autonomous agents that move real value within cryptographically bounded authority.</p>
+        <div class="dc-stack">
+          <div class="dc-item">AP2 payment protocol</div>
+          <div class="dc-item">Merkle-verified attribution</div>
+          <div class="dc-item">Truth Ledger audit trail</div>
+          <div class="dc-item">EU AI Act compliant</div>
+        </div>
+      </div>
+
+      <!-- Compute -->
+      <div class="domain-card dc-compute" role="listitem">
+        <div class="dc-hex" aria-hidden="true">
+          <svg viewBox="0 0 54 54" fill="none">
+            <polygon points="27,2 49,13 49,41 27,52 5,41 5,13" fill="rgba(43,91,255,0.06)" stroke="rgba(91,138,255,0.35)" stroke-width="1.2"/>
+            <circle cx="27" cy="27" r="6" fill="rgba(43,91,255,0.5)" style="filter:drop-shadow(0 0 6px rgba(43,91,255,0.7))"/>
+          </svg>
+        </div>
+        <div class="dc-num num-compute">Domain 03</div>
+        <h3 class="dc-title">COMPUTE</h3>
+        <p class="dc-desc">Token-max, not headcount-max. Autonomous compute allocation across the subnet. Wasm-sandboxed. BFT-attested. Zero escapes.</p>
+        <div class="dc-stack">
+          <div class="dc-item">MCP-native tool registry</div>
+          <div class="dc-item">Resonance BFT consensus</div>
+          <div class="dc-item">Wasm sandboxing</div>
+          <div class="dc-item">2.4M ops/sec throughput</div>
+        </div>
+      </div>
+
+      <!-- Supply -->
+      <div class="domain-card dc-supply" role="listitem">
+        <div class="dc-hex" aria-hidden="true">
+          <svg viewBox="0 0 54 54" fill="none">
+            <polygon points="27,2 49,13 49,41 27,52 5,41 5,13" fill="rgba(255,155,64,0.06)" stroke="rgba(255,155,64,0.3)" stroke-width="1.2"/>
+            <circle cx="27" cy="27" r="6" fill="rgba(255,155,64,0.4)" style="filter:drop-shadow(0 0 6px rgba(255,155,64,0.5))"/>
+          </svg>
+        </div>
+        <div class="dc-num num-supply">Domain 04</div>
+        <h3 class="dc-title">SUPPLY</h3>
+        <p class="dc-desc">50,000 agents. Zero incidents. The supply chain is a mandate chain. Procurement, logistics, allocation — all attested.</p>
+        <div class="dc-stack">
+          <div class="dc-item">A2A agent coordination</div>
+          <div class="dc-item">ACP performative dialogue</div>
+          <div class="dc-item">Durable Temporal workflows</div>
+          <div class="dc-item">HITL escalation paths</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ORG PHILOSOPHY ══════════════════════════════════════════ -->
+<section class="philosophy" id="org" aria-labelledby="org-title">
+  <div class="wrap">
+    <div class="s-overline gold">Operating Model</div>
+    <h2 id="org-title" class="s-title">TOKEN-MAX.<br/><em>Not headcount-max.</em></h2>
+    <p class="s-lede">
+      The best organizations in the agentic era are the ones maximizing token usage, not headcount. 
+      Every layer of human routing you remove is a direct speed gain.
+    </p>
+
+    <div class="phil-grid">
+      <div class="phil-cell">
+        <div class="pc-num">01</div>
+        <h3 class="pc-title">NO HUMAN MIDDLEWARE</h3>
+        <p class="pc-body">The classic management hierarchy no longer makes sense. If your company is queryable, artifact-rich, and legible to AI, you should have almost no human middleware. <strong>Your velocity is only as fast as your information flow.</strong></p>
+      </div>
+      <div class="phil-cell">
+        <div class="pc-num">02</div>
+        <h3 class="pc-title">THE EARLY ADVANTAGE</h3>
+        <p class="pc-body">You have no legacy systems, no org charts, no thousands to retrain. Startups can design their systems, workflows, and culture around AI from the start — <strong>and operate a thousand times faster than the incumbents.</strong></p>
+      </div>
+      <div class="phil-cell full">
+        <div class="s-overline gold" style="margin-bottom:20px;">Three Archetypes (per Jack Dorsey)</div>
+        <div class="archetype-row">
+          <div class="arch-card">
+            <div class="arch-tag">Archetype 01</div>
+            <div class="arch-name">IC / BUILDER-OPERATOR</div>
+            <p class="arch-desc">Directly makes and runs things. Not limited to engineers. Everyone builds. Everyone comes to meetings with working prototypes, not pitch decks.</p>
+          </div>
+          <div class="arch-card">
+            <div class="arch-tag">Archetype 02</div>
+            <div class="arch-name">DRI</div>
+            <p class="arch-desc">Directly responsible individual. Focused on strategy and customer outcomes. Not a classic manager. One person. One outcome. No hiding.</p>
+          </div>
+          <div class="arch-card">
+            <div class="arch-tag">Archetype 03</div>
+            <div class="arch-name">AI FOUNDER</div>
+            <p class="arch-desc">Still builds. Still coaches. Leads by example. You cannot outsource your conviction. You need to develop it yourself by actually sitting with coding agents and using them.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NETWORK MAP ══════════════════════════════════════════════ -->
+<section class="network" id="network" aria-labelledby="network-title">
+  <div class="wrap">
+    <div class="s-overline blue">Signal Network</div>
+    <h2 id="network-title" class="s-title">THE<br/>CONSTELLATION.</h2>
+    <p class="s-lede">AU-RE.ORG is the org root. Everything else in the network feeds authority toward <code style="font-family:var(--mono);font-size:14px;color:var(--arc-s);">arm-agency.com</code> — the commercial endpoint.</p>
+
+    <div class="network-grid">
+      <div class="net-node">
+        <div class="nn-role">Org Root</div>
+        <div class="nn-name">AU-RE.ORG</div>
+        <div class="nn-url">au-re.org</div>
+        <p class="nn-desc">The sovereign organizational root. Predictive neural sovereignty. Four domains. One mandate.</p>
+      </div>
+      <div class="net-node">
+        <div class="nn-role">Term Authority</div>
+        <div class="nn-name">ARM REFERENCE</div>
+        <div class="nn-url">autonomousresourcemanagement.com</div>
+        <p class="nn-desc">The canonical definition of autonomous resource management. Architecture reference. Five primitives. Six-layer signal stack.</p>
+      </div>
+      <div class="net-node">
+        <div class="nn-role">Protocol Subnet</div>
+        <div class="nn-name">ARCTURA.NETWORK</div>
+        <div class="nn-url">arctura.network</div>
+        <p class="nn-desc">The decentralized protocol layer. Resonance BFT. 144 bonded nodes. Truth Ledger. Carbon-sovereign operations.</p>
+      </div>
+      <div class="net-node primary">
+        <div class="nn-role" style="color:var(--gold);">Commercial Endpoint →</div>
+        <div class="nn-name">ARM AGENCY</div>
+        <div class="nn-url" style="color:var(--gold-s);">arm-agency.com</div>
+        <p class="nn-desc">The product and commercial hub. Everything in the network points here. Engagements begin with a signal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SIGNAL — THE PRIMARY CTA SECTION ══════════════════════ -->
+<section class="signal-section" id="signal" aria-labelledby="signal-title">
+  <div class="wrap-sm">
+    <div class="signal-inner">
+      <div class="s-overline gold" style="justify-content:center;">
+        <span>The Threshold</span>
+      </div>
+      <h2 id="signal-title" class="signal-title">
+        SEND
+        <span class="title-gold">YOUR SIGNAL.</span>
+      </h2>
+      <p class="signal-sub">
+        We do not take unsolicited work. We accept signals — expressions of shared purpose. Signal intent, capability, and horizon.
+      </p>
+
+      <div class="signal-actions">
+        <!-- THE ONE BUTTON — live, no dead links -->
+        <a href="mailto:signal@arctura.network?subject=Signal%20—%20AU-RE.ORG%20Waitlist&body=Name:%0AOrganization:%0ADomain%20of%20interest:%0AWhat%20you%20are%20building:%0AHorizon:"
+           class="btn-signal" style="font-size:13px;padding:16px 40px;"
+           aria-label="Send signal email to join the AU-RE.ORG waitlist">
+          signal@arctura.network <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <!-- Waitlist counter — honest about phase -->
+      <div style="margin-top:40px;padding:22px 28px;background:var(--v3);border:1px solid var(--gl);border-radius:var(--r);display:inline-block;font-family:var(--mono);font-size:12px;color:var(--tl);letter-spacing:1px;">
+        <span style="color:var(--sig);">● </span>
+        Phase 01 · v0.1 Blueprint · Waitlist open
+        &nbsp;&nbsp;·&nbsp;&nbsp;
+        <span style="color:var(--tm);">500</span> waitlist → GitHub repo launch
+        &nbsp;&nbsp;·&nbsp;&nbsp;
+        <a href="/llms.txt" style="color:var(--arc-s);">llms.txt</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="foot-logo">AU-RE.ORG</span>
+        <span class="foot-tag">Predictive Neural Sovereignty</span>
+        <p>The sovereign network for autonomous resource management. Four domains. One protocol substrate. No human middleware.</p>
+      </div>
+
+      <div class="foot-col">
+        <h4>Domains</h4>
+        <a href="#domains">Energy</a>
+        <a href="#domains">Finance</a>
+        <a href="#domains">Compute</a>
+        <a href="#domains">Supply</a>
+      </div>
+
+      <div class="foot-col">
+        <h4>Network</h4>
+        <a href="https://autonomousresourcemanagement.com" target="_blank" rel="noopener">autonomousresourcemanagement.com</a>
+        <a href="https://arctura.network" target="_blank" rel="noopener">arctura.network</a>
+        <a href="https://arm-agency.com" target="_blank" rel="noopener">arm-agency.com</a>
+      </div>
+
+      <div class="foot-col">
+        <h4>Signal</h4>
+        <a href="mailto:signal@arctura.network">signal@arctura.network</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© MMXXVI AU-RE.ORG · Apache-2.0 Kernel · Govern the Chaos. Own the Fabric.</span>
+      <div class="foot-status">
+        <span class="foot-dot" aria-hidden="true"></span>
+        Resonance · Healthy · 4,320 Hz
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ══ Mobile nav ══ */
+function toggleMobileNav(btn) {
+  const nav = document.getElementById('mobileNav');
+  const isOpen = nav.classList.contains('open');
+  nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded', String(!isOpen));
+  document.body.style.overflow = isOpen ? '' : 'hidden';
+  btn.querySelectorAll('.nt-bar')[0].style.transform = isOpen ? '' : 'translateY(6px) rotate(45deg)';
+  btn.querySelectorAll('.nt-bar')[1].style.transform = isOpen ? '' : 'translateY(-0px) rotate(-45deg)';
+}
+function closeMobileNav() {
+  const nav = document.getElementById('mobileNav');
+  nav.classList.remove('open');
+  document.body.style.overflow = '';
+  const btn = document.getElementById('navToggle');
+  btn.setAttribute('aria-expanded', 'false');
+  btn.querySelectorAll('.nt-bar').forEach(b => b.style.transform = '');
+}
+document.getElementById('mobileNav').querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', closeMobileNav);
+});
+
+/* ══ Sticky nav border ══ */
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.borderColor = window.scrollY > 40 ? 'var(--gl)' : 'transparent';
+}, { passive: true });
+
+/* ══ Live stats ticker ══ */
+const co2El = document.getElementById('co2-val');
+const hzEl  = document.getElementById('hz-val');
+setInterval(() => {
+  if (co2El) co2El.textContent = '−' + (1.78 + Math.random() * 0.14).toFixed(2);
+  if (hzEl)  hzEl.textContent  = (4310 + Math.round(Math.random() * 18)).toLocaleString();
+}, 3400);
+
+/* ══ Scroll-reveal for domain + network cards ══ */
+if ('IntersectionObserver' in window) {
+  const els = document.querySelectorAll('.domain-card, .net-node, .phil-cell, .arch-card');
+  els.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(16px)'; el.style.transition = 'opacity 0.6s var(--ease), transform 0.6s var(--ease)'; });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }, i * 60);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  els.forEach(el => obs.observe(el));
+}
+
+/* ══ Keyboard nav logo ══ */
+document.querySelector('.logo').addEventListener('keydown', e => {
+  if (e.key === 'Enter') window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+</body>
+</html>

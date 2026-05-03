@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="color-scheme" content="dark"/>
+<meta name="theme-color" content="#04060e"/>
+<title>AU-RE.ORG — Documentation & FAQ</title>
+<meta name="description" content="Complete documentation, architecture reference, and FAQ for AU-RE.ORG — the sovereign network for autonomous resource management across Energy, Finance, Compute, and Supply."/>
+<link rel="canonical" href="https://au-re.org/docs"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet"/>
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   AU-RE.ORG DOCS & FAQ — DARK MATTER COSMOGRAPHY
+   Palette identical to au-re.org main site
+═══════════════════════════════════════════════════════════════ */
+:root {
+  --v0:   #04060e;
+  --v1:   #080c1a;
+  --v2:   #0d1228;
+  --v3:   #121830;
+  --v4:   #1a2240;
+  --gl:   #1c2340;
+  --gb:   #2a3460;
+
+  --arc:      #2b5bff;
+  --arc-s:    #5b8aff;
+  --arc-glow: rgba(43,91,255,0.35);
+  --arc-wash: rgba(43,91,255,0.07);
+  --arc-dim:  rgba(43,91,255,0.04);
+
+  --gold:      #c9a84c;
+  --gold-s:    #e5cc9a;
+  --gold-glow: rgba(201,168,76,0.25);
+  --gold-wash: rgba(201,168,76,0.07);
+
+  --sig:  #00d4aa;
+  --sig-glow: rgba(0,212,170,0.2);
+  --warn: #ff9b40;
+  --red:  #ff4466;
+
+  --th:   #eef2ff;
+  --tm:   #a8b4d8;
+  --tl:   #6070a0;
+  --tg:   #2c3a5c;
+
+  --display: 'Bebas Neue', 'Impact', sans-serif;
+  --mono:    'Fira Code', ui-monospace, monospace;
+  --body:    'Lora', Georgia, serif;
+
+  --r:    6px;
+  --r-lg: 14px;
+  --r-xl: 24px;
+  --ease: cubic-bezier(0.16,1,0.3,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  background: var(--v0);
+  color: var(--tm);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  cursor: crosshair;
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  background:
+    radial-gradient(ellipse 1800px 900px at 60% -15%, rgba(43,91,255,0.10), transparent 55%),
+    radial-gradient(ellipse 1200px 700px at -10% 60%, rgba(43,91,255,0.07), transparent 50%),
+    radial-gradient(ellipse 900px 600px at 100% 90%, rgba(201,168,76,0.06), transparent 55%);
+}
+
+body::after {
+  content: '';
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(43,91,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43,91,255,0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+a { color: var(--arc-s); text-decoration: none; transition: color .2s; }
+a:hover { color: var(--th); }
+::selection { background: var(--arc); color: var(--th); }
+:focus-visible { outline: 1px solid var(--arc); outline-offset: 3px; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--v1); }
+::-webkit-scrollbar-thumb { background: var(--gb); border-radius: 2px; }
+
+.wrap    { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+.wrap-sm { max-width: 900px;  margin: 0 auto; padding: 0 40px; }
+
+/* ═══ NAV ═══════════════════════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  backdrop-filter: blur(20px) saturate(1.4);
+  background: rgba(4,6,14,0.85);
+  border-bottom: 1px solid var(--gl);
+}
+.nav-inner {
+  display: flex; align-items: center;
+  padding: 16px 40px;
+  max-width: 1280px; margin: 0 auto;
+  gap: 32px;
+}
+.logo {
+  display: flex; align-items: center; gap: 14px;
+  flex-shrink: 0; cursor: pointer;
+}
+.logo-mark { position: relative; width: 36px; height: 36px; }
+.logo-mark svg { width: 100%; height: 100%; }
+.logo-wordmark { font-family: var(--display); font-size: 22px; letter-spacing: 4px; color: var(--th); line-height: 1; }
+.logo-tagline  { font-family: var(--mono); font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); display: block; margin-top: 2px; }
+
+.nav-links { display: flex; gap: 4px; list-style: none; margin-left: auto; }
+.nav-links a { font-family: var(--mono); font-size: 10px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--tl); padding: 7px 12px; border-radius: var(--r); transition: all .18s; }
+.nav-links a:hover { color: var(--tm); background: var(--arc-wash); }
+.nav-links a.active { color: var(--arc-s); background: var(--arc-dim); }
+
+.btn-signal {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+  background: linear-gradient(135deg, var(--arc), #4a3cff);
+  border: none; border-radius: var(--r); color: var(--th); padding: 11px 24px;
+  cursor: crosshair; transition: all .25s var(--ease); white-space: nowrap;
+}
+.btn-signal:hover {
+  background: linear-gradient(135deg, #3d6aff, #5a4dff);
+  box-shadow: 0 0 32px var(--arc-glow); transform: translateY(-1px); color: var(--th);
+}
+
+/* ═══ PAGE HERO ══════════════════════════════════════════════════ */
+.docs-hero {
+  padding: 140px 0 80px;
+  border-bottom: 1px solid var(--gl);
+  position: relative; overflow: hidden;
+}
+.docs-hero::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse 800px 500px at 80% 50%, rgba(43,91,255,0.06), transparent 60%);
+  pointer-events: none;
+}
+.hero-overline {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
+  animation: rise .7s .05s var(--ease) both;
+}
+.hero-overline::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+
+.docs-hero h1 {
+  font-family: var(--display); font-size: clamp(60px, 7vw, 96px); letter-spacing: 5px;
+  line-height: 0.93; color: var(--th); margin-bottom: 20px;
+  animation: rise .7s .12s var(--ease) both;
+}
+.docs-hero h1 .line-gold {
+  background: linear-gradient(110deg, #c9a84c 0%, #e5cc9a 45%, #c9a84c 80%);
+  -webkit-background-clip: text; background-clip: text; color: transparent; display: block;
+}
+.docs-hero-sub {
+  font-size: 17px; color: var(--tm); line-height: 1.8; max-width: 580px;
+  font-style: italic; margin-bottom: 40px;
+  animation: rise .7s .2s var(--ease) both;
+}
+
+/* Docs version + status strip */
+.docs-meta {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  animation: rise .7s .28s var(--ease) both;
+}
+.dmeta-pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 6px 14px; border-radius: var(--r);
+  border: 1px solid var(--gl); color: var(--tl);
+}
+.dmeta-pill.live   { border-color: rgba(0,212,170,0.25); color: var(--sig); }
+.dmeta-pill.gold   { border-color: rgba(201,168,76,0.25); color: var(--gold); }
+.dmeta-pill.arc    { border-color: rgba(43,91,255,0.25); color: var(--arc-s); }
+.live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sig); animation: pulse-sig 2s ease-in-out infinite; }
+@keyframes pulse-sig { 0%,100%{opacity:1} 50%{opacity:.3} }
+@keyframes rise { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:none} }
+
+/* ═══ DOCS LAYOUT ════════════════════════════════════════════════ */
+.docs-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 0;
+  min-height: 100vh;
+  align-items: start;
+}
+
+/* ── Sidebar ── */
+.docs-sidebar {
+  position: sticky; top: 72px;
+  padding: 48px 0 80px;
+  border-right: 1px solid var(--gl);
+  height: calc(100vh - 72px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.docs-sidebar::-webkit-scrollbar { width: 2px; }
+.docs-sidebar::-webkit-scrollbar-thumb { background: var(--gb); }
+
+.sb-section { margin-bottom: 32px; padding: 0 28px; }
+.sb-section-label {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--tg); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+}
+.sb-section-label::after { content: ''; flex: 1; height: 1px; background: var(--gl); }
+
+.sb-link {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.5px;
+  color: var(--tl); padding: 6px 10px; border-radius: var(--r);
+  transition: all .15s; cursor: pointer; margin-bottom: 2px;
+  border: 1px solid transparent;
+}
+.sb-link:hover { color: var(--tm); background: var(--arc-dim); border-color: var(--gl); }
+.sb-link.active { color: var(--arc-s); background: var(--arc-wash); border-color: rgba(43,91,255,0.2); }
+.sb-link-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+.sd-energy  { background: var(--sig); }
+.sd-finance { background: var(--gold); }
+.sd-compute { background: var(--arc-s); }
+.sd-supply  { background: var(--warn); }
+.sd-arc     { background: var(--arc-s); }
+.sd-gold    { background: var(--gold); }
+.sd-sig     { background: var(--sig); }
+.sd-default { background: var(--tg); }
+
+/* ── Main content ── */
+.docs-main {
+  padding: 48px 60px 120px;
+}
+
+/* ═══ SECTION HEADINGS ══════════════════════════════════════════ */
+.docs-section {
+  margin-bottom: 80px;
+  animation: rise .5s var(--ease) both;
+}
+.section-overline {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
+}
+.section-overline::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+.section-overline.blue { color: var(--arc-s); }
+.section-overline.blue::before { background: var(--arc-s); }
+.section-overline.sig { color: var(--sig); }
+.section-overline.sig::before { background: var(--sig); }
+
+.section-title {
+  font-family: var(--display); font-size: clamp(32px, 3.5vw, 52px); letter-spacing: 3px;
+  color: var(--th); margin-bottom: 16px; line-height: 1.0;
+}
+.section-lede { font-size: 16px; color: var(--tm); line-height: 1.8; max-width: 680px; margin-bottom: 40px; font-style: italic; }
+
+/* ═══ PRIMITIVES GRID ════════════════════════════════════════════ */
+.primitives-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
+  background: var(--gl); border: 1px solid var(--gl); border-radius: var(--r-lg); overflow: hidden;
+  margin-bottom: 40px;
+}
+.prim-card {
+  background: var(--v2); padding: 36px 32px;
+  position: relative; overflow: hidden; transition: background .2s;
+}
+.prim-card:hover { background: var(--v3); }
+.prim-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--arc-s), transparent); opacity: 0; transition: opacity .25s; }
+.prim-card:hover::before { opacity: 1; }
+.prim-num { font-family: var(--display); font-size: 56px; letter-spacing: 2px; color: rgba(43,91,255,0.08); line-height: 1; margin-bottom: 12px; }
+.prim-title { font-family: var(--display); font-size: 22px; letter-spacing: 2px; color: var(--th); margin-bottom: 10px; }
+.prim-body { font-size: 14px; color: var(--tl); line-height: 1.8; }
+.prim-body strong { color: var(--tm); font-weight: 500; }
+.prim-tag { display: inline-block; font-family: var(--mono); font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; border: 1px solid rgba(43,91,255,0.2); background: var(--arc-dim); color: var(--arc-s); margin-top: 12px; }
+
+/* ═══ DOMAIN DOCS GRID ════════════════════════════════════════════ */
+.domain-docs {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 40px;
+}
+.domain-doc-card {
+  background: var(--v2); border: 1px solid var(--gl); border-radius: var(--r-lg);
+  padding: 32px 28px; position: relative; overflow: hidden; transition: all .2s;
+}
+.domain-doc-card:hover { border-color: rgba(43,91,255,0.25); transform: translateY(-2px); }
+.ddc-accent { position: absolute; top: 0; left: 0; right: 0; height: 2px; }
+.ddc-energy  .ddc-accent { background: linear-gradient(90deg, transparent, var(--sig), transparent); }
+.ddc-finance .ddc-accent { background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.ddc-compute .ddc-accent { background: linear-gradient(90deg, transparent, var(--arc-s), transparent); }
+.ddc-supply  .ddc-accent { background: linear-gradient(90deg, transparent, var(--warn), transparent); }
+
+.ddc-num  { font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+.ddc-energy  .ddc-num { color: var(--sig); }
+.ddc-finance .ddc-num { color: var(--gold); }
+.ddc-compute .ddc-num { color: var(--arc-s); }
+.ddc-supply  .ddc-num { color: var(--warn); }
+
+.ddc-title { font-family: var(--display); font-size: 26px; letter-spacing: 3px; color: var(--th); margin-bottom: 10px; }
+.ddc-desc  { font-size: 14px; color: var(--tl); line-height: 1.75; margin-bottom: 20px; }
+.ddc-stack { display: flex; flex-direction: column; gap: 6px; }
+.ddc-item  { font-family: var(--mono); font-size: 11px; color: var(--tg); display: flex; align-items: flex-start; gap: 8px; }
+.ddc-item::before { content: '—'; color: var(--gl); flex-shrink: 0; }
+.ddc-item strong { color: var(--tl); font-weight: 400; }
+
+/* ═══ ARCHITECTURE DIAGRAM ═══════════════════════════════════════ */
+.arch-diagram {
+  background: var(--v2); border: 1px solid var(--gl); border-radius: var(--r-lg);
+  padding: 40px; margin-bottom: 40px; font-family: var(--mono);
+  overflow-x: auto;
+}
+.arch-diagram pre {
+  font-size: 12px; line-height: 1.6; color: var(--tl);
+  white-space: pre;
+}
+.arch-diagram pre .hl  { color: var(--arc-s); }
+.arch-diagram pre .hg  { color: var(--sig); }
+.arch-diagram pre .hgo { color: var(--gold); }
+.arch-diagram pre .hw  { color: var(--warn); }
+
+/* ═══ SIGNAL STACK TABLE ════════════════════════════════════════ */
+.signal-stack {
+  border: 1px solid var(--gl); border-radius: var(--r-lg); overflow: hidden; margin-bottom: 40px;
+}
+.ss-header {
+  background: var(--v3); padding: 16px 24px; display: grid;
+  grid-template-columns: 60px 1fr 1fr 120px;
+  gap: 16px; border-bottom: 1px solid var(--gl);
+}
+.ss-header span { font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--tg); }
+.ss-row {
+  display: grid; grid-template-columns: 60px 1fr 1fr 120px;
+  gap: 16px; padding: 16px 24px; border-bottom: 1px solid var(--gl);
+  background: var(--v2); transition: background .15s; align-items: start;
+}
+.ss-row:last-child { border-bottom: none; }
+.ss-row:hover { background: var(--v3); }
+.ss-layer { font-family: var(--display); font-size: 28px; letter-spacing: 1px; color: rgba(43,91,255,0.2); line-height: 1; }
+.ss-name  { font-family: var(--display); font-size: 16px; letter-spacing: 1.5px; color: var(--th); margin-bottom: 4px; }
+.ss-desc  { font-size: 13px; color: var(--tl); line-height: 1.6; }
+.ss-tech  { font-family: var(--mono); font-size: 11px; color: var(--tg); line-height: 1.7; }
+.ss-badge { display: inline-block; font-family: var(--mono); font-size: 8px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 7px; border-radius: 3px; }
+.ss-badge.arc   { background: var(--arc-dim); border: 1px solid rgba(43,91,255,0.2); color: var(--arc-s); }
+.ss-badge.gold  { background: var(--gold-wash); border: 1px solid rgba(201,168,76,0.2); color: var(--gold); }
+.ss-badge.sig   { background: rgba(0,212,170,0.06); border: 1px solid rgba(0,212,170,0.18); color: var(--sig); }
+.ss-badge.warn  { background: rgba(255,155,64,0.06); border: 1px solid rgba(255,155,64,0.18); color: var(--warn); }
+
+/* ═══ FAQ ════════════════════════════════════════════════════════ */
+.faq-list { display: flex; flex-direction: column; gap: 2px; }
+.faq-item {
+  border: 1px solid var(--gl); border-radius: var(--r);
+  background: var(--v2); overflow: hidden;
+  transition: border-color .2s;
+}
+.faq-item:hover { border-color: rgba(43,91,255,0.2); }
+.faq-item.open  { border-color: rgba(43,91,255,0.25); }
+
+.faq-q {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px; background: none; border: none;
+  font-family: var(--display); font-size: 18px; letter-spacing: 1.5px;
+  color: var(--th); cursor: crosshair; text-align: left; gap: 16px;
+  transition: color .2s;
+}
+.faq-q:hover { color: var(--th); }
+.faq-item.open .faq-q { color: var(--arc-s); }
+
+.faq-chevron {
+  flex-shrink: 0; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--gl); border-radius: 4px; transition: all .25s var(--ease);
+  color: var(--tg);
+}
+.faq-item.open .faq-chevron { border-color: rgba(43,91,255,0.3); color: var(--arc-s); transform: rotate(45deg); }
+
+.faq-a {
+  padding: 0 24px; max-height: 0; overflow: hidden; transition: all .35s var(--ease);
+}
+.faq-item.open .faq-a { padding: 0 24px 24px; max-height: 800px; }
+.faq-a-inner { padding-top: 4px; border-top: 1px solid var(--gl); padding-top: 16px; }
+.faq-a-inner p  { font-size: 15px; color: var(--tm); line-height: 1.8; margin-bottom: 12px; }
+.faq-a-inner p:last-child { margin-bottom: 0; }
+.faq-a-inner strong { color: var(--th); font-weight: 500; }
+.faq-a-inner code  { font-family: var(--mono); font-size: 12px; color: var(--arc-s); background: var(--arc-dim); padding: 1px 6px; border-radius: 3px; border: 1px solid rgba(43,91,255,0.15); }
+.faq-a-inner a { color: var(--arc-s); border-bottom: 1px solid rgba(91,138,255,0.3); }
+
+/* FAQ category labels */
+.faq-cat {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--tg); margin: 28px 0 10px; display: flex; align-items: center; gap: 10px;
+}
+.faq-cat::after { content: ''; flex: 1; height: 1px; background: var(--gl); }
+
+/* ═══ CALLOUT BOXES ══════════════════════════════════════════════ */
+.callout {
+  border-radius: var(--r); padding: 20px 24px; margin-bottom: 24px;
+  display: flex; gap: 14px; align-items: flex-start;
+}
+.callout.arc  { background: var(--arc-dim); border: 1px solid rgba(43,91,255,0.2); }
+.callout.gold { background: var(--gold-wash); border: 1px solid rgba(201,168,76,0.2); }
+.callout.sig  { background: rgba(0,212,170,0.05); border: 1px solid rgba(0,212,170,0.18); }
+.callout.warn { background: rgba(255,155,64,0.05); border: 1px solid rgba(255,155,64,0.18); }
+.callout-icon { font-family: var(--mono); font-size: 12px; flex-shrink: 0; margin-top: 2px; }
+.callout.arc  .callout-icon { color: var(--arc-s); }
+.callout.gold .callout-icon { color: var(--gold); }
+.callout.sig  .callout-icon { color: var(--sig); }
+.callout.warn .callout-icon { color: var(--warn); }
+.callout-body { font-size: 14px; color: var(--tm); line-height: 1.7; }
+.callout-body strong { color: var(--th); }
+.callout-body code   { font-family: var(--mono); font-size: 12px; color: var(--arc-s); background: var(--arc-dim); padding: 1px 5px; border-radius: 3px; }
+
+/* ═══ CODE BLOCK ══════════════════════════════════════════════════ */
+.code-block {
+  background: var(--v1); border: 1px solid var(--gl); border-radius: var(--r); overflow-x: auto;
+  margin-bottom: 24px;
+}
+.code-block-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 16px; border-bottom: 1px solid var(--gl);
+  font-family: var(--mono); font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--tg);
+}
+.code-block-header span { color: var(--arc-s); }
+.code-block pre { padding: 20px; font-family: var(--mono); font-size: 12px; line-height: 1.7; color: var(--tl); white-space: pre; }
+.code-block pre .k { color: var(--arc-s); }   /* keyword */
+.code-block pre .s { color: var(--sig); }     /* string */
+.code-block pre .c { color: var(--tg); font-style: italic; } /* comment */
+.code-block pre .n { color: var(--gold); }    /* name/key */
+.code-block pre .v { color: var(--warn); }    /* value */
+
+/* ═══ GLOSSARY TABLE ═════════════════════════════════════════════ */
+.glossary-table { width: 100%; border-collapse: collapse; margin-bottom: 40px; }
+.glossary-table th { font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--tg); padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--gl); }
+.glossary-table td { padding: 14px 16px; border-bottom: 1px solid rgba(28,35,64,0.5); vertical-align: top; }
+.glossary-table tr:hover td { background: var(--arc-dim); }
+.glossary-table tr:last-child td { border-bottom: none; }
+.gl-term  { font-family: var(--mono); font-size: 12px; color: var(--arc-s); white-space: nowrap; }
+.gl-type  { font-family: var(--mono); font-size: 9px; color: var(--tg); text-transform: uppercase; letter-spacing: 1px; }
+.gl-def   { font-size: 14px; color: var(--tm); line-height: 1.65; }
+
+/* ═══ NETWORK CONSTELLATION ══════════════════════════════════════ */
+.constellation {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 40px;
+}
+.cons-node {
+  border: 1px solid var(--gl); border-radius: var(--r-lg); background: var(--v2);
+  padding: 28px 24px; transition: all .2s; position: relative; overflow: hidden;
+}
+.cons-node::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--arc-s), transparent); opacity: 0; transition: opacity .25s; }
+.cons-node:hover { border-color: rgba(43,91,255,0.25); transform: translateY(-2px); }
+.cons-node:hover::before { opacity: 1; }
+.cons-node.primary { border-color: rgba(201,168,76,0.3); background: rgba(201,168,76,0.02); }
+.cons-node.primary::before { background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.5; }
+.cons-role { font-family: var(--mono); font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.cons-primary .cons-role { color: var(--sig); }
+.cons-name { font-family: var(--display); font-size: 22px; letter-spacing: 2px; color: var(--th); margin-bottom: 6px; }
+.cons-url  { font-family: var(--mono); font-size: 11px; color: var(--arc-s); margin-bottom: 12px; }
+.cons-desc { font-size: 13px; color: var(--tl); line-height: 1.7; }
+
+/* ═══ PHASE TIMELINE ════════════════════════════════════════════ */
+.phase-timeline { display: flex; flex-direction: column; gap: 2px; margin-bottom: 40px; }
+.phase-row {
+  display: grid; grid-template-columns: 200px 1fr;
+  border: 1px solid var(--gl); border-radius: var(--r);
+  background: var(--v2); overflow: hidden; transition: background .2s;
+}
+.phase-row:hover { background: var(--v3); }
+.phase-row.now { border-color: rgba(0,212,170,0.25); }
+.phase-meta { padding: 20px 24px; border-right: 1px solid var(--gl); }
+.phase-num  { font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--tg); margin-bottom: 6px; }
+.phase-name { font-family: var(--display); font-size: 20px; letter-spacing: 2px; color: var(--th); margin-bottom: 4px; }
+.phase-time { font-family: var(--mono); font-size: 10px; color: var(--tg); }
+.phase-row.now .phase-time { color: var(--sig); }
+.phase-content { padding: 20px 28px; }
+.phase-cta  { font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sig); margin-bottom: 8px; }
+.phase-desc { font-size: 14px; color: var(--tl); line-height: 1.7; }
+
+/* ═══ SIGNAL SECTION ════════════════════════════════════════════ */
+.signal-section {
+  background: var(--v0); position: relative; overflow: hidden;
+  padding: 100px 0; border-top: 1px solid var(--gl);
+}
+.signal-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 900px 500px at 50% 50%, rgba(43,91,255,0.07), transparent 60%); }
+.signal-inner { text-align: center; position: relative; z-index: 1; }
+.signal-title { font-family: var(--display); font-size: clamp(48px, 6vw, 80px); letter-spacing: 6px; line-height: 0.95; color: var(--th); margin-bottom: 24px; }
+.signal-title .title-gold { background: linear-gradient(110deg, var(--gold) 0%, var(--gold-s) 50%, var(--gold) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; display: block; }
+.signal-sub  { font-size: 17px; color: var(--tm); font-style: italic; max-width: 480px; margin: 0 auto 40px; line-height: 1.75; }
+
+/* ═══ FOOTER ════════════════════════════════════════════════════ */
+footer { border-top: 1px solid var(--gl); background: rgba(4,6,14,0.9); padding: 48px 0 28px; }
+.foot-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.foot-logo { font-family: var(--display); font-size: 20px; letter-spacing: 4px; color: var(--th); display: block; margin-bottom: 6px; }
+.foot-tag  { font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 12px; }
+.foot-brand p { font-size: 14px; color: var(--tl); line-height: 1.7; }
+.foot-col h4 { font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--tg); margin-bottom: 14px; }
+.foot-col a  { display: block; font-size: 13px; color: var(--tl); margin-bottom: 8px; transition: color .2s; }
+.foot-col a:hover { color: var(--tm); }
+.foot-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 24px; border-top: 1px solid var(--gl); font-family: var(--mono); font-size: 9px; color: var(--tg); letter-spacing: 1px; flex-wrap: wrap; gap: 12px; }
+.foot-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--sig); box-shadow: 0 0 8px var(--sig-glow); animation: pulse-sig 2.4s ease-in-out infinite; margin-right: 6px; }
+
+/* ═══ RESPONSIVE ════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .docs-layout { grid-template-columns: 1fr; }
+  .docs-sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--gl); padding: 24px 0; display: flex; gap: 0; overflow-x: auto; }
+  .sb-section { padding: 0 16px; white-space: nowrap; min-width: 160px; }
+  .docs-main { padding: 40px 24px 80px; }
+  .primitives-grid { grid-template-columns: 1fr; }
+  .domain-docs { grid-template-columns: 1fr; }
+  .constellation { grid-template-columns: 1fr; }
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+  .ss-header, .ss-row { grid-template-columns: 48px 1fr 1fr; }
+  .ss-header span:last-child, .ss-row .ss-badge { display: none; }
+}
+@media (max-width: 600px) {
+  .wrap, .wrap-sm { padding: 0 20px; }
+  .nav-inner { padding: 14px 20px; }
+  .docs-hero { padding: 110px 0 60px; }
+  .phase-row { grid-template-columns: 1fr; }
+  .phase-meta { border-right: none; border-bottom: 1px solid var(--gl); }
+  .foot-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ═════════════════════════════════════════════════════ -->
+<nav role="banner">
+  <div class="nav-inner">
+    <div class="logo" onclick="window.location.href='https://au-re.org'" role="link" tabindex="0" aria-label="AU-RE.ORG home">
+      <div class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="18,2 32,10 32,26 18,34 4,26 4,10" fill="none" stroke="rgba(43,91,255,0.5)" stroke-width="1.2"/>
+          <polygon points="18,6 28,12 28,24 18,30 8,24 8,12" fill="none" stroke="rgba(201,168,76,0.25)" stroke-width="0.6"/>
+          <circle cx="18" cy="18" r="4.5" fill="rgba(43,91,255,0.7)" style="filter:drop-shadow(0 0 5px rgba(43,91,255,0.9))"/>
+          <circle cx="18" cy="2"  r="1.4" fill="#b48ef7"/>
+          <circle cx="32" cy="10" r="1.2" fill="#4a6cf7"/>
+          <circle cx="32" cy="26" r="1.2" fill="#4a6cf7"/>
+          <circle cx="18" cy="34" r="1.4" fill="#c9a84c"/>
+          <circle cx="4"  cy="26" r="1.2" fill="#4a6cf7"/>
+          <circle cx="4"  cy="10" r="1.2" fill="#c9a84c"/>
+        </svg>
+      </div>
+      <div>
+        <span class="logo-wordmark">AU-RE.ORG</span>
+        <span class="logo-tagline">Docs & FAQ</span>
+      </div>
+    </div>
+    <ul class="nav-links" role="list">
+      <li><a href="https://au-re.org/#domains">Domains</a></li>
+      <li><a href="https://au-re.org/#org">Org Model</a></li>
+      <li><a href="https://au-re.org/#network">Network</a></li>
+      <li><a href="#" class="active">Docs</a></li>
+    </ul>
+    <a href="mailto:signal@arctura.network?subject=Signal%20—%20AU-RE.ORG%20Waitlist&body=Name:%0AOrganization:%0ADomain%20of%20interest:%0AWhat%20you%20are%20building:%0AHorizon:" class="btn-signal" aria-label="Send signal">
+      Send Signal <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ══ DOCS HERO ════════════════════════════════════════════════ -->
+<section class="docs-hero">
+  <div class="wrap">
+    <div class="hero-overline">Documentation · v0.1 · Phase 01 · Blueprint</div>
+    <h1>
+      DOCUMENTATION<br/>
+      <span class="line-gold">&amp; FAQ</span>
+    </h1>
+    <p class="docs-hero-sub">
+      Complete reference for AU-RE.ORG — the sovereign network for autonomous resource management. Architecture, primitives, domain specifications, and answers to everything the network will need to answer.
+    </p>
+    <div class="docs-meta">
+      <span class="dmeta-pill live"><span class="live-dot"></span>Phase 01 Active</span>
+      <span class="dmeta-pill gold">v0.1 Blueprint</span>
+      <span class="dmeta-pill arc">Waitlist Open → 500</span>
+      <span class="dmeta-pill">Apache-2.0 Kernel</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DOCS LAYOUT ══════════════════════════════════════════════ -->
+<div class="wrap" style="padding-top:0;padding-bottom:0;">
+  <div class="docs-layout">
+
+    <!-- ── Sidebar ── -->
+    <aside class="docs-sidebar" role="navigation" aria-label="Documentation sections">
+      <div class="sb-section">
+        <div class="sb-section-label">Overview</div>
+        <a class="sb-link active" onclick="scrollTo('intro')"><span class="sb-link-dot sd-arc"></span>What is AU-RE.ORG</a>
+        <a class="sb-link" onclick="scrollTo('primitives')"><span class="sb-link-dot sd-gold"></span>Five Primitives</a>
+        <a class="sb-link" onclick="scrollTo('signal-stack')"><span class="sb-link-dot sd-sig"></span>Signal Stack</a>
+        <a class="sb-link" onclick="scrollTo('architecture')"><span class="sb-link-dot sd-arc"></span>Architecture</a>
+      </div>
+      <div class="sb-section">
+        <div class="sb-section-label">Domains</div>
+        <a class="sb-link" onclick="scrollTo('domains')"><span class="sb-link-dot sd-energy"></span>Energy</a>
+        <a class="sb-link" onclick="scrollTo('domains')"><span class="sb-link-dot sd-finance"></span>Finance</a>
+        <a class="sb-link" onclick="scrollTo('domains')"><span class="sb-link-dot sd-compute"></span>Compute</a>
+        <a class="sb-link" onclick="scrollTo('domains')"><span class="sb-link-dot sd-supply"></span>Supply</a>
+      </div>
+      <div class="sb-section">
+        <div class="sb-section-label">Network</div>
+        <a class="sb-link" onclick="scrollTo('constellation')"><span class="sb-link-dot sd-arc"></span>Constellation</a>
+        <a class="sb-link" onclick="scrollTo('org-model')"><span class="sb-link-dot sd-gold"></span>Org Model</a>
+        <a class="sb-link" onclick="scrollTo('roadmap')"><span class="sb-link-dot sd-sig"></span>Roadmap</a>
+      </div>
+      <div class="sb-section">
+        <div class="sb-section-label">Glossary & FAQ</div>
+        <a class="sb-link" onclick="scrollTo('glossary')"><span class="sb-link-dot sd-default"></span>Glossary</a>
+        <a class="sb-link" onclick="scrollTo('faq-general')"><span class="sb-link-dot sd-arc"></span>General</a>
+        <a class="sb-link" onclick="scrollTo('faq-domains')"><span class="sb-link-dot sd-energy"></span>Domains</a>
+        <a class="sb-link" onclick="scrollTo('faq-tech')"><span class="sb-link-dot sd-sig"></span>Technical</a>
+        <a class="sb-link" onclick="scrollTo('faq-org')"><span class="sb-link-dot sd-gold"></span>Org & Joining</a>
+        <a class="sb-link" onclick="scrollTo('faq-compliance')"><span class="sb-link-dot sd-default"></span>Compliance</a>
+      </div>
+    </aside>
+
+    <!-- ── Main content ── -->
+    <div class="docs-main">
+
+      <!-- INTRO -->
+      <div class="docs-section" id="intro">
+        <div class="section-overline gold">Overview</div>
+        <h2 class="section-title">WHAT IS AU-RE.ORG</h2>
+        <p class="section-lede">AU-RE.ORG is the sovereign network for autonomous resource management across four domains: Energy, Finance, Compute, and Supply. It is the org root. Everything else in the network feeds authority toward arm-agency.com — the commercial endpoint.</p>
+
+        <div class="callout arc">
+          <div class="callout-icon">◈</div>
+          <div class="callout-body"><strong>One sentence:</strong> AU-RE.ORG is the protocol substrate through which autonomous agents govern real-world resource flows — carbon, capital, compute, and supply chains — without human middleware.</div>
+        </div>
+
+        <p style="font-size:15px;color:var(--tm);line-height:1.8;margin-bottom:16px;">When the system is queryable, artifact-rich, and legible to AI, you need almost no human middleware. AU-RE.ORG is the organizational and technical expression of that thesis applied to the four resource domains that constitute the physical economy.</p>
+
+        <p style="font-size:15px;color:var(--tm);line-height:1.8;margin-bottom:16px;">The network operates on a single mandate: <strong style="color:var(--th);">Govern the Chaos. Own the Fabric.</strong> Each domain node is an autonomous mandate chain. Each mandate is attested. Nothing moves without a cryptographic record.</p>
+
+        <div class="callout gold">
+          <div class="callout-icon">⚑</div>
+          <div class="callout-body"><strong>Phase 01 — Blueprint:</strong> The network is in active blueprint phase. The architecture is specified. The protocol substrate is being implemented. The GitHub repo launches at 500 waitlist signals. Send yours at <code>signal@arctura.network</code>.</div>
+        </div>
+      </div>
+
+      <!-- FIVE PRIMITIVES -->
+      <div class="docs-section" id="primitives">
+        <div class="section-overline gold">Architecture</div>
+        <h2 class="section-title">FIVE PRIMITIVES</h2>
+        <p class="section-lede">Every resource event in the AU-RE.ORG network resolves through five primitives. They are not components or services — they are the irreducible units of autonomous resource governance.</p>
+
+        <div class="primitives-grid">
+          <div class="prim-card">
+            <div class="prim-num">01</div>
+            <div class="prim-title">MANDATE CHAIN</div>
+            <p class="prim-body">The unit of authority. Every agent action is backed by a signed mandate — a cryptographically bounded statement of permission, scope, and expiry. <strong>No mandate, no action.</strong> Mandates are composable, delegatable, and fully auditable via the Truth Ledger.</p>
+            <span class="prim-tag">BFT-Attested</span>
+          </div>
+          <div class="prim-card">
+            <div class="prim-num">02</div>
+            <div class="prim-title">TRUTH LEDGER</div>
+            <p class="prim-body">The immutable audit trail of all mandate-governed actions across all four domains. Not a blockchain in the public chain sense — a <strong>Merkle-verified append-only log</strong> that provides chain-of-custody for every resource event. Required for EU AI Act compliance.</p>
+            <span class="prim-tag">Merkle-Verified</span>
+          </div>
+          <div class="prim-card">
+            <div class="prim-num">03</div>
+            <div class="prim-title">RESONANCE BFT</div>
+            <p class="prim-body">The consensus substrate. 144 bonded nodes. 99.97% attestation rate. Byzantine fault-tolerant by design — <strong>no single node failure can corrupt the mandate chain</strong>. Optimized for the 4,320 Hz resonance frequency of the physical infrastructure layer.</p>
+            <span class="prim-tag">144 Nodes · 4,320 Hz</span>
+          </div>
+          <div class="prim-card">
+            <div class="prim-num">04</div>
+            <div class="prim-title">CARBON SCHEDULER</div>
+            <p class="prim-body">The L1 scheduling primitive for energy-aware compute. Carbon intensity is a <strong>first-class scheduling variable</strong> — not an afterthought. Integrates WattTime + Electricity Maps for 18-hour green window forecasting. Net-negative by design.</p>
+            <span class="prim-tag">Net-Negative · 18h Forecast</span>
+          </div>
+          <div class="prim-card" style="grid-column: span 2;">
+            <div class="prim-num">05</div>
+            <div class="prim-title">AGENTIC FABRIC</div>
+            <p class="prim-body">The coordination layer for agent-to-agent (A2A) dialogue across domains. Built on the ACP performative dialogue standard — agents negotiate, delegate, and confirm resource actions using a structured semantic protocol. <strong>50,000 agents. Zero incidents.</strong> HITL escalation paths are defined but rarely triggered — the mandate chain prevents most classes of error at the authorization layer.</p>
+            <span class="prim-tag">ACP · A2A · HITL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIGNAL STACK -->
+      <div class="docs-section" id="signal-stack">
+        <div class="section-overline blue">Protocol</div>
+        <h2 class="section-title">SIX-LAYER SIGNAL STACK</h2>
+        <p class="section-lede">The AU-RE.ORG protocol is organized as a six-layer signal stack. Each layer has a distinct function and a defined interface to the layers above and below it.</p>
+
+        <div class="signal-stack">
+          <div class="ss-header">
+            <span>#</span>
+            <span>Layer</span>
+            <span>Function</span>
+            <span>Status</span>
+          </div>
+          <div class="ss-row">
+            <div class="ss-layer">L6</div>
+            <div><div class="ss-name">MANDATE AUTHORITY</div><div class="ss-desc">Sovereign root of all agent permissions. Signs and revokes mandates. The org layer — humans sit here and only here.</div></div>
+            <div class="ss-tech">au-re.org<br/>arm-agency.com<br/>arctura.network</div>
+            <div><span class="ss-badge gold">Blueprint</span></div>
+          </div>
+          <div class="ss-row">
+            <div class="ss-layer">L5</div>
+            <div><div class="ss-name">RESONANCE CONSENSUS</div><div class="ss-desc">BFT attestation of all mandate-governed actions. 144 bonded nodes. 99.97% attestation rate. The truth substrate.</div></div>
+            <div class="ss-tech">Resonance BFT<br/>144 nodes<br/>4,320 Hz</div>
+            <div><span class="ss-badge sig">Active</span></div>
+          </div>
+          <div class="ss-row">
+            <div class="ss-layer">L4</div>
+            <div><div class="ss-name">AGENTIC FABRIC</div><div class="ss-desc">A2A coordination and ACP performative dialogue. Agents negotiate resource actions within mandate bounds. Durable Temporal workflows for long-running operations.</div></div>
+            <div class="ss-tech">ACP Protocol<br/>A2A Coordination<br/>Temporal</div>
+            <div><span class="ss-badge arc">Spec</span></div>
+          </div>
+          <div class="ss-row">
+            <div class="ss-layer">L3</div>
+            <div><div class="ss-name">DOMAIN EXECUTION</div><div class="ss-desc">The four domain nodes executing resource events: Energy, Finance, Compute, Supply. Each domain runs its own mandate chain anchored to L5.</div></div>
+            <div class="ss-tech">Energy · Finance<br/>Compute · Supply<br/>MCP Tool Registry</div>
+            <div><span class="ss-badge gold">Blueprint</span></div>
+          </div>
+          <div class="ss-row">
+            <div class="ss-layer">L2</div>
+            <div><div class="ss-name">CARBON SCHEDULER</div><div class="ss-desc">L1 scheduling primitive. Carbon intensity governs all compute dispatch. 18-hour green window forecasting from WattTime + Electricity Maps. Kepler per-pod measurement.</div></div>
+            <div class="ss-tech">WattTime<br/>Electricity Maps<br/>Kepler</div>
+            <div><span class="ss-badge sig">Active</span></div>
+          </div>
+          <div class="ss-row">
+            <div class="ss-layer">L1</div>
+            <div><div class="ss-name">TRUTH LEDGER</div><div class="ss-desc">Merkle-verified append-only audit log. Chain-of-custody for every resource event across all domains. The ground truth. EU AI Act compliant by design.</div></div>
+            <div class="ss-tech">Merkle Trees<br/>Append-only log<br/>EU AI Act</div>
+            <div><span class="ss-badge arc">Spec</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARCHITECTURE -->
+      <div class="docs-section" id="architecture">
+        <div class="section-overline blue">Reference</div>
+        <h2 class="section-title">ARCHITECTURE</h2>
+        <p class="section-lede">The AU-RE.ORG protocol substrate as implemented across the network constellation. Built on Coreweaver Labs infrastructure.</p>
+
+        <div class="arch-diagram">
+          <pre><span class="hl">                    AU-RE.ORG — Signal Network
+</span>
+<span class="hgo">    ┌────────────────────────────────────────────────────────┐
+    │                   L6 — MANDATE AUTHORITY               │
+    │          au-re.org · arm-agency.com · arctura.network  │
+    └──────────────────────────┬─────────────────────────────┘</span>
+                               │ mandate issuance
+<span class="hl">    ┌──────────────────────────▼─────────────────────────────┐
+    │                 L5 — RESONANCE BFT                     │
+    │           144 bonded nodes · 99.97% attestation        │
+    └──────┬─────────────────────────────────────────┬───────┘</span>
+           │ attested actions                         │ truth sync
+<span class="hg">    ┌──────▼──────────────┐         ┌────────────────▼──────┐
+    │   L4 — AGENTIC FABRIC│         │   L1 — TRUTH LEDGER   │
+    │   ACP · A2A · HITL   │         │   Merkle-verified log  │
+    └──────┬───────────────┘         └───────────────────────┘</span>
+           │ domain dispatch
+<span class="hw">    ┌──────▼──────────────────────────────────────────────────┐
+    │                L3 — DOMAIN EXECUTION                    │
+    │                                                         │
+    │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌──────────┐  │
+    │  │ ENERGY  │  │ FINANCE │  │ COMPUTE │  │  SUPPLY  │  │
+    │  │WattTime │  │   AP2   │  │  Wasm   │  │   A2A    │  │
+    │  │ Kepler  │  │ Merkle  │  │  MCP    │  │  ACP     │  │
+    │  └────┬────┘  └────┬────┘  └────┬────┘  └────┬─────┘  │
+    └───────┼────────────┼────────────┼─────────────┼────────┘</span>
+            │            │            │             │
+<span class="hg">    ┌───────▼────────────▼────────────▼─────────────▼────────┐
+    │              L2 — CARBON SCHEDULER                      │
+    │       18h green window forecast · net-negative ops      │
+    └────────────────────────────────────────────────────────┘</span>
+</pre>
+        </div>
+
+        <div class="code-block">
+          <div class="code-block-header">Protocol config · <span>arctura.network/operon</span></div>
+          <pre><span class="c"># AU-RE.ORG — Network substrate configuration
+# Built on CoreweaverLabs city-infrastructure</span>
+
+<span class="n">network</span>:
+  <span class="n">name</span>: <span class="s">"au-re.org"</span>
+  <span class="n">version</span>: <span class="v">0.1</span>
+  <span class="n">phase</span>: <span class="s">"blueprint"</span>
+  <span class="n">mandate_root</span>: <span class="s">"arctura.network"</span>
+  <span class="n">consensus</span>:
+    <span class="n">type</span>: <span class="s">"resonance_bft"</span>
+    <span class="n">nodes</span>: <span class="v">144</span>
+    <span class="n">attestation_target</span>: <span class="v">0.9997</span>
+    <span class="n">frequency_hz</span>: <span class="v">4320</span>
+  <span class="n">carbon</span>:
+    <span class="n">scheduler</span>: <span class="s">"l2_carbon"</span>
+    <span class="n">sources</span>: [<span class="s">"watttime"</span>, <span class="s">"electricity_maps"</span>]
+    <span class="n">forecast_horizon_h</span>: <span class="v">18</span>
+    <span class="n">target</span>: <span class="s">"net_negative"</span>
+
+<span class="n">domains</span>:
+  - <span class="n">id</span>: <span class="s">"energy"</span>
+    <span class="n">color</span>: <span class="v">"#00d4aa"</span>
+  - <span class="n">id</span>: <span class="s">"finance"</span>
+    <span class="n">mandate_protocol</span>: <span class="s">"ap2"</span>
+  - <span class="n">id</span>: <span class="s">"compute"</span>
+    <span class="n">sandbox</span>: <span class="s">"wasm"</span>
+    <span class="n">throughput_ops_sec</span>: <span class="v">2400000</span>
+  - <span class="n">id</span>: <span class="s">"supply"</span>
+    <span class="n">coordination</span>: <span class="s">"a2a_acp"</span>
+    <span class="n">agent_limit</span>: <span class="v">50000</span></pre>
+        </div>
+      </div>
+
+      <!-- DOMAINS -->
+      <div class="docs-section" id="domains">
+        <div class="section-overline sig">Domain Reference</div>
+        <h2 class="section-title">FOUR DOMAINS</h2>
+        <p class="section-lede">AU-RE.ORG governs four resource domains through a single sovereign protocol substrate. Each domain is an autonomous node. Each node is a mandate chain. Each mandate is attested.</p>
+
+        <div class="domain-docs">
+          <div class="domain-doc-card ddc-energy">
+            <div class="ddc-accent"></div>
+            <div class="ddc-num">Domain 01</div>
+            <div class="ddc-title">ENERGY</div>
+            <p class="ddc-desc">Carbon-sovereign operations. Net-negative by design. The grid's carbon intensity is a first-class scheduling variable — not an afterthought layered on top of an already-committed workload.</p>
+            <div class="ddc-stack">
+              <div class="ddc-item"><strong>WattTime + Electricity Maps</strong> — real-time grid carbon intensity by region</div>
+              <div class="ddc-item"><strong>Kepler per-pod measurement</strong> — container-level energy attribution</div>
+              <div class="ddc-item"><strong>L2 Carbon Scheduler</strong> — mandate-aware green window dispatch</div>
+              <div class="ddc-item"><strong>18h forecast horizon</strong> — forward scheduling to renewable windows</div>
+              <div class="ddc-item"><strong>Arctura Wind eXSeek™</strong> — wind farm optimization via Operon subnet</div>
+            </div>
+          </div>
+
+          <div class="domain-doc-card ddc-finance">
+            <div class="ddc-accent"></div>
+            <div class="ddc-num">Domain 02</div>
+            <div class="ddc-title">FINANCE</div>
+            <p class="ddc-desc">Mandate-signed payment intents with full chain-of-custody. Autonomous agents that move real value within cryptographically bounded authority. No mandate, no movement.</p>
+            <div class="ddc-stack">
+              <div class="ddc-item"><strong>AP2 protocol</strong> — the payment intent standard for the agentic era</div>
+              <div class="ddc-item"><strong>Merkle-verified attribution</strong> — every payment traceable to its mandate</div>
+              <div class="ddc-item"><strong>Truth Ledger audit trail</strong> — immutable chain-of-custody for all transactions</div>
+              <div class="ddc-item"><strong>EU AI Act compliant</strong> — explainability and auditability by design</div>
+            </div>
+          </div>
+
+          <div class="domain-doc-card ddc-compute">
+            <div class="ddc-accent"></div>
+            <div class="ddc-num">Domain 03</div>
+            <div class="ddc-title">COMPUTE</div>
+            <p class="ddc-desc">Token-max, not headcount-max. Autonomous compute allocation across the subnet. Wasm-sandboxed. BFT-attested. Zero escapes. 2.4M ops/sec throughput.</p>
+            <div class="ddc-stack">
+              <div class="ddc-item"><strong>MCP-native tool registry</strong> — standardized agent-tool interface</div>
+              <div class="ddc-item"><strong>Resonance BFT consensus</strong> — 144-node Byzantine fault tolerance</div>
+              <div class="ddc-item"><strong>Wasm sandboxing</strong> — zero-escape agent execution environments</div>
+              <div class="ddc-item"><strong>2.4M ops/sec throughput</strong> — production-grade compute fabric</div>
+              <div class="ddc-item"><strong>Bittensor SN19 via blockmachine</strong> — verified decentralized compute</div>
+            </div>
+          </div>
+
+          <div class="domain-doc-card ddc-supply">
+            <div class="ddc-accent"></div>
+            <div class="ddc-num">Domain 04</div>
+            <div class="ddc-title">SUPPLY</div>
+            <p class="ddc-desc">50,000 agents. Zero incidents. The supply chain is a mandate chain. Procurement, logistics, allocation — all attested, all auditable, all autonomous within mandate bounds.</p>
+            <div class="ddc-stack">
+              <div class="ddc-item"><strong>A2A agent coordination</strong> — peer-to-peer agent negotiation protocol</div>
+              <div class="ddc-item"><strong>ACP performative dialogue</strong> — semantic coordination language for agents</div>
+              <div class="ddc-item"><strong>Durable Temporal workflows</strong> — long-running operations with guaranteed delivery</div>
+              <div class="ddc-item"><strong>HITL escalation paths</strong> — human-in-the-loop for defined edge cases</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONSTELLATION -->
+      <div class="docs-section" id="constellation">
+        <div class="section-overline blue">Signal Network</div>
+        <h2 class="section-title">THE CONSTELLATION</h2>
+        <p class="section-lede">AU-RE.ORG is the org root. Everything in the network feeds authority toward arm-agency.com — the commercial endpoint. Each node in the constellation has a distinct role and mandate.</p>
+
+        <div class="constellation">
+          <div class="cons-node">
+            <div class="cons-role">Org Root</div>
+            <div class="cons-name">AU-RE.ORG</div>
+            <div class="cons-url">au-re.org</div>
+            <p class="cons-desc">The sovereign organizational root. Predictive neural sovereignty. Four domains. One mandate. The highest authority node in the network — where mandate chains begin.</p>
+          </div>
+          <div class="cons-node">
+            <div class="cons-role">Term Authority</div>
+            <div class="cons-name">ARM REFERENCE</div>
+            <div class="cons-url">autonomousresourcemanagement.com</div>
+            <p class="cons-desc">The canonical definition of autonomous resource management. Architecture reference. Five primitives. Six-layer signal stack. The vocabulary of the network.</p>
+          </div>
+          <div class="cons-node">
+            <div class="cons-role">Protocol Subnet</div>
+            <div class="cons-name">ARCTURA NETWORK</div>
+            <div class="cons-url">arctura.network</div>
+            <p class="cons-desc">The decentralized protocol layer. Resonance BFT. 144 bonded nodes. Truth Ledger. Carbon-sovereign operations. The compute and consensus infrastructure of the network.</p>
+          </div>
+          <div class="cons-node primary">
+            <div class="cons-role" style="color:var(--gold)">Commercial Endpoint →</div>
+            <div class="cons-name">ARM AGENCY</div>
+            <div class="cons-url" style="color:var(--gold-s)">arm-agency.com</div>
+            <p class="cons-desc">The product and commercial hub. Everything in the network points here. Engagements begin with a signal. The interface between the protocol and the world.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ORG MODEL -->
+      <div class="docs-section" id="org-model">
+        <div class="section-overline gold">Operating Model</div>
+        <h2 class="section-title">TOKEN-MAX.<br/><em style="font-family:var(--body);color:var(--gold);">Not headcount-max.</em></h2>
+        <p class="section-lede">The best organizations in the agentic era maximize token usage, not headcount. Every layer of human routing you remove is a direct speed gain.</p>
+
+        <div class="callout sig">
+          <div class="callout-icon">▸</div>
+          <div class="callout-body"><strong>Core thesis:</strong> If your company is queryable, artifact-rich, and legible to AI, you should have almost no human middleware. Your velocity is only as fast as your information flow.</div>
+        </div>
+
+        <p style="font-size:15px;color:var(--tm);line-height:1.8;margin-bottom:24px;">AU-RE.ORG operates three archetypes — per Jack Dorsey's framework for the agentic organization. Every person in the network is one of three things:</p>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:32px;">
+          <div style="background:var(--v3);border:1px solid var(--gl);border-radius:var(--r);padding:24px 20px;">
+            <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--arc-s);margin-bottom:10px;">Archetype 01</div>
+            <div style="font-family:var(--display);font-size:18px;letter-spacing:2px;color:var(--th);margin-bottom:8px;">IC / BUILDER-OPERATOR</div>
+            <p style="font-size:13px;color:var(--tl);line-height:1.7;">Directly makes and runs things. Not limited to engineers. Everyone builds. Everyone comes to meetings with working prototypes, not pitch decks.</p>
+          </div>
+          <div style="background:var(--v3);border:1px solid var(--gl);border-radius:var(--r);padding:24px 20px;">
+            <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--arc-s);margin-bottom:10px;">Archetype 02</div>
+            <div style="font-family:var(--display);font-size:18px;letter-spacing:2px;color:var(--th);margin-bottom:8px;">DRI</div>
+            <p style="font-size:13px;color:var(--tl);line-height:1.7;">Directly responsible individual. Focused on strategy and customer outcomes. Not a classic manager. One person. One outcome. No hiding.</p>
+          </div>
+          <div style="background:var(--v3);border:1px solid var(--gl);border-radius:var(--r);padding:24px 20px;">
+            <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--arc-s);margin-bottom:10px;">Archetype 03</div>
+            <div style="font-family:var(--display);font-size:18px;letter-spacing:2px;color:var(--th);margin-bottom:8px;">AI FOUNDER</div>
+            <p style="font-size:13px;color:var(--tl);line-height:1.7;">Still builds. Still coaches. Leads by example. You cannot outsource your conviction. You need to develop it yourself by actually sitting with coding agents and using them.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROADMAP -->
+      <div class="docs-section" id="roadmap">
+        <div class="section-overline sig">Status</div>
+        <h2 class="section-title">ROADMAP</h2>
+        <p class="section-lede">Three phases. Transparent about where we are. No fake progress bars.</p>
+
+        <div class="phase-timeline">
+          <div class="phase-row now">
+            <div class="phase-meta">
+              <div class="phase-num">Phase 01 · Now</div>
+              <div class="phase-name">BLUEPRINT</div>
+              <div class="phase-time">● Active</div>
+            </div>
+            <div class="phase-content">
+              <div class="phase-cta">Send Signal →</div>
+              <p class="phase-desc">Architecture specified. Protocol substrate in development. Waitlist open — 500 signals triggers GitHub repo launch. Signal intent, capability, and horizon to <strong style="color:var(--th)">signal@arctura.network</strong>.</p>
+            </div>
+          </div>
+          <div class="phase-row">
+            <div class="phase-meta">
+              <div class="phase-num">Phase 02 · Q3 2026</div>
+              <div class="phase-name">REPO LIVE</div>
+              <div class="phase-time">Pending</div>
+            </div>
+            <div class="phase-content">
+              <div class="phase-cta">Star on GitHub</div>
+              <p class="phase-desc">GitHub repo launches at 500 waitlist signals. Open-source kernel under Apache-2.0. First working implementation of the Resonance BFT substrate and mandate chain primitives.</p>
+            </div>
+          </div>
+          <div class="phase-row">
+            <div class="phase-meta">
+              <div class="phase-num">Phase 03 · Q1 2027</div>
+              <div class="phase-name">DOCS + PLAYGROUND</div>
+              <div class="phase-time">Horizon</div>
+            </div>
+            <div class="phase-content">
+              <div class="phase-cta">Get Started</div>
+              <p class="phase-desc">Full documentation, interactive playground, domain SDKs, and the first production deployments across Energy and Compute domains. Coreweaver Labs city-infrastructure powers the industrial layer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GLOSSARY -->
+      <div class="docs-section" id="glossary">
+        <div class="section-overline gold">Reference</div>
+        <h2 class="section-title">GLOSSARY</h2>
+        <p class="section-lede">Key terms in the AU-RE.ORG network. Canonical definitions as used in all protocol documentation.</p>
+
+        <table class="glossary-table">
+          <thead><tr><th>Term</th><th>Type</th><th>Definition</th></tr></thead>
+          <tbody>
+            <tr><td class="gl-term">ARM</td><td class="gl-type">Acronym</td><td class="gl-def">Autonomous Resource Management — the governing paradigm of the AU-RE.ORG network. The discipline of managing real-world resource flows (energy, capital, compute, supply) through autonomous, attested, mandate-bound agents.</td></tr>
+            <tr><td class="gl-term">Mandate</td><td class="gl-type">Primitive</td><td class="gl-def">A cryptographically signed statement of agent permission, including scope, bounds, and expiry. The irreducible unit of authority in the network. No agent acts without a valid mandate.</td></tr>
+            <tr><td class="gl-term">Mandate Chain</td><td class="gl-type">Structure</td><td class="gl-def">An ordered, composable sequence of mandates forming a chain of authority from the L6 mandate root to the executing agent. Every link is attested. Every delegation is bounded.</td></tr>
+            <tr><td class="gl-term">Truth Ledger</td><td class="gl-type">Primitive</td><td class="gl-def">The Merkle-verified, append-only audit log of all mandate-governed actions across all four domains. The immutable record of what happened, when, and under whose authority.</td></tr>
+            <tr><td class="gl-term">Resonance BFT</td><td class="gl-type">Protocol</td><td class="gl-def">The Byzantine fault-tolerant consensus mechanism of the ARCTURA network. 144 bonded nodes. 99.97% attestation rate. Named for the 4,320 Hz resonance frequency of the physical infrastructure it governs.</td></tr>
+            <tr><td class="gl-term">Carbon Scheduler</td><td class="gl-type">Primitive</td><td class="gl-def">The L2 scheduling primitive that treats carbon intensity as a first-class dispatch variable. Integrates WattTime + Electricity Maps. Produces 18-hour green window forecasts for all compute workloads.</td></tr>
+            <tr><td class="gl-term">ACP</td><td class="gl-type">Protocol</td><td class="gl-def">Agent Communication Protocol — the performative dialogue standard used for A2A coordination in the Supply domain and across the agentic fabric. Agents negotiate, delegate, and confirm resource actions using structured semantic exchanges.</td></tr>
+            <tr><td class="gl-term">A2A</td><td class="gl-type">Pattern</td><td class="gl-def">Agent-to-agent — the coordination pattern where agents negotiate and delegate directly, without human middleware. The primary interaction mode in the Supply domain.</td></tr>
+            <tr><td class="gl-term">HITL</td><td class="gl-type">Pattern</td><td class="gl-def">Human-in-the-loop — defined escalation paths where an agent action exceeds its mandate bounds and requires human authorization. Rare by design. The mandate chain prevents most error classes at the authorization layer.</td></tr>
+            <tr><td class="gl-term">AP2</td><td class="gl-type">Protocol</td><td class="gl-def">The payment intent protocol for the Finance domain. Mandate-signed, Merkle-verified, fully auditable. Every payment is traceable to its originating mandate.</td></tr>
+            <tr><td class="gl-term">Operon</td><td class="gl-type">Subnet</td><td class="gl-def">The industrial intelligence subnet of the ARCTURA network, built and maintained by CoreweaverLabs. Powers the physical infrastructure layer (city-infrastructure, eXSeek™ wind, IIoT sensors) for the Energy domain.</td></tr>
+            <tr><td class="gl-term">eXSeek™</td><td class="gl-type">Product</td><td class="gl-def">Arctura Wind's turbine optimization system, running on the Operon subnet. Real-time wind farm telemetry, predictive maintenance, and power output optimization via the CoreweaverLabs city-infrastructure module.</td></tr>
+            <tr><td class="gl-term">Token-max</td><td class="gl-type">Principle</td><td class="gl-def">The operating principle of the agentic-era organization — maximizing token usage (AI throughput) rather than headcount. Removing human middleware layers as a direct velocity gain.</td></tr>
+            <tr><td class="gl-term">DRI</td><td class="gl-type">Role</td><td class="gl-def">Directly Responsible Individual — one person, one outcome, no hiding. The AU-RE.ORG org model has no classic managers. Every critical outcome has a named DRI.</td></tr>
+            <tr><td class="gl-term">Signal</td><td class="gl-type">Act</td><td class="gl-def">An expression of shared purpose sent to signal@arctura.network. Not an application — a declaration of intent, capability, and horizon. The act of entering the network.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- FAQ — GENERAL -->
+      <div class="docs-section" id="faq-general">
+        <div class="section-overline gold">FAQ</div>
+        <h2 class="section-title">FREQUENTLY ASKED</h2>
+        <p class="section-lede">Every question the network needs to answer, answered. Organized by domain. No marketing language.</p>
+
+        <div class="faq-cat">General</div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              What exactly is AU-RE.ORG?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p>AU-RE.ORG is the sovereign network for autonomous resource management across four domains: Energy, Finance, Compute, and Supply. It is the organizational and technical root from which all authority in the network flows.</p>
+              <p>It is not a company in the traditional sense. It is a protocol root — the place where mandate chains begin and where the definitions that govern the network are established. The commercial endpoint is <a href="https://arm-agency.com" target="_blank">arm-agency.com</a>.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              What does "autonomous resource management" mean?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>Autonomous resource management (ARM)</strong> is the discipline of governing real-world resource flows — energy, capital, compute, supply chains — through autonomous, mandate-bound agents that act without requiring human approval for each individual decision.</p>
+              <p>The key word is <em>resource</em>. Not data, not documents — actual physical and financial resources that have real-world consequences when moved incorrectly. The mandate chain is what makes autonomous action safe at scale.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              What does "predictive neural sovereignty" mean?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>Predictive</strong> — the network forecasts resource states (carbon intensity, demand, supply chain risk) and acts ahead of events rather than reactively. The Carbon Scheduler's 18-hour green window forecast is the clearest example.</p>
+              <p><strong>Neural</strong> — the intelligence substrate is neural (AI-native), not rule-based. Agents reason, not just execute.</p>
+              <p><strong>Sovereignty</strong> — the network is self-governing within its mandate bounds. It does not depend on a central authority for each decision. The Resonance BFT consensus and mandate chain are what make sovereign operation safe.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Is AU-RE.ORG a blockchain project?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p>No — and yes, depending on your definition. AU-RE.ORG uses cryptographic primitives (Merkle-verified Truth Ledger, BFT consensus, signed mandates) that are also used in blockchain systems, but the network is not a public chain and does not have a token.</p>
+              <p>The Resonance BFT substrate is a permissioned, high-performance consensus system optimized for the throughput requirements of industrial resource management. It is not designed for financial speculation. The Bittensor integration (via blockmachine SN19) is the closest the network gets to blockchain — and even that is infrastructure, not product.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              What phase is the network in right now?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>Phase 01 — Blueprint.</strong> The architecture is fully specified. The protocol substrate is in active development by CoreweaverLabs. The GitHub repo launches when 500 waitlist signals are received.</p>
+              <p>The Carbon Scheduler (L2) and Resonance BFT (L5) components are active. The domain execution layer (L3) and agentic fabric (L4) are in the spec and early build phase. Phase 02 (Repo Live) targets Q3 2026. Phase 03 (Docs + Playground) targets Q1 2027.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Who builds AU-RE.ORG?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p>AU-RE.ORG is built by <strong>CoreweaverLabs</strong> as part of the ARCTURA network. The technical infrastructure runs on CoreweaverLabs' Operon subnet, which provides the physical and industrial intelligence layer via the <code>city-infrastructure</code> module.</p>
+              <p>The commercial endpoint is <a href="https://arm-agency.com" target="_blank">arm-agency.com</a>. The protocol authority sits at <a href="https://arctura.network" target="_blank">arctura.network</a>. The term authority is at <a href="https://autonomousresourcemanagement.com" target="_blank">autonomousresourcemanagement.com</a>.</p>
+            </div></div>
+          </div>
+        </div>
+
+        <!-- FAQ — DOMAINS -->
+        <div class="faq-cat" id="faq-domains">Domains</div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Why these four domains? Why not more?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p>Energy, Finance, Compute, and Supply are the four resource domains that constitute the physical economy. Everything else — healthcare, logistics, manufacturing, agriculture — is a combination or derivative of these four.</p>
+              <p>The network is designed to be the substrate, not the application. Domain-specific applications (like eXSeek™ for wind) are built on top of the four-domain substrate, not alongside it.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              What does "net-negative by design" mean for Energy?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p>It means the network removes more carbon from the grid than it emits — not through offsets, but through operational design. The Carbon Scheduler dispatches compute to renewable windows identified by WattTime and Electricity Maps, 18 hours in advance.</p>
+              <p>Kepler provides per-pod energy measurement at the container level, so every workload has an accurate carbon attribution. The network targets and tracks a live net-negative figure. The stat bar on <a href="https://au-re.org">au-re.org</a> shows the current kgCO₂e/hr in real time.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              How does the Finance domain handle autonomous payments safely?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p>Through the mandate chain. Every payment intent is a mandate — a cryptographically signed statement of permission that includes: the originating authority, the scope (what can be paid, to whom, up to what amount), bounds (velocity limits, counterparty restrictions), and expiry.</p>
+              <p>The AP2 protocol encodes payment intents in this format. The Truth Ledger provides Merkle-verified chain-of-custody. The system is EU AI Act compliant by design — every autonomous action has a complete, legible audit trail traceable to a human authorization at L6.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              What is eXSeek™ and how does it relate to AU-RE.ORG?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>eXSeek™</strong> is Arctura Wind's turbine optimization system — a domain-specific application built on top of the Energy domain of AU-RE.ORG. It runs on the CoreweaverLabs Operon subnet, streaming wind farm telemetry via Kafka and running predictive maintenance and power output optimization models.</p>
+              <p>It demonstrates what a production application on the AU-RE.ORG Energy domain looks like: real IIoT sensor arrays, real-time telemetry, autonomous optimization decisions made within mandate bounds, all attested to the Truth Ledger.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              How does the Supply domain handle 50,000 agents without incidents?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p>The mandate chain is the answer. Most incidents in agentic supply chain systems happen because agents have too much authority relative to what is actually needed for a given action. The mandate chain solves this structurally — every agent can only do what its current mandate explicitly permits.</p>
+              <p>ACP performative dialogue ensures agents negotiate before acting on resources that affect other agents. HITL escalation paths are defined for the cases where mandate bounds don't cover an edge case — but the mandate chain is designed so these are rare.</p>
+            </div></div>
+          </div>
+        </div>
+
+        <!-- FAQ — TECHNICAL -->
+        <div class="faq-cat" id="faq-tech">Technical</div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              What is the tech stack?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p>The protocol substrate is built on CoreweaverLabs' <code>city-infrastructure</code> module: <strong>TypeScript + Python</strong> core, <strong>Apache Kafka</strong> for telemetry streaming, <strong>TimescaleDB</strong> for time-series data, <strong>FastAPI</strong> for the agent-facing API, and <strong>Bittensor SN19</strong> via blockmachine for decentralized compute verification.</p>
+              <p>The consensus layer runs <strong>Resonance BFT</strong> on 144 bonded nodes. The Energy domain uses <strong>WattTime, Electricity Maps, and Kepler</strong>. The Compute domain runs <strong>Wasm-sandboxed agents</strong> via an MCP-native tool registry. The Supply domain uses <strong>Durable Temporal workflows</strong> for long-running operations.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              What is Resonance BFT and why 144 nodes?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p>Resonance BFT is the Byzantine fault-tolerant consensus mechanism of the ARCTURA network. It is optimized for the throughput and latency requirements of industrial resource management — not for public chain economics.</p>
+              <p>144 nodes is a deliberate choice: it provides strong Byzantine fault tolerance (tolerates up to 47 faulty nodes) while keeping the consensus network manageable. The 4,320 Hz resonance frequency references the network's physical infrastructure layer — the frequency at which the IIoT sensor mesh operates.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              What is MCP and why is it used for the Compute domain?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>MCP (Model Context Protocol)</strong> is the emerging standard for agent-to-tool interfaces — the way an AI agent describes, discovers, and invokes tools. The AU-RE.ORG Compute domain runs an MCP-native tool registry: every compute resource in the domain is exposed as an MCP-compatible tool that agents can discover and invoke within their mandate bounds.</p>
+              <p>This makes the Compute domain natively legible to any MCP-compatible agent framework. The Wasm sandboxing ensures that tool invocations cannot escape their execution environment regardless of agent behavior.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              How does the Bittensor / blockmachine SN19 integration work?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p>The CoreweaverLabs <code>city-infrastructure</code> module runs on Bittensor SN19 via <a href="https://blockmachine.io" target="_blank">blockmachine.io</a>. Bittensor provides decentralized compute with economic incentive alignment — miners are rewarded for correct behavior, making correct behavior the economically optimal behavior.</p>
+              <p>The <code>emit-proof</code> agent in the AURE 16-agent cluster emits cryptographic proofs of compute actions to SN19. The <code>bft-verify</code> agent validates these proofs against the Resonance BFT substrate. The <code>mandate-enf</code> agent enforces the mandate chain on all SN19-verified actions.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              When will the GitHub repo be available?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p>The repo launches when 500 waitlist signals are received. Send a signal to <code>signal@arctura.network</code> — include your name, organization, domain of interest, what you are building, and your horizon.</p>
+              <p>Phase 02 (Repo Live) targets Q3 2026. The open-source kernel will be Apache-2.0. The first working implementation will cover the Resonance BFT substrate and mandate chain primitives. The CoreweaverLabs <code>city-infrastructure</code> module is already available at <a href="https://github.com/CoreweaverLabs/city-infrastructure" target="_blank">github.com/CoreweaverLabs/city-infrastructure</a>.</p>
+            </div></div>
+          </div>
+        </div>
+
+        <!-- FAQ — ORG & JOINING -->
+        <div class="faq-cat" id="faq-org">Org & Joining</div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              How do I join or engage with AU-RE.ORG?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p>Send a signal to <a href="mailto:signal@arctura.network?subject=Signal%20—%20AU-RE.ORG%20Waitlist&body=Name:%0AOrganization:%0ADomain%20of%20interest:%0AWhat%20you%20are%20building:%0AHorizon:">signal@arctura.network</a>. A signal is not an application — it is an expression of shared purpose. Include: your name, organization, the domain of interest (Energy / Finance / Compute / Supply), what you are building, and your horizon.</p>
+              <p>The network does not take unsolicited work. It accepts signals. The best signals demonstrate that you are already building something aligned with the network's mandate.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              What is the "token-max, not headcount-max" operating model in practice?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p>It means the network is designed around three archetypes — IC/Builder-Operator, DRI, and AI Founder — with no classic management layer between them. Everyone builds. Everyone comes to meetings with working prototypes, not pitch decks.</p>
+              <p>In practice: no status update meetings. No approval chains for routine decisions. No middle management. Every critical outcome has a DRI. Agent systems handle the coordination overhead that would otherwise require human middleware. The result is a network that operates orders of magnitude faster than traditional organizations with equivalent resource footprint.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Is this open source? Can I build on it?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p>Yes. The AU-RE.ORG kernel is Apache-2.0 licensed. The CoreweaverLabs <code>city-infrastructure</code> module is MIT licensed and already on GitHub. The philosophy is: open by default unless a security constraint demands otherwise.</p>
+              <p>The agentic web is built by people who share what they make. If you are building something on the AU-RE.ORG substrate, send a signal — the network wants to know what is being built.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              What is "arm-agency.com" and how does it differ from au-re.org?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p><strong>au-re.org</strong> is the org root — the sovereign organizational authority. Protocol definitions, mandate roots, and network governance live here. It is where the network's identity and standards are anchored.</p>
+              <p><strong>arm-agency.com</strong> is the commercial endpoint — the product and engagement surface. If you want to deploy an autonomous resource management system, you engage via arm-agency.com. Everything in the network points toward it as the place where the protocol becomes product.</p>
+            </div></div>
+          </div>
+        </div>
+
+        <!-- FAQ — COMPLIANCE -->
+        <div class="faq-cat" id="faq-compliance">Compliance & Risk</div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              How does AU-RE.ORG comply with the EU AI Act?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p>EU AI Act compliance is built into the protocol, not bolted on. Three mechanisms make the network compliant by design:</p>
+              <p><strong>Explainability:</strong> Every agent action is backed by a mandate that specifies exactly why the action is authorized. The Truth Ledger provides a complete, machine-readable record of what happened and under whose authority.</p>
+              <p><strong>Human oversight:</strong> The L6 mandate authority is human. All mandate chains originate from human-signed root mandates. HITL escalation paths provide human review for actions outside mandate bounds. The system is auditable at every layer.</p>
+              <p><strong>Risk classification:</strong> The Finance domain (high-risk AI system under EU AI Act) uses the AP2 mandate protocol with Merkle-verified attribution — every payment is traceable to a human authorization. The architecture is designed to satisfy Article 9 (risk management) and Article 13 (transparency) requirements.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              What happens if an agent acts outside its mandate?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p>The mandate chain prevents most out-of-bounds actions at the authorization layer — before they execute. An agent cannot initiate an action for which it does not hold a valid, unexpired mandate. The Wasm sandbox in the Compute domain adds an execution-layer constraint on top of the authorization-layer constraint.</p>
+              <p>When an edge case is genuinely outside the mandate scope (rare by design), the HITL escalation path triggers — the action is held, the DRI is notified, and a human makes the authorization decision. This event is logged to the Truth Ledger with full context.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              How is data sovereignty handled across domains?
+              <span class="faq-chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">
+              <p>Each domain operates its own mandate chain. Cross-domain actions require cross-domain mandate delegation — an Energy mandate cannot authorize a Finance action. This structural isolation means data and authority do not leak between domains without an explicit, auditable delegation event.</p>
+              <p>The Truth Ledger maintains domain-scoped audit trails that can be independently verified without exposing cross-domain data. The Resonance BFT consensus attest to the integrity of each domain's Truth Ledger independently.</p>
+            </div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end docs-main -->
+  </div><!-- end docs-layout -->
+</div><!-- end wrap -->
+
+<!-- ══ SIGNAL ═══════════════════════════════════════════════════ -->
+<section class="signal-section">
+  <div class="wrap-sm">
+    <div class="signal-inner">
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:12px;">
+        <span>The Threshold</span>
+      </div>
+      <h2 class="signal-title">
+        SEND<br/>
+        <span class="title-gold">YOUR SIGNAL.</span>
+      </h2>
+      <p class="signal-sub">The network does not take unsolicited work. It accepts signals — expressions of shared purpose. Signal intent, capability, and horizon.</p>
+      <a href="mailto:signal@arctura.network?subject=Signal%20—%20AU-RE.ORG%20Waitlist&body=Name:%0AOrganization:%0ADomain%20of%20interest:%0AWhat%20you%20are%20building:%0AHorizon:" class="btn-signal" style="font-size:13px;padding:16px 40px;" aria-label="Send signal email">
+        signal@arctura.network <span aria-hidden="true">→</span>
+      </a>
+      <div style="margin-top:36px;padding:20px 24px;background:var(--v3);border:1px solid var(--gl);border-radius:var(--r);display:inline-block;font-family:var(--mono);font-size:11px;color:var(--tl);letter-spacing:1px;">
+        <span style="color:var(--sig);">● </span>
+        Phase 01 · v0.1 Blueprint · Waitlist open
+        &nbsp;·&nbsp;
+        <span style="color:var(--tm);">500</span> waitlist → GitHub repo launch
+        &nbsp;·&nbsp;
+        <a href="/llms.txt" style="color:var(--arc-s);">llms.txt</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="foot-logo">AU-RE.ORG</span>
+        <span class="foot-tag">Predictive Neural Sovereignty</span>
+        <p>The sovereign network for autonomous resource management. Four domains. One protocol substrate. No human middleware.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Docs</h4>
+        <a href="#intro">Overview</a>
+        <a href="#primitives">Five Primitives</a>
+        <a href="#signal-stack">Signal Stack</a>
+        <a href="#domains">Domains</a>
+        <a href="#glossary">Glossary</a>
+        <a href="#faq-general">FAQ</a>
+      </div>
+      <div class="foot-col">
+        <h4>Network</h4>
+        <a href="https://autonomousresourcemanagement.com" target="_blank" rel="noopener">autonomousresourcemanagement.com</a>
+        <a href="https://arctura.network" target="_blank" rel="noopener">arctura.network</a>
+        <a href="https://arm-agency.com" target="_blank" rel="noopener">arm-agency.com</a>
+        <a href="https://github.com/CoreweaverLabs" target="_blank" rel="noopener">CoreweaverLabs</a>
+      </div>
+      <div class="foot-col">
+        <h4>Signal</h4>
+        <a href="mailto:signal@arctura.network">signal@arctura.network</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© MMXXVI AU-RE.ORG · Apache-2.0 Kernel · Govern the Chaos. Own the Fabric.</span>
+      <div style="display:flex;align-items:center;">
+        <span class="foot-dot" aria-hidden="true"></span>
+        Resonance · Healthy · <span id="hz-val">4,320</span> Hz
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ══ FAQ accordion ══ */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  // close all
+  document.querySelectorAll('.faq-item.open').forEach(el => {
+    el.classList.remove('open');
+    el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+
+/* ══ Sidebar scroll-spy ══ */
+function scrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.querySelectorAll('.sb-link').forEach(l => l.classList.remove('active'));
+}
+
+/* ══ Live Hz ticker ══ */
+setInterval(() => {
+  const el = document.getElementById('hz-val');
+  if (el) el.textContent = (4310 + Math.round(Math.random() * 18)).toLocaleString();
+}, 3400);
+
+/* ══ Scroll-reveal ══ */
+if ('IntersectionObserver' in window) {
+  const els = document.querySelectorAll('.docs-section, .prim-card, .domain-doc-card, .cons-node, .phase-row');
+  els.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(14px)';
+    el.style.transition = 'opacity 0.55s cubic-bezier(0.16,1,0.3,1), transform 0.55s cubic-bezier(0.16,1,0.3,1)';
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }, i * 40);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  els.forEach(el => obs.observe(el));
+}
+</script>
+</body>
+</html>
